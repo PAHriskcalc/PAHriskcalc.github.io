@@ -26,7 +26,7 @@
 	<!--
 	<button class="reset-btn" onclick="window.print()">Print</button>
 	-->
-	
+
 	<button class="reset-btn" onclick="resetCalc()">Reset</button>
 
 	<button class="reset-btn" onclick="goTo3()">View 3-strata model</button>
@@ -94,20 +94,20 @@
 	<!-- Start of result section -->
 	<tr class="title-row">
 		<th colspan="6">
-			Calculated ESC/ERS Risk Scores <sup>1-6</sup>
+			Calculated ESC/ERS Risk Score <sup>1-7</sup>
 		</th>
 	</tr>
 
 	<tr class="header-row">
 		<th class="header-cell">N</th>
-		<th class="header-cell" colspan="4">Risk Assesment Strategy</th>
+		<th class="header-cell" colspan="4" style="text-align: left;padding-left: 10px">Risk Assesment Strategy</th>
 		<th class="header-cell">Risk Score</th>
 		<!--<th class="header-cell" colspan="2">Key for Interpretation</th>-->
 	</tr>
 
 	<tr class="title-row">
 		<th colspan="6">
-		SPAHR-equation derived risk scores
+		SPAHR-equation derived risk score
 		</th>
 		<!--<td colspan="2" rowspan="5" class="image-cell">
 			<object data="interpretation-key.svg" class="image-svg" width="100%" height="100%"></object>
@@ -118,10 +118,10 @@
 	<tr class="result-row">
 		<td class="result-cell" id="result_Compera_count">0/3</td>
 		<td class="title-cell" colspan="4" onmouseenter="highlightParam('result_Compera')" onmouseout="highlightParam()">
-			COMPERA 2 <!--<small> (up to 6 parameters, without RA area and pericardial effusion) </small>-->
+			COMPERA 2.0 <small> (each variable is graded from 1-4 corresponding to low risk - high risk, respectively. The mean is rounded to the nearest integer) </small>
 				
 		</td>
-		<td class="result-cell" id="result_Compera">Use &geq; 3 parameters</td>
+		<td class="result-cell" id="result_Compera">Use 3 parameters</td>
 	</tr>
 	
 	</table>
@@ -147,12 +147,10 @@
 			The final decision making has to be made on balanced clinical judgement by the user in relation to the clinical presentation. The risk calculator serves only as a supporting tool to calculate risk scores.
 		</li>
 		<li>
-			The risk score calculator will be updated after the upcoming ESC/ERS guidelines in 2022.
+			The risk score calculator will be continuously updated in accordance with the prevailing ESC/ERS guidelines.
 		</li>		
 	</ul>
 	*<small>Note that if both NT-proBNP and BNP are selected, only NT-proBNP will be included in the calculated risk score.</small>
-	<br>
-	¤<small>Indicates the parameters used in the SPAHR-Kylhammar equation. In COMPERA, RA area and pericardial effusion are not included.</small>
 	</div>
 
 	<!-- Collapsible enviroment with article references -->
@@ -166,7 +164,7 @@
 		<li>Benza RL, Gomberg-Maitland M, Elliott CG, Farber HW, Foreman AJ, Frost AE, McGoon MD, Pasta DJ, Selej M, Burger CD, Frantz RP. Predicting Survival in Patients With Pulmonary Arterial Hypertension: The REVEAL Risk Score Calculator 2.0 and Comparison With ESC/ERS-Based Risk Assessment Strategies. Chest 2019 (February 14, 2019): 156(2): 323-337.
 		</li>
 		<li>Kylhammar D, Hjalmarsson C, Hesselstrand R, Jansson K, Kavianipour M, Kjellström B, Nisell M, Söderberg S, Rådegran G. Predicting mortality during long-term follow-up in pulmonary arterial hypertension. ERJ Open Research 2021 (published May 31 2021): 00837-2020.</li>
-		<li></li>
+		<li>Ahmed A, Kempe D, Ahmed S, Rådegran G. Comparison and validation of the ESC/ERS risk stratification models in PAH - Introducing an internet-based risk stratification calculator. <i>Submitted for review 2022.</i></li>
 	</ol>
 	</div>
 

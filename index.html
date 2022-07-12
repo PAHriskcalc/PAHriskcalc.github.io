@@ -11,12 +11,46 @@
 </head>
 
 <script type="text/javascript">
-if (screen.width <= 700) {
+ function go3Strata() {
+ 	if (screen.width <= 700) {
 	document.location = "RiskCalc_m.html";
-} else {
+	} else {
 	document.location = "RiskCalc.html";
-}
+	}
+ }
+
+ function go4Strata() {
+ 	if (screen.width <= 700) {
+	document.location = "RiskCalc4_m.html";
+	} else {
+	document.location = "RiskCalc4.html";
+	}
+ }
+
 </script>
 
-<body>
+<body style="display: flex;justify-content: center;align-items: center; padding-top: 50px;">
+
+<table style="width: 40%">
+		<tr class="title-row">
+		<th colspan="2">
+		Pulmonary Arterial Hypertension Risk Score Calculator
+		<br>
+		<small>Developed by Abdulla Ahmed, Daniel Kempe, Salaheldin Ahmed and Göran Rådegran</small><br>
+		<small>Apply the 3 strata or 4 strata model below</small>
+		</th>
+		</tr>
+
+		<tr style="display: flex;justify-content: center;align-items: center; padding-top: 50px;">
+			<th>
+				<button style="margin-top: 10px;margin: 50px;" class="reset-btn" onclick="go3Strata()">3 Strata</button>
+			</th>
+			<th>
+				<button style="margin-top: 10px;margin: 50px;" class="reset-btn" onclick="go4Strata()">4 Strata</button>
+
+			</th>
+		</tr>
+</table>
+
+
 </body>

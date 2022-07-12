@@ -1,10 +1,12 @@
 :root {
   --low-green: #c6e0b4;
   --mid-yellow: #ffd966;
+  --mid-yellow-orange: #fbb84a;
   --mid-orange: #f7972d;
   --high-red: #ff5050;
   --background-blue: #203764;
   --highlight-blue: #3e6ca8;
+  --highlight-active: lightgrey;
 }
 /* table styling start */
 table {
@@ -136,7 +138,7 @@ tr {
 .reset-btn {
   height: 40px;
   width: 30%;
-  font-size: 18px;
+  font-size: 14px;
   color: white;
   background-color: var(--background-blue);
   margin: 5px;
@@ -155,7 +157,7 @@ tr {
   color: white;
   background-color: var(--background-blue);
   cursor: pointer;
-  width: 96%;
+  width: 100%;
   border: none;
   text-align: center;
   font-size: 24px;
