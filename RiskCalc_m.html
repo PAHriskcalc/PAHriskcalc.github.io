@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>PAH Risk Calculator</title>
+	<meta charset='UTF-8'/>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="RiskCalc_m.css">
+ 	<script type="text/javascript" src="RiskCalc.js"></script>
+</head>
+
+<body onload="createTable_m()">
+
+<header class="container">
+	<div class="row">
+		<nav class="col-xs-8 text-right">
+		</nav>
+	</div>
+</header>
+
+<section class="resultbar">
+	<!--
+	<button class="reset-btn" onclick="printTable()">Print</button>
+	-->
+
+	<button class="reset-btn" onclick="copyData()">Copy</button>
+
+	<button class="reset-btn" onclick="resetCalc()">Reset</button>
+</section>
+
+
+<section class="container">
+
+	<table class="table table-bordered" id="mainTable" style="width:96%;border:2px solid black;margin-top: 60px">
+	
+	<!--
+	<tr>
+		<th></th>
+		<th style="width:150px"></th>
+		<th style="width:150px"></th>
+		<th style="width:150px"></th>
+	</tr>
+	-->
+	<tbody class="solid-border">
+	<tr class="title-row">
+		<th colspan="4">
+		Pulmonary Arterial Hypertension Risk Score Calculator<br>
+		Select the availble risk category for each parameter
+		</th>
+	</tr>
+	</tbody>
+
+	<tbody class="solid-border">
+	<tr class="header-row">
+		<!--<th class="header-cell" rowspan="2">
+			Determinants of prognosis
+		</th>-->
+		<th class="header-cell" colspan="3">
+			Risk Group Corresponding to 1-year Mortality
+		</th>
+	</tr>
+
+	<tr class="header-row">
+		<th class="header-cell" style="width:32%;background-color: var(--low-green);">Low risk (<5%)</th>
+		<th class="header-cell" style="width:32%;background-color: var(--mid-yellow);">Intermediate risk (5-10%)</th>
+		<th class="header-cell" style="width:32%;background-color: var(--high-red);">High risk (>10%)</th>
+	</tr>
+	</tbody>
+
+	<!-- Start of rows of parameters -->
+	<!-- Section 1 start -->
+	<tbody class="solid-border" id="misc">
+	</tbody>
+	<!-- End of rows of parameters -->
+
+	<!-- Start of result section -->
+	<tr class="title-row">
+		<th colspan="3">
+			Calculated Risk Scores <small>[1-6]</small>
+		</th>
+	</tr>
+
+	<tr class="header-row">
+		<th class="header-cell" colspan="2">Risk Assesment Strategy</th>
+		<th class="header-cell">Risk Score</th>
+	</tr>
+
+	<tr class="title-row">
+		<th colspan="3">
+		SPAHR-equation derived risk scores
+		</th>
+	</tr>
+
+	<tr>
+		<td colspan="2">Extended<small>(using all available parameters above in SPAHR equation)</small></td>
+		<td class="result-cell" id="result_Full">Use &geq; 3 parameters</td>
+	</tr>
+
+	<tr>
+		<td colspan="2">SPAHR-Kylhammar<small>(up to 8 determinats of prognosis)</small></td>
+		<td class="result-cell" id="result_SPAHR">Use &geq; 3 parameters</td>
+	</tr>
+
+	<tr>
+		<td colspan="2">COMPERA<small>(up to 6 parameters, without RA and pericardial effusion)</small></td>
+		<td class="result-cell" id="result_Compera">Use &geq; 3 parameters</td>
+	</tr>
+
+	<tr class="header-row">
+		<th class="header-cell" colspan="3">Key for Interpretation</th>
+	</tr>
+	
+	<tr>
+		<td colspan="4" class="image-cell">
+			<object data="interpretation-key.svg" class="image-svg" width="100%" height="100%"></object>
+		</td>
+	</tr>
+
+	<tr class="title-row">
+		<th colspan="3">
+		French strategy - number of low-risk parameters
+		</th>
+	</tr>
+
+	<tr>
+		<td colspan="2">French invasive<small>(WHO-FC, 6MWD, RAP, CI)</small></td>
+		<td class="result-cell" id="result_french1">1.0</td>
+	</tr>
+
+	<tr>
+		<td colspan="2">French non-invasive<small>(WHO-FC, 6MWD, BNP/NT-proBNP)</small></td>
+		<td class="result-cell" id="result_french2">1.0</td>
+	</tr>
+
+	<tr class="header-row">
+		<th class="header-cell" colspan="3">Key for Interpretation</th>
+	</tr>
+
+	<tr>
+		<td colspan="4" class="image-cell">
+			<object data="interpretation-key2.svg" class="image-svg" width="100%" height="100%"></object>
+		</td>
+	</tr>
+	
+	</table>
+
+	<!-- Collapsible enviroment with extra information -->
+	<button class="collapsible" onclick="collapseContent(this)">Additional information</button>
+	<div class="collapsible-content">
+	<ul>
+		<li>
+			The risk calculator variables and cut-offs are based on expert opinion according to the 2015 ESC/ERS pulmonary hypertension guidelines <small>[1]</small> which have been validated <small>[2-6]</small>. The risk calculator assists in the calculation of risk scores. No proportion of the risk calculator is intended to be used as or replacing clinical or medical assessment, diagnosis, or treatment.
+		</li>
+		<li>
+			 The user take full responsibility, including but not limited to decision making, for all data input and calculated scores.
+		</li>
+		<li>
+			The developers are not liable for any errors or inaccuracies in the algorithms or other content within or related to the calculation tool. 
+		</li>
+		<li>
+			The final decision making has to be made on balanced clinical judgement by the user in relation to the full clinical presentation. The risk calculator serves only as a supporting tool to calculate risk scores.
+		</li>
+		<li>
+			The risk score calculator is continusly updated according to available data and is to be updated after the upcoming ESC/ERS guidelines in 2022.
+		</li>		
+	</ul>
+	</div>
+
+	<!-- Collapsible enviroment with article references -->
+	<button class="collapsible" onclick="collapseContent(this)">References</button>
+	<div class="collapsible-content">
+	<ol>
+		<li>Authors 1, Reference 1 ...</li>
+		<li>Authors 2, Reference 2 ...</li>
+		<li>Authors 3, Reference 3 ...</li>
+	</ol>
+	</div>
+
+
+</section>
+
+
+</body>

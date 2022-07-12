@@ -1,0 +1,184 @@
+:root {
+  --low-green: #c6e0b4;
+  --mid-yellow: #ffd966;
+  --mid-orange: #f7972d;
+  --high-red: #ff5050;
+  --background-blue: #203764;
+  --highlight-blue: #3e6ca8;
+}
+/* table styling start */
+table {
+  width: 1px;
+  height: 1px;
+  border-spacing: 0px;
+}
+tr {
+  height: 40px;
+}
+.table > tbody > tr > th,
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
+.btn-row > .title-cell {
+  vertical-align: middle;
+  padding-left: 15px;
+  border-right: 2px solid black;
+}
+.title-cell {
+  font-size: 16px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding-left: 10px;
+}
+.header-row > .header-cell {
+  vertical-align: middle;
+  text-align: center;
+  border: 2px solid black;
+}
+.title-row > th {
+  height: 60px;
+  font-size: 20px;
+  background-color: var(--background-blue);
+  color: white;
+  text-align: center;
+  border: 2px solid black;
+}
+.result-cell {
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+.table > .solid-border{
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+/* table styling end */
+
+/* Style custom radio buttons */
+.radioButton {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+  cursor: pointer;
+  display: block;
+}
+.radioButton input {
+  position: absolute;
+  opacity:  0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  font-size: 10px;
+  padding: 0px;
+  margin: 0px;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*.radioButton:hover input[value="1"] ~ .checkmark {
+  background-color: var(--low-green);
+}
+.radioButton:hover input[value="2"] ~ .checkmark {
+  background-color: var(--mid-yellow);
+}
+.radioButton:hover input[value="3"] ~ .checkmark {
+  background-color: var(--high-red);
+}*/
+.btn-cell input[value="1"]:checked ~ .checkmark {
+  background-color: var(--low-green);
+  font-weight: bold;
+}
+.btn-cell input[value="2"]:checked ~ .checkmark {
+  background-color: var(--mid-yellow);
+  font-weight: bold;
+}
+.btn-cell input[value="3"]:checked ~ .checkmark {
+  background-color: var(--high-red);
+  font-weight: bold;
+}
+/*.radioButton:hover input:checked ~ .checkmark {
+  background-color: white;
+}*/
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* End of Radio button style */
+
+
+/* Style of sidebar with results */
+.resultbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  margin-bottom: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+}
+.reset-btn {
+  height: 40px;
+  width: 30%;
+  font-size: 18px;
+  color: white;
+  background-color: var(--background-blue);
+  margin: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*.reset-btn:hover {
+  background-color: var(--highlight-blue);
+}*/
+/* End of sidebar style */
+
+/* Collapsible content */
+.collapsible {
+  color: white;
+  background-color: var(--background-blue);
+  cursor: pointer;
+  width: 96%;
+  border: none;
+  text-align: center;
+  font-size: 24px;
+}
+.collapsible_open {
+  background-color: var(--highlight-blue);
+}
+.collapsible-content {
+  background-color: white;
+  width: 80%;
+  /*display: block;*/
+  overflow: hidden;
+  padding: 0px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+  max-height: 0px;
+  transition: max-height 0.2s ease-out;
+}
+/* End of collapsible */
+
+.image-svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

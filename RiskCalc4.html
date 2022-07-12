@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>PAH Risk Calculator</title>
+	<meta charset='UTF-8'/>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="RiskCalc4.css">
+	<link rel="stylesheet" media="print" href="RiskCalc_print.css">
+ 	<script type="text/javascript" src="RiskCalc4.js"></script>
+</head>
+
+<body onload="createTable()">
+
+<header class="container">
+	<div class="row">
+		<nav class="col-xs-8 text-right">
+		</nav>
+	</div>
+</header>
+
+<section class="resultbar">
+	<button class="reset-btn" onclick="copyData()">Copy to Clipboard</button>
+
+	<!--
+	<button class="reset-btn" onclick="window.print()">Print</button>
+	-->
+	
+	<button class="reset-btn" onclick="resetCalc()">Reset</button>
+
+	<button class="reset-btn" onclick="goTo3()">View 3-strata model</button>
+</section>
+
+
+<section class="container">
+
+	<table class="table table-bordered" id="mainTable">
+	
+	<!--
+	<tr>
+		<th></th>
+		<th style="width:150px"></th>
+		<th style="width:150px"></th>
+		<th style="width:150px"></th>
+	</tr>
+	-->
+	<tbody class="solid-border">
+	<tr class="title-row">
+		<th colspan="6">
+		Pulmonary Arterial Hypertension Risk Score Calculator - 4 Strata Model
+		<!--<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+		  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+		  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+		</svg>-->
+		<br>
+		<small>Developed by Abdulla Ahmed, Daniel Kempe, Salaheldin Ahmed and Göran Rådegran</small><br>
+		<small>Select the available risk category for each parameter</small>
+		</th>
+	</tr>
+	<!--<tr class="title-row">
+		<th colspan="3" onclick="goTo3()" style="border-top: none;">3 Strata Model</th>
+		<th colspan="3" onclick="goTo4()" style="background: var(--highlight-blue);border-top: none;">4 Strata Model</th>
+	</tr>-->
+	</tbody>
+
+	<tbody class="solid-border">
+	<tr class="header-row">
+		<th class="header-cell" colspan="2" rowspan="3" style="border: 2px solid black;">
+			Determinants of prognosis
+		</th>
+		<th class="header-cell" colspan="4" style="border: 2px solid black;">
+			Risk Group Corresponding to 1-year Mortality
+		</th>
+	</tr>
+
+	<tr class="header-row">
+		<th class="header-cell" rowspan="2" style="width:160px;background-color: var(--low-green);">Low risk (<5%)</th>
+		<th class="header-cell" colspan="2" style="background: linear-gradient(to right, var(--mid-yellow), var(--mid-yellow-orange), var(--mid-orange));">Intermediete risk (5-20%)</th>
+		<th class="header-cell" rowspan="2" style="width:160px;background-color: var(--high-red);">High risk (>20%)</th>
+	</tr>
+	<tr class="header-row">
+		<th class="header-cell" style="width:160px;background: linear-gradient(to right, var(--mid-yellow), var(--mid-yellow-orange));;">Intermediate-Low</th>
+		<th class="header-cell" style="width:160px;background: linear-gradient(to right, var(--mid-yellow-orange), var(--mid-orange));;">Intermediate-High</th>
+	</tr>
+		</tbody>
+
+
+	<!-- Parameters go here -->
+	<tbody class="solid-border" id="misc">
+	</tbody>
+
+
+	<!-- Start of result section -->
+	<tr class="title-row">
+		<th colspan="6">
+			Calculated ESC/ERS Risk Scores <sup>1-6</sup>
+		</th>
+	</tr>
+
+	<tr class="header-row">
+		<th class="header-cell">N</th>
+		<th class="header-cell" colspan="4">Risk Assesment Strategy</th>
+		<th class="header-cell">Risk Score</th>
+		<!--<th class="header-cell" colspan="2">Key for Interpretation</th>-->
+	</tr>
+
+	<tr class="title-row">
+		<th colspan="6">
+		SPAHR-equation derived risk scores
+		</th>
+		<!--<td colspan="2" rowspan="5" class="image-cell">
+			<object data="interpretation-key.svg" class="image-svg" width="100%" height="100%"></object>
+		</td>-->
+	</tr>
+
+
+	<tr class="result-row">
+		<td class="result-cell" id="result_Compera_count">0/3</td>
+		<td class="title-cell" colspan="4" onmouseenter="highlightParam('result_Compera')" onmouseout="highlightParam()">
+			COMPERA 2 <!--<small> (up to 6 parameters, without RA area and pericardial effusion) </small>-->
+				
+		</td>
+		<td class="result-cell" id="result_Compera">Use &geq; 3 parameters</td>
+	</tr>
+	
+	</table>
+
+	<!-- Collapsible enviroment with extra information -->
+	<button class="collapsible"  onclick="collapseContent(this)">Click to show Additional Information</button>
+	<div id="info" class="collapsible-content">
+	<p style="font-weight: bold;">By using the PAH risk calculator, the user agrees to and consent to be bound to the terms of use, as follows:</p>
+	<ul>
+		<li>
+			The risk calculator variables and cut-offs are based on expert opinion according to the 2015 ESC/ERS pulmonary hypertension guidelines <small>[1]</small>, which have been validated in a series of studies <small>[2-6]</small>. The risk calculator assists in the calculation of risk scores. No proportion of the risk calculator is intended to be used as or replacing clinical or medical assessment, diagnosis, or treatment.
+		</li>
+		<li>
+			The risk calculator assists in the calculation of risk scores. No proportion of the risk calculator is intented to be used as or to replace clinical or medical assessment, diagnosis or treatment. N indicates the number of parameters used in the risk calculation.
+		</li>
+		<li>
+			 The user take full responsibility, including but not limited to decision making, for all data input and calculated scores.
+		</li>
+		<li>
+			The developers are not liable for any errors or inaccuracies in the algorithms or other content within or related to the calculation tool. 
+		</li>
+		<li>
+			The final decision making has to be made on balanced clinical judgement by the user in relation to the clinical presentation. The risk calculator serves only as a supporting tool to calculate risk scores.
+		</li>
+		<li>
+			The risk score calculator will be updated after the upcoming ESC/ERS guidelines in 2022.
+		</li>		
+	</ul>
+	*<small>Note that if both NT-proBNP and BNP are selected, only NT-proBNP will be included in the calculated risk score.</small>
+	<br>
+	¤<small>Indicates the parameters used in the SPAHR-Kylhammar equation. In COMPERA, RA area and pericardial effusion are not included.</small>
+	</div>
+
+	<!-- Collapsible enviroment with article references -->
+	<button class="collapsible"  onclick="collapseContent(this)">Click to show References</button>
+	<div id="ref" class="collapsible-content">
+	<ol>
+		<li>Galiè N, Humbert M, Vachiery J-L, Gibbs S, Lang I, Torbicki A, Simonneau G, Peacock A, Vonk Noordegraaf A, Beghetti M, Ghofrani A, Gomez Sanchez MA, Hansmann G, Klepetko W, Lancellotti P, Matucci M, McDonagh T, Pierard LA, Trindade PT, Zompatori M, Hoeper M. 2015 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary hypertension. European Respiratory Journal 2015: 46(4): 903.</li>
+		<li>Kylhammar D, Kjellström B, Hjalmarsson C, Jansson K, Nisell M, Söderberg S, Wikström G, Rådegran G. A comprehensive risk stratification at early follow-up determines prognosis in pulmonary arterial hypertension. Eur Heart J 2018 (first published June 01, 2017): 39(47): 4175-4181.</li>
+		<li>Hoeper MM, Kramer T, Pan Z, Eichstaedt CA, Spiesshoefer J, Benjamin N, Olsson KM, Meyer K, Vizza CD, Vonk-Noordegraaf A, Distler O, Opitz C, Gibbs JSR, Delcroix M, Ghofrani HA, Huscher D, Pittrow D, Rosenkranz S, Grünig E. Mortality in pulmonary arterial hypertension: Prediction by the 2015 European pulmonary hypertension guidelines risk stratification model. European Respiratory Journal 2017 (published August 03, 2017): 50(2).</li>
+		<li>Boucly A, Weatherald J, Savale L, Jaïs X, Cottin V, Prevot G, Picard F, De Groote P, Jevnikar M, Bergot E, Chaouat A, Chabanne C, Bourdin A, Parent F, Montani D, Simonneau G, Humbert M, Sitbon O. Risk assessment, prognosis and guideline implementation in pulmonary arterial hypertension. European Respiratory Journal 2017 (published August 03, 2017): 50(2).</li>
+		<li>Benza RL, Gomberg-Maitland M, Elliott CG, Farber HW, Foreman AJ, Frost AE, McGoon MD, Pasta DJ, Selej M, Burger CD, Frantz RP. Predicting Survival in Patients With Pulmonary Arterial Hypertension: The REVEAL Risk Score Calculator 2.0 and Comparison With ESC/ERS-Based Risk Assessment Strategies. Chest 2019 (February 14, 2019): 156(2): 323-337.
+		</li>
+		<li>Kylhammar D, Hjalmarsson C, Hesselstrand R, Jansson K, Kavianipour M, Kjellström B, Nisell M, Söderberg S, Rådegran G. Predicting mortality during long-term follow-up in pulmonary arterial hypertension. ERJ Open Research 2021 (published May 31 2021): 00837-2020.</li>
+		<li></li>
+	</ol>
+	</div>
+
+	<!-- Start of collapisble enviroment 
+	<button class="collapsible" onclick="collapseContent(this)">Collapse</button>
+	<div class="collapsible_content">
+	<div class="buttonSet">
+		<h3 class="col-xs-6">NAME</h3>
+	<div class="buttonRow">
+		<label id="PH_NAME_1" class="radioButton col-xs-2">
+		<input type="radio" name="PH_NAME" value="1" onclick="inputButton(this.name, this.value)">
+		<span class="checkmark">Button 1</span>
+		</label>
+		<label id="PH_NAME_2" class="radioButton col-xs-2">
+		<input type="radio" name="PH_NAME" value="2" onclick="inputButton(this.name, this.value)">
+		<span class="checkmark">Button 2</span>
+		</label>
+		<label id="PH_NAME_3" class="radioButton col-xs-2">
+		<input type="radio" name="PH_NAME" value="3" onclick="inputButton(this.name, this.value)">
+		<span class="checkmark">Button 3</span>
+		</label>
+	</div>
+	</div>
+	</div>
+	End of collapsible enviroment -->
+
+<!-- 	
+	<div class="buttonSet">
+		<h3 class="col-xs-6">Place holder NAME</h3>
+	<div class="buttonRow">
+		<label id="PH_NAME_1" class="radioButton col-xs-2">
+		<input type="radio" name="PH_NAME" value="1" onclick="inputButton(this.name, this.value)">
+		<span class="checkmark">Button 1</span>
+		</label>
+		<label id="PH_NAME_2" class="radioButton col-xs-2">
+		<input type="radio" name="PH_NAME" value="2" onclick="inputButton(this.name, this.value)">
+		<span class="checkmark">Button 2</span>
+		</label>
+		<label id="PH_NAME_3" class="radioButton col-xs-2">
+		<input type="radio" name="PH_NAME" value="3" onclick="inputButton(this.name, this.value)">
+		<span class="checkmark">Button 3</span>
+		</label>
+	</div>
+	</div> -->
+
+<!--
+	<tr class="btn-row">
+		<td class="title-cell">
+		PH NAME
+		</td>
+
+		<td class="btn-cell">
+		<label id="PH_NAME_1" class="radioButton">
+		<input type="radio" name="RV_Fail" value="1" onclick="inputButton(this.name, this.value)">
+		<span class="checkmark">-</span>
+		</label>
+		</td>
+
+		<td class="btn-cell">
+		<label id="PH_NAME_2" class="radioButton">
+		<input type="radio" name="PH_NAME" value="2" onclick="inputButton(this.name, this.value)">
+		<span class="checkmark">--</span>
+		</label>
+		</td>
+
+		<td class="btn-cell">
+		<label id="PH_NAME_3" class="radioButton">
+		<input type="radio" name="PH_NAME" value="3" onclick="inputButton(this.name, this.value)">
+		<span class="checkmark">---</span>
+		</label>
+		</td>
+	</tr>
+-->
+
+
+</section>
+
+
+</body>
