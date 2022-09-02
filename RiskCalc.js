@@ -13,18 +13,21 @@ let riskValue_f = new Array(numOfRisks_f).fill(0);
 let params = [];
 // Create params with buttons and add to array of params
 /*
-const PH_NAME = {name:"PH_NAME", weight:[0,0,0], value:[1,2,3], title:"", btnText:["BTN1","BTN2","BTN3"]};
+const PH_NAME = {name:"PH_NAME", group:"", meta_group:"", weight:[1,0,0,0], weight_f:[0,0], value:[1,2,3], 
+title:"", btnText:["BTN1","BTN2","BTN3"],
+title_c:"", btnText_c:["","",""],
+title_p:"", btnText_p:[]};
 params.push(PH_NAME);
 */
 //RV Failure
 const RV_Fail = {name:"RV_Fail", group:"Sympt", meta_group:"Clinical", weight:[1,0,0,0], weight_f:[0,0], value:[1,0,3], 
-title:"Clinical signs of right heart failure", btnText:["Absent","-","Present"],
+title:"Signs of right heart failure", btnText:["Absent","-","Present"],
 title_c:"", btnText_c:["","",""],
 title_p:"", btnText_p:[]};
 params.push(RV_Fail);
 // Progression of Symptoms
 const Sympt_Prog = {name:"Sympt_Prog", group:"Sympt", meta_group:"Clinical", weight:[1,0,0,0], weight_f:[0,0], value:[1,2,3], 
-title:"Progression of symptoms", btnText:["No","Slow","Rapid"],
+title:"Progression of symptoms and clinical manifestation", btnText:["No","Slow","Rapid"],
 title_c:"", btnText_c:["","",""],
 title_p:"", btnText_p:[]};
 params.push(Sympt_Prog);
@@ -46,61 +49,96 @@ title:"Six-minute walking distance <sup>¤ #</sup>", btnText:["> 440 m","165 - 4
 title_c:"Six-minute walking distance", btnText_c:["","",""],
 title_p:"", btnText_p:[]};
 params.push(MWT);
+
 // Peak VO_2
 const Peak_VO2 = {name:"Peak_VO2", group:"Cardiopulmonary", meta_group:"Modifiable", weight:[1,0,0,0], weight_f:[0,0], value:[1,2,3], 
 title:"Peak VO2", btnText:["Peak VO<sub>2</sub>&nbsp;> 15 ml/min/kg","Peak VO<sub>2</sub>&nbsp;11 - 15 ml/min/kg","Peak VO<sub>2</sub>&nbsp;< 11 ml/min/kg"],
 title_c:"", btnText_c:[">15 ml/min/kg","11-15 ml/min/kg","< 11 ml/min/kg"],
 title_p:"", btnText_p:[]};
 params.push(Peak_VO2);
-//
+/* Predicted VO2
 const Predicted_VO2 = {name:"Predicted_VO2", group:"Cardiopulmonary", meta_group:"Modifiable", weight:[1,0,0,0], weight_f:[0,0], value:[1,2,3], 
 title:"Predicted VO_2", btnText:["> 65% of predicted","35 - 65% of predicted","< 35% of predicted"],
 title_c:"", btnText_c:["","",""],
 title_p:"", btnText_p:[]};
-params.push(Predicted_VO2);
+params.push(Predicted_VO2); Removed in new update */
 // VE / VO_2 slope
 const VE_slope = {name:"VE_slope", group:"Cardiopulmonary", meta_group:"Modifiable", weight:[1,0,0,0], weight_f:[0,0], value:[1,2,3], 
 title:"VE/VO2-slope", btnText:["VE/VO<sub>2</sub>-slope < 36","VE/VO<sub>2</sub>-slope 36 - 44.9","VE/VO<sub>2</sub>-slope &GreaterEqual; 45"],
 title_c:"VE/VO_2 -slope", btnText_c:["< 36","36-44.9","=> 45"],
 title_p:"", btnText_p:[]};
 params.push(VE_slope);
-//
+
+// proBNP
 const proBNP = {name:"proBNP", group:"Biochem", meta_group:"Modifiable", weight:[1,1,1,1], weight_f:[0,1], value:[1,2,3], 
-title:"NT-proBNP", btnText:["NT-proBNP < 300 ng/l","NT-proBNP 300 - 1400 ng/l","NT-proBNP > 1400 ng/l"],
-title_c:"", btnText_c:["< 300 ng/l","300-1400 ng/l","> 1400 ng/l"],
+title:"NT-proBNP", btnText:["NT-proBNP < 300 ng/L","NT-proBNP 300 - 1100 ng/L","NT-proBNP > 1100 ng/L"],
+title_c:"", btnText_c:["< 300 ng/L","300-1100 ng/L","> 1100 ng/L"],
 title_p:"", btnText_p:[]};
 params.push(proBNP);
-//
+// BNP
 const BNP = {name:"BNP", group:"Biochem", meta_group:"Modifiable", weight:[1,1,1,1], weight_f:[0,1], value:[1,2,3], 
-title:"BNP", btnText:["BNP < 50 ng/l","BNP 50 - 300 ng/l","BNP > 300 ng/l"],
-title_c:"", btnText_c:["< 50 ng/l","50-300 ng/l","> 300 ng/l"],
+title:"BNP", btnText:["BNP < 50 ng/L","BNP 50 - 800 ng/L","BNP > 800 ng/L"],
+title_c:"", btnText_c:["< 50 ng/L","50-800 ng/L","> 800 ng/L"],
 title_p:"", btnText_p:[]};
 params.push(BNP);
-//
+
+// RAarea
 const RAarea = {name:"RAarea", group:"Imaging", meta_group:"Modifiable", weight:[1,0,1,0], weight_f:[0,0], value:[1,2,3], 
 title:"RA area", btnText:["RA area < 18 cm<sup>2</sup>","RA area 18 - 26 cm<sup>2</sup>","RA area > 26 cm<sup>2</sup>"],
 title_c:"", btnText_c:["< 18 cm^2","18-26 cm^2","> 26 cm^2"],
 title_p:"", btnText_p:[]};
 params.push(RAarea);
-//
+// sPAP
+const sPAP = {name:"sPAP", group:"Imaging", meta_group:"Modifiable", weight:[1,0,0,0], weight_f:[0,0], value:[1,2,3], 
+title:"TAPSE/sPAP", btnText:["TAPSE/sPAP >0.32 mm/mmHg","TAPSE/sPAP 0.19-0.32 mm/mmHg","TAPSE/sPAP <0.19 mm/mmHg"],
+title_c:"TAPSE/sPAP", btnText_c:[">0.32 mm/mmHg","0.19-0.32 mm/mmHg","<0.19 mm/mmHg"],
+title_p:"", btnText_p:[]};
+params.push(sPAP);
+// Pericardial effusion
 const Pericardial_Effusion = {name:"Pericardial_Effusion", meta_group:"Modifiable", group:"Imaging", weight:[1,0,1,0], weight_f:[0,0], value:[1,2,3], 
 title:"Pericardial effusion", btnText:["No pericardial effusion","Minimal pericardial effusion","Pericardial effusion"],
 title_c:"", btnText_c:["","",""],
 title_p:"", btnText_p:[]};
 params.push(Pericardial_Effusion);
-//
+
+// RVEF
+const RVEF = {name:"RVEF", group:"cMRI", meta_group:"Modifiable", weight:[1,0,0,0], weight_f:[0,0], value:[1,2,3], 
+title:"RVEF", btnText:["RVEF >54%","RVEF 37-54%","RVEF <37%"],
+title_c:"", btnText_c:["","",""],
+title_p:"", btnText_p:[]};
+params.push(RVEF);
+// SVI
+const SVI_MRI = {name:"SVI_MRI", group:"cMRI", meta_group:"Modifiable", weight:[1,0,0,0], weight_f:[0,0], value:[1,2,3], 
+title:"SVI", btnText:["SVI >40 mL/m<sup>2</sup>","SVI 26 - 40 mL/m<sup>2</sup>","SVI <26 mL/m<sup>2</sup>"],
+title_c:"", btnText_c:["","",""],
+title_p:"", btnText_p:[]};
+params.push(SVI_MRI);
+// RVESVI
+const RVSVI = {name:"RVSVI", group:"cMRI", meta_group:"Modifiable", weight:[1,0,0,0], weight_f:[0,0], value:[1,2,3], 
+title:"RVSVI", btnText:["RVSVI <42 mL/m<sup>2</sup>","RVSVI 42-54 mL/m<sup>2</sup>","RVSVI >54 mL/m<sup>2</sup>"],
+title_c:"", btnText_c:["","",""],
+title_p:"", btnText_p:[]};
+params.push(RVSVI);
+
+// MRAP
 const MRAP = {name:"MRAP", group:"Haemodynamics", meta_group:"Modifiable", weight:[1,1,1,0], weight_f:[1,0], value:[1,2,3], 
 title:"MRAP", btnText:["RAP < 8 mmHg","RAP 8 - 14 mmHg","RAP > 14 mmHg"],
 title_c:"", btnText_c:["=< 8 mmHg","8-14 mmHg","> 14 mmHg"],
 title_p:"", btnText_p:[]};
 params.push(MRAP);
-//
+// CI
 const CI = {name:"CI", group:"Haemodynamics", meta_group:"Modifiable", weight:[1,1,1,0], weight_f:[1,0], value:[1,2,3], 
 title:"CI", btnText:["CI &GreaterEqual; 2.5 l/min/m<sup>2</sup>","CI 2.0 - 2.4 l/min/m<sup>2</sup>","CI < 2.0 l/min/m<sup>2</sup>"],
 title_c:"", btnText_c:[">= 2.5 l/min/m^2","2.0-2.4 l/min/m^2","< 2.0 l/min/m^2"],
 title_p:"", btnText_p:[]};
 params.push(CI);
-//
+// SVI
+const SVI = {name:"SVI", group:"Haemodynamics", meta_group:"Modifiable", weight:[1,0,0,0], weight_f:[0,0], value:[1,2,3], 
+title:"SVI", btnText:["SVI >38 mL/m<sup>2</sup>","SVI 31-38 mL/m<sup>2</sup>","SVI <31 mL/m<sup>2</sup>"],
+title_c:"", btnText_c:["","",""],
+title_p:"", btnText_p:[]};
+params.push(SVI);
+// SvO2
 const SvO2 = {name:"SvO2", group:"Haemodynamics", meta_group:"Modifiable", weight:[1,1,1,0], weight_f:[0,0], value:[1,2,3], 
 title:"SvO2", btnText:["SvO<sub>2</sub>&nbsp;> 65%","SvO<sub>2</sub>&nbsp;60% - 65%","SvO<sub>2</sub>&nbsp;< 60%"],
 title_c:"SvO_2", btnText_c:["> 65%","60%-65%","< 60%"],
@@ -109,7 +147,7 @@ params.push(SvO2);
 //
 // Set group titles
 const groupTitle = {Cardiopulmonary:"Cardiopulmonary excercise testing", Biochem:"Biochemical markers <sup>¤ # *</sup>", 
-			Imaging:"Imaging <sup>¤</sup> <small>(echocardiography, cardiac magnetic resonance)</small>", Haemodynamics:"Haemodynamics <sup>¤ #</sup>"};
+			Imaging:"Echocardiography <sup>¤</sup>", cMRI:"Cardiac megnetic resonance imaging", Haemodynamics:"Haemodynamics <sup>¤ #</sup>"};
 const metaGroupTitle = {Clinical:"Clinical Observations", Modifiable:"Modifiable Parameters"};
 
 // Number of params in array
