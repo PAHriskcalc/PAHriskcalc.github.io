@@ -28,7 +28,9 @@
 </header>
 
 <section class="resultbar">
+	<!--
 	<button class="reset-btn" onclick="copyData()">Copy to Clipboard</button>
+	-->
 
 	<!--
 	<button class="reset-btn" onclick="window.print()">Print</button>
@@ -127,7 +129,7 @@
 	<tr class="result-row">
 		<td class="result-cell" id="result_Compera_count">0/3</td>
 		<td class="title-cell" colspan="4" onmouseenter="highlightParam('result_Compera')" onmouseout="highlightParam()">
-			COMPERA 2.0 <small> (each variable is graded from 1-4 corresponding to low risk - high risk, respectively. The mean is rounded to the nearest integer) </small>
+			COMPERA 2.0 <small> (each variable is graded from 1-4 corresponding to low-, intermediete-low, intermediete high, and high risk, respectively. The mean is rounded off to the nearest integer) </small>
 				
 		</td>
 		<td class="result-cell" id="result_Compera">Use 3 parameters</td>
@@ -138,7 +140,7 @@
 	<!-- Collapsible enviroment with extra information -->
 	<button class="collapsible"  onclick="collapseContent(this)">Click to show Additional Information</button>
 	<div id="info" class="collapsible-content">
-	<p style="font-weight: bold;">By using the PAH risk calculator, the user agrees to and consent to be bound to the terms of use, as follows:</p>
+	<p style="font-weight: bold;">By using the PAH risk score calculator the user agrees and consents to be bound to the terms of use, as follows:</p>
 	<ul>
 		<li>
 			The new COMPERA 2.0 four-strata model variables and cut-offs are based on the COMPERA 2.0 study, [1] validated [2,3] and endorsed by the 2022 ESC/ERS pulmonary hypertension guidelines. [4,5]
