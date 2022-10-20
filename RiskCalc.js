@@ -9,6 +9,7 @@ var numOfRisks_f = riskID_f.length;
 let riskValue = new Array(numOfRisks).fill(0);
 let riskValue_f = new Array(numOfRisks_f).fill(0);
 
+
 // Array of all parameters
 let params = [];
 // Create params with buttons and add to array of params
