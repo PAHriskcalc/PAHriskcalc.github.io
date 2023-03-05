@@ -9,7 +9,6 @@ var numOfRisks_f = riskID_f.length;
 let riskValue = new Array(numOfRisks).fill(0);
 let riskValue_f = new Array(numOfRisks_f).fill(0);
 
-
 // Array of all parameters
 let params = [];
 // Create params with buttons and add to array of params
@@ -278,7 +277,8 @@ function updateRisk_f() {
 	riskValue_f[0] = sum[0];
 	riskValue_f[1] = sum[1];
 	// French invasive
-	var riskRate = ["&nbsp;<small>(Low)</small>", "&nbsp;<small>(Intermediate)</small>", "&nbsp;<small>(High)</small>"];
+	//var riskRate = ["&nbsp;<small>(Low)</small>", "&nbsp;<small>(Intermediate)</small>", "&nbsp;<small>(High)</small>"];
+	var riskRate = ["&nbsp;", "&nbsp;", "&nbsp;"];
 	//Set param count for each risk
 	if (document.getElementById(riskID_f[0]+"_count")) {
 		document.getElementById(riskID_f[0]+"_count").innerHTML = `${paramCount[0]}/${paramTotal[0]}`;
@@ -287,15 +287,15 @@ function updateRisk_f() {
 	if ( paramCount[0] >= paramMin[0] ) {
 		if ( riskValue_f[0] >= 3 ) {
 			// If 3-4 low risk parameters
-			document.getElementById(riskID_f[0]).style.backgroundColor = "var(--low-green)";
+			//document.getElementById(riskID_f[0]).style.backgroundColor = "var(--low-green)";
 			document.getElementById(riskID_f[0]).innerHTML = sum[0] + riskRate[0];		
 		} else if ( riskValue_f[0] >= 1) {
 			// If 1-2 low risk parameters
-			document.getElementById(riskID_f[0]).style.backgroundColor = "var(--mid-yellow)";
+			//document.getElementById(riskID_f[0]).style.backgroundColor = "var(--mid-yellow)";
 			document.getElementById(riskID_f[0]).innerHTML = sum[0] + riskRate[1];			
 		} else {
 			// If 0 low risk parameters
-			document.getElementById(riskID_f[0]).style.backgroundColor = "var(--high-red)";
+			//document.getElementById(riskID_f[0]).style.backgroundColor = "var(--high-red)";
 			document.getElementById(riskID_f[0]).innerHTML = sum[0] + riskRate[2];			
 		}
 	}  else { // Do if too few parameters were used.
@@ -303,7 +303,8 @@ function updateRisk_f() {
 		document.getElementById(riskID_f[0]).style.backgroundColor = "white";
 	}
 	// French non-invasive
-	riskRate = ["&nbsp;<small>(Low)</small>", "&nbsp;<small>(N/A)</small>", "&nbsp;<small>(High)</small>"];
+	//riskRate = ["&nbsp;<small>(Low)</small>", "&nbsp;<small>(N/A)</small>", "&nbsp;<small>(High)</small>"];
+	riskRate = ["&nbsp;", "&nbsp;", "&nbsp;"];
 	//Set param count for each risk
 	if (document.getElementById(riskID_f[1]+"_count")) {
 		document.getElementById(riskID_f[1]+"_count").innerHTML = `${paramCount[1]}/${paramTotal[1]}`;
@@ -312,15 +313,15 @@ function updateRisk_f() {
 	if ( paramCount[1] >= paramMin[1] ) {
 		if ( riskValue_f[1] >= 3 ) {
 			// If 3-4 low risk parameters
-			document.getElementById(riskID_f[1]).style.backgroundColor = "var(--low-green)";
+			//document.getElementById(riskID_f[1]).style.backgroundColor = "var(--low-green)";
 			document.getElementById(riskID_f[1]).innerHTML = sum[1] + riskRate[0];		
 		} else if ( riskValue_f[1] >= 1) {
 			// If 1-2 low risk parameters
-			document.getElementById(riskID_f[1]).style.backgroundColor = "lightgrey";
+			//document.getElementById(riskID_f[1]).style.backgroundColor = "lightgrey";
 			document.getElementById(riskID_f[1]).innerHTML = sum[1] + riskRate[1];			
 		} else {
 			// If 0 low risk parameters
-			document.getElementById(riskID_f[1]).style.backgroundColor = "var(--high-red)";
+			//document.getElementById(riskID_f[1]).style.backgroundColor = "var(--high-red)";
 			document.getElementById(riskID_f[1]).innerHTML = sum[1] + riskRate[2];			
 		} 
 	} else { // Do if too few parameters were used.
