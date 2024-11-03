@@ -3,12 +3,12 @@
 
 <head>
 	<title>PAH Risk Calculator</title>
-	<meta charset='UTF-8'/>
+	<meta charset='UTF-8' />
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="RiskCalc.css">
 	<link rel="stylesheet" media="print" href="RiskCalc_print.css">
- 	<script type="text/javascript" src="RiskCalc.js"></script>
+	<script type="text/javascript" src="RiskCalc.js"></script>
 </head>
 
 <script type="text/javascript">
@@ -19,35 +19,35 @@
 
 <body onload="createTable()">
 
-<header class="container">
-	<div class="row">
-		<nav class="col-xs-8 text-right">
-		</nav>
-	</div>
-</header>
+	<header class="container">
+		<div class="row">
+			<nav class="col-xs-8 text-right">
+			</nav>
+		</div>
+	</header>
 
-<section class="resultbar">
-	<!--
+	<section class="resultbar">
+		<!--
 	<button class="reset-btn" onclick="copyData()">Copy to Clipboard</button>
 	-->
 
-	<!--
+		<!--
 	<button class="reset-btn" onclick="window.print()">Print</button>
 	-->
-	
-	<button class="reset-btn" onclick="resetCalc()">Reset</button>
 
-	<button class="reset-btn" onclick="goTo4()">View 4-strata model</button>
+		<button class="reset-btn" onclick="resetCalc()">Reset</button>
 
-	<button class="reset-btn" onclick="goBack()">Back</button>
-</section>
+		<button class="reset-btn" onclick="goTo4()">View 4-strata model</button>
+
+		<button class="reset-btn" onclick="goBack()">Back</button>
+	</section>
 
 
-<section class="container">
+	<section class="container">
 
-	<table class="table table-bordered" id="mainTable">
-	
-	<!--
+		<table class="table table-bordered" id="mainTable">
+
+			<!--
 	<tr>
 		<th></th>
 		<th style="width:150px"></th>
@@ -55,212 +55,295 @@
 		<th style="width:150px"></th>
 	</tr>
 	-->
-	<tbody class="solid-border">
-	<tr class="title-row">
-		<th colspan="5">
-		Pulmonary Arterial Hypertension Risk Score Calculator - 3-Strata Model
-		<br>
-		<!--<small>Developed by Abdulla Ahmed, Daniel Kempe, Salaheldin Ahmed and Göran Rådegran</small><br>-->
-		<small>Select the available risk category for each parameter</small>
-		</th>
-	</tr>
-	<!--<tr class="title-row">
+			<tbody class="solid-border">
+				<tr class="title-row">
+					<th colspan="5">
+						Pulmonary Arterial Hypertension Risk Score Calculator - 3-Strata Model
+						<br>
+						<!--<small>Developed by Abdulla Ahmed, Daniel Kempe, Salaheldin Ahmed and Göran Rådegran</small><br>-->
+						<small>Select the available risk category for each parameter</small>
+					</th>
+				</tr>
+				<!--<tr class="title-row">
 		<th colspan="2" onclick="goTo3()" style="background: var(--highlight-blue);border-top: none;">3 Strata Model</th>
 		<th colspan="3" onclick="goTo4()" style="border-top: none;">4 Strata Model</th>
 	</tr>-->
-	</tbody>
+			</tbody>
 
-	<tbody class="solid-border">
-	<tr class="header-row">
-		<th class="header-cell" colspan="2" rowspan="2" style="border: 2px solid black; font-size: 16px;">
-			Determinants of prognosis
-		</th>
-		<th class="header-cell" colspan="3" style="border: 2px solid black;">
-			Risk Group Corresponding to 1-year Mortality
-		</th>
-	</tr>
+			<tbody class="solid-border">
+				<tr class="header-row">
+					<th class="header-cell" colspan="2" rowspan="2" style="border: 2px solid black; font-size: 16px;">
+						Determinants of prognosis
+					</th>
+					<th class="header-cell" colspan="3" style="border: 2px solid black;">
+						Risk Group Corresponding to 1-year Mortality
+					</th>
+				</tr>
 
-	<tr class="header-row">
-		<th class="header-cell" style="width:180px;background-color: var(--low-green);">Low risk (<5%)</th>
-		<th class="header-cell" style="width:180px;background-color: var(--mid-yellow);">Intermediate risk (5-20%)</th>
-		<th class="header-cell" style="width:180px;background-color: var(--high-red);">High risk (>20%)</th>
-	</tr>
-	</tbody>
-
-
-	<!-- Parameters go here -->
-	<tbody class="solid-border" id="misc">
-	</tbody>
+				<tr class="header-row">
+					<th class="header-cell" style="width:180px;background-color: var(--low-green);">Low risk (<5%)< /th>
+					<th class="header-cell" style="width:180px;background-color: var(--mid-yellow);">Intermediate risk (5-20%)
+					</th>
+					<th class="header-cell" style="width:180px;background-color: var(--high-red);">High risk (>20%)</th>
+				</tr>
+			</tbody>
 
 
-	<!-- Start of result section -->
-	<tr class="title-row">
-		<th colspan="5">
-			Calculated ESC/ERS Risk Scores <sup>1-12</sup>
-		</th>
-	</tr>
+			<!-- Parameters go here -->
+			<tbody class="solid-border" id="misc">
+			</tbody>
 
-	<tr class="header-row">
-		<th class="header-cell">N</th>
-		<th class="header-cell">Risk Assesment Strategy</th>
-		<th class="header-cell">Risk Score</th>
-		<th class="header-cell" colspan="2">Key for Interpretation</th>
-	</tr>
 
-	<tr class="title-row">
-		<th colspan="3">
-		SPAHR-equation derived risk scores
-		</th>
-		<td colspan="2" rowspan="4" class="image-cell">
-			<object data="int-key-4scale.svg" class="image-svg" width="100%" height="100%"></object>
-		</td>
-	</tr>
+			<!-- Start of result section -->
+			<tr class="title-row">
+				<th colspan="5">
+					Calculated ESC/ERS Risk Scores <sup>1-13</sup>
+				</th>
+			</tr>
 
-	<tr class="result-row">
-		<td class="result-cell" id="result_Full_count">0/18</td>
-		<td class="title-cell" onmouseenter="highlightParam('result_Full')" onmouseout="highlightParam()">
-			Extended<small> (clinical observations and modifiable parameters)</small> <!--Using all available parameters-->
-		</td>
-		<td class="result-cell" id="result_Full">Use &geq; 3 parameters</td>
-	</tr>
+			<tr class="header-row">
+				<th class="header-cell">N</th>
+				<th class="header-cell">Risk Assesment Strategy</th>
+				<th class="header-cell">Risk Score</th>
+				<th class="header-cell" colspan="2">Key for Interpretation</th>
+			</tr>
 
-	<tr class="result-row">
-		<td class="result-cell" id="result_SPAHR_count">0/8</td>
-		<td class="title-cell" onmouseenter="highlightParam('result_SPAHR')" onmouseout="highlightParam()">
-			SPAHR-Kylhammar <sup>¤</sup><!--<small> (up to 8 determinats of prognosis, marked ¤)</small>-->
-		</td>
-		<td class="result-cell" id="result_SPAHR">Use &geq; 3 parameters</td>
-	</tr>
+			<tr class="title-row">
+				<th colspan="3">
+					SPAHR-equation derived risk scores
+				</th>
+				<td colspan="2" rowspan="4" class="image-cell">
+					<object data="int-key-4scale.svg" class="image-svg" width="100%" height="100%"></object>
+				</td>
+			</tr>
 
-	<tr class="result-row">
-		<td class="result-cell" id="result_Compera_count">0/6</td>
-		<td class="title-cell" onmouseenter="highlightParam('result_Compera')" onmouseout="highlightParam()">
-			COMPERA <sup>#</sup><!--<small> (up to 6 parameters marked ¤, without RA area and pericardial effusion)</small>-->
-		</td>
-		<td class="result-cell" id="result_Compera">Use &geq; 3 parameters</td>
-	</tr>
-	
-	<!--
+			<tr class="result-row">
+				<td class="result-cell" id="result_Full_count">0/18</td>
+				<td class="title-cell" onmouseenter="highlightParam('result_Full')" onmouseout="highlightParam()">
+					Extended<small> (clinical observations and modifiable parameters)</small>
+					<!--Using all available parameters-->
+				</td>
+				<td class="result-cell" id="result_Full">Use &geq; 3 parameters</td>
+			</tr>
+
+			<tr class="result-row">
+				<td class="result-cell" id="result_SPAHR_count">0/8</td>
+				<td class="title-cell" onmouseenter="highlightParam('result_SPAHR')" onmouseout="highlightParam()">
+					SPAHR-Kylhammar <sup>¤</sup><!--<small> (up to 8 determinats of prognosis, marked ¤)</small>-->
+				</td>
+				<td class="result-cell" id="result_SPAHR">Use &geq; 3 parameters</td>
+			</tr>
+
+			<tr class="result-row">
+				<td class="result-cell" id="result_Compera_count">0/6</td>
+				<td class="title-cell" onmouseenter="highlightParam('result_Compera')" onmouseout="highlightParam()">
+					COMPERA
+					<sup>#</sup><!--<small> (up to 6 parameters marked ¤, without RA area and pericardial effusion)</small>-->
+				</td>
+				<td class="result-cell" id="result_Compera">Use &geq; 3 parameters</td>
+			</tr>
+
+			<!--
 	<tr class="result-row">
 		<td class="title-cell">Weighted non-invasive<sup>#</sup> <small> (WHO FC, 6MWD and BNP/NT-proBNP)</small></td>
 		<td class="result-cell" id="result_Weighted">Use &geq; 3 parameters</td>
 	</tr>
 	-->
 
-	<tr class="title-row">
-		<th colspan="5">
-		French strategy - number of low-risk parameters
-		</th>
-	<!--
+			<tr class="title-row">
+				<th colspan="5">
+					French strategy - number of low-risk parameters
+				</th>
+				<!--
 		<td colspan="2" rowspan="3" class="image-cell">
 			<object data="int-key-french.svg" class="image-svg" width="100%" height="100%"></object>
 		</td>
 	-->
-	</tr>
+			</tr>
 
-	<tr class="result-row">
-		<td class="result-cell" id="result_french1_count">0/4</td>
-		<td colspan="3" class="title-cell" onmouseenter="highlightParam_f('result_french1')" onmouseout="highlightParam_f()">
-			French invasive<small> (WHO-FC, 6MWD, RAP, CI)</small>
-		</td>
-		<td class="result-cell" id="result_french1">Use 4 parameters</td>		
-	</tr>
+			<tr class="result-row">
+				<td class="result-cell" id="result_french1_count">0/4</td>
+				<td colspan="3" class="title-cell" onmouseenter="highlightParam_f('result_french1')"
+					onmouseout="highlightParam_f()">
+					French invasive<small> (WHO-FC, 6MWD, RAP, CI)</small>
+				</td>
+				<td class="result-cell" id="result_french1">Use 4 parameters</td>
+			</tr>
 
-	<tr class="result-row">
-		<td class="result-cell" id="result_french2_count">0/3</td>
-		<td colspan="3" class="title-cell" onmouseenter="highlightParam_f('result_french2')" onmouseout="highlightParam_f()">
-			French non-invasive<small> (WHO-FC, 6MWD, BNP/NT-proBNP)</small>
-		</td>
-		<td class="result-cell" id="result_french2">Use 3 parameters</td>
-	</tr>
-	
-	</table>
+			<tr class="result-row">
+				<td class="result-cell" id="result_french2_count">0/3</td>
+				<td colspan="3" class="title-cell" onmouseenter="highlightParam_f('result_french2')"
+					onmouseout="highlightParam_f()">
+					French non-invasive<small> (WHO-FC, 6MWD, BNP/NT-proBNP)</small>
+				</td>
+				<td class="result-cell" id="result_french2">Use 3 parameters</td>
+			</tr>
 
-	<!-- Collapsible enviroment with extra information -->
-	<button class="collapsible"  onclick="collapseContent(this)">Click to show Additional Information</button>
-	<div id="info" class="collapsible-content">
-	<p style="font-weight: bold;">By using the PAH risk score calculator the user agrees and consents to be bound to the terms of use, as follows:</p>
-	<ul>
-		<li>
-			The risk score calculator variables and cut-offs were initially based on expert opinion according to the 2015 ESC/ERS pulmonary hypertension guidelines, [1,2] and have thereafter been validated in a series of studies, [5-12] and further expanded in the 2022 ESC/ERS pulmonary hypertension guidelines. [3,4]
-		</li>	
+		</table>
 
-		<li>
-			The risk score calculator assists in the calculation of risk scores, but is not intended to replace general clinical assessment, judgement, or treatment decisions.
-		</li>
-		<li>
-			N indicates the number of parameters used in the risk score calculation.
-		</li>
-		<li>
-			 The user takes full responsibility, for all data input, calculated risk scores, and decision making.
-		</li>
-		<li>
-			The developers are not liable for any errors or inaccuracies in the algorithms or content within or related to the calculation tool. 
-		</li>
-		<li>
-			The final decision making has to be made by the user on a comprehensive and balanced clinical judgement in relation to the clinical presentation. The risk score calculator serves only as a supporting tool.
-		</li>
-		<li>
-			The risk score calculator may be updated in accordance with the prevailing ESC/ERS guidelines.
-		</li>	
-	</ul>
+		<!-- Collapsible enviroment with extra information -->
+		<button class="collapsible" onclick="collapseContent(this)">Click to show Additional Information</button>
+		<div id="info" class="collapsible-content">
+			<p style="font-weight: bold;">By using the PAH risk score calculator the user agrees and consents to be bound to
+				the terms of use, as follows:</p>
+			<ul>
+				<li>
+					The risk score calculator variables and cut-offs were initially based on expert opinion according to the 2015
+					ESC/ERS pulmonary hypertension guidelines, [1,2] and have thereafter been validated in a series of studies,
+					[5-13] and further expanded in the 2022 ESC/ERS pulmonary hypertension guidelines. [3,4]
+				</li>
 
-	<p style="font-weight: bold;">The SPAHR-Kylhammar equation for the SPAHR three-strata model without and with divided intermediate risk group</p>
-	<p>The SPAHR equation was initially described by Kylhammar et al, assessing a score of 1, 2 or 3, to each parameter depending on the thresholds defined by the 2015 ESC/ERS guidelines. The sum is divided by the numbers of parameters included, and thereafter rounded off to the nearest integer. [1,2,5]</p>
-	<p>The original SPAHR three-strata model categorizes patients into low, intermediate, or high risk for one year mortality, by assigning a score <br>(low risk = 1, intermediate risk = 2 and high risk = 3) to parameters based on thresholds defined initially by the 2015 and subsequently by the 2022 ESC/ERS guidelines. The overall risk category (low risk, intermediate risk, or high risk) is determined by the average from the scores of the available parameters for each patient, rounded off to the nearest integer (1 - 1.49 = low risk, 1.5 - 2.49 = intermediate risk, and ≥ 2.5 high-risk). [1-5]</p>
-	<p>In the new updated SPAHR three-strata model with divided intermediate risk group, the calculated mean is rounded off according to modified thresholds for the intermediate risk (1.5 - 1.99 = intermediate-low risk, 2.0 - 2.49 = intermediate-high risk; instead of 1.5 - 2.49 = intermediate risk in the original SAPHR three-strata). [9]</p>
-	<p>The SPAHR-Kylhammar three-strata strategies may be used at diagnosis and at follow-up. To allow a simplified and more granular method at follow-up, the new four-strata strategy based on the COMPERA 2.0 three-parameter model (WHO-FC, 6MWD, BNP/ NT-pro-BNP) may be used. A more comprehensive and precise long-term prognostic prediction can, however, be achieved by using additional prognostic parameters, applying the updated SPAHR three-strata strategy, with divided intermediate risk group. [3,4,10,11,12]</p>
+				<li>
+					The risk score calculator assists in the calculation of risk scores, but is not intended to replace general
+					clinical assessment, judgement, or treatment decisions.
+				</li>
+				<li>
+					N indicates the number of parameters used in the risk score calculation.
+				</li>
+				<li>
+					The user takes full responsibility, for all data input, calculated risk scores, and decision making.
+				</li>
+				<li>
+					The developers are not liable for any errors or inaccuracies in the algorithms or content within or related to
+					the calculation tool.
+				</li>
+				<li>
+					The final decision making has to be made by the user on a comprehensive and balanced clinical judgement in
+					relation to the clinical presentation. The risk score calculator serves only as a supporting tool.
+				</li>
+				<li>
+					The risk score calculator may be updated in accordance with the prevailing ESC/ERS guidelines.
+				</li>
+			</ul>
 
-	<p style="font-weight: bold;">The French invasive and non-invasive model</p>
-	<p>The invasive and non-invasive French pulmonary hypertension registry based models complies the number of low-risk criteria achieved, as defined by the 2015 ESC/ERS risk stratification strategy. Notably, the number of low risk criteria cannot be interpreted into three different risk categories, i.e low-, intermediate-, and high risk.</p>
+			<p style="font-weight: bold;">The SPAHR-Kylhammar equation for the SPAHR three-strata model without and with
+				divided intermediate risk group</p>
+			<p>The SPAHR equation was initially described by Kylhammar et al, assessing a score of 1, 2 or 3, to each
+				parameter depending on the thresholds defined by the 2015 ESC/ERS guidelines. The sum is divided by the numbers
+				of parameters included, and thereafter rounded off to the nearest integer. [1,2,5]</p>
+			<p>The original SPAHR three-strata model categorizes patients into low, intermediate, or high risk for one year
+				mortality, by assigning a score <br>(low risk = 1, intermediate risk = 2 and high risk = 3) to parameters based
+				on thresholds defined initially by the 2015 and subsequently by the 2022 ESC/ERS guidelines. The overall risk
+				category (low risk, intermediate risk, or high risk) is determined by the average from the scores of the
+				available parameters for each patient, rounded off to the nearest integer (1 - 1.49 = low risk, 1.5 - 2.49 =
+				intermediate risk, and ≥ 2.5 high-risk). [1-5]</p>
+			<p>In the new updated SPAHR three-strata model with divided intermediate risk group, the calculated mean is
+				rounded off according to modified thresholds for the intermediate risk (1.5 - 1.99 = intermediate-low risk, 2.0
+				- 2.49 = intermediate-high risk; instead of 1.5 - 2.49 = intermediate risk in the original SAPHR three-strata).
+				[9]</p>
+			<p>The SPAHR-Kylhammar three-strata strategies may be used at diagnosis and at follow-up. To allow a simplified
+				and more granular method at follow-up, the new four-strata strategy based on the COMPERA 2.0 three-parameter
+				model (WHO-FC, 6MWD, BNP/ NT-pro-BNP) may be used. A more comprehensive and precise long-term prognostic
+				prediction can, however, be achieved by using additional prognostic parameters, applying the updated SPAHR
+				three-strata strategy, with divided intermediate risk group. [3,4,10,11,12]</p>
+
+			<p style="font-weight: bold;">The French invasive and non-invasive model</p>
+			<p>The invasive and non-invasive French pulmonary hypertension registry based models complies the number of
+				low-risk criteria achieved, as defined by the 2015 ESC/ERS risk stratification strategy. Notably, the number of
+				low risk criteria cannot be interpreted into three different risk categories, i.e low-, intermediate-, and high
+				risk.</p>
 
 
-	<b style="font-size: 20px;">*</b><small> Note that if both NT-proBNP and BNP are selected, only NT-proBNP will be included in the calculated risk score.</small>
-	<br>
-	<b>¤</b><small> Indicates the parameters used in the SPAHR-Kylhammar equation, including; WHO-FC, 6MWD, BNP/NT-proBNP, RA area, pericardial effusion, RAP, CI, and S<sub>V</sub>O<sub>2</sub>.<!--In COMPERA, RA area and pericardial effusion are not included.--></small>
-	<br>
-	<b>#</b><small> Indicates the parameters used in the initial COMPERA model, including; WHO-FC, 6MWD, BNP/NT-proBNP, RAP, CI, and S<sub>V</sub>O<sub>2</sub>.
-	</div>
+			<b style="font-size: 20px;">*</b><small> Note that if both NT-proBNP and BNP are selected, only NT-proBNP will be
+				included in the calculated risk score.</small>
+			<br>
+			<b>¤</b><small> Indicates the parameters used in the SPAHR-Kylhammar equation, including; WHO-FC, 6MWD,
+				BNP/NT-proBNP, RA area, pericardial effusion, RAP, CI, and
+				S<sub>V</sub>O<sub>2</sub>.<!--In COMPERA, RA area and pericardial effusion are not included.--></small>
+			<br>
+			<b>#</b><small> Indicates the parameters used in the initial COMPERA model, including; WHO-FC, 6MWD,
+				BNP/NT-proBNP, RAP, CI, and S<sub>V</sub>O<sub>2</sub>.
+		</div>
 
-	<!-- Collapsible enviroment with article references -->
-	<button class="collapsible"  onclick="collapseContent(this)">Click to show References</button>
-	<div id="ref" class="collapsible-content">
-	<ol>
-		<li>Galiè N, Humbert M, Vachiery J-L, Gibbs S, Lang I, Torbicki A, Simonneau G, Peacock A, Vonk Noordegraaf A, Beghetti M, Ghofrani A, Gomez Sanchez MA, Hansmann G, Klepetko W, Lancellotti P, Matucci M, McDonagh T, Pierard LA, Trindade PT, Zompatori M, Hoeper M. 2015 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary hypertension. <i>European Respiratory Journal</i> 2015; <b>46</b>:903.</li>
+		<!-- Collapsible enviroment with article references -->
+		<button class="collapsible" onclick="collapseContent(this)">Click to show References</button>
+		<div id="ref" class="collapsible-content">
+			<ol>
+				<li>Galiè N, Humbert M, Vachiery J-L, Gibbs S, Lang I, Torbicki A, Simonneau G, Peacock A, Vonk Noordegraaf A,
+					Beghetti M, Ghofrani A, Gomez Sanchez MA, Hansmann G, Klepetko W, Lancellotti P, Matucci M, McDonagh T,
+					Pierard LA, Trindade PT, Zompatori M, Hoeper M. 2015 ESC/ERS Guidelines for the diagnosis and treatment of
+					pulmonary hypertension. <i>European Respiratory Journal</i> 2015; <b>46</b>:903.</li>
 
-		<li>Galiè N, Humbert M, Vachiery JL, Gibbs S, Lang I, Torbicki A, Simonneau G, Peacock A, Vonk Noordegraaf A, Beghetti M, Ghofrani A, Gomez Sanchez MA, Hansmann G, Klepetko W, Lancellotti P, Matucci M, McDonagh T, Pierard LA, Trindade PT, Zompatori M, Hoeper M. 2015 esc/ers guidelines for the diagnosis and treatment of pulmonary hypertension: The joint task force for the diagnosis and treatment of pulmonary hypertension of the european society of cardiology (esc) and the european respiratory society (ers): Endorsed by: Association for european paediatric and congenital cardiology (aepc), international society for heart and lung transplantation (ishlt). <i>Eur Heart J</i> 2016; <b>37</b>:67-119.</li>
+				<li>Galiè N, Humbert M, Vachiery JL, Gibbs S, Lang I, Torbicki A, Simonneau G, Peacock A, Vonk Noordegraaf A,
+					Beghetti M, Ghofrani A, Gomez Sanchez MA, Hansmann G, Klepetko W, Lancellotti P, Matucci M, McDonagh T,
+					Pierard LA, Trindade PT, Zompatori M, Hoeper M. 2015 esc/ers guidelines for the diagnosis and treatment of
+					pulmonary hypertension: The joint task force for the diagnosis and treatment of pulmonary hypertension of the
+					european society of cardiology (esc) and the european respiratory society (ers): Endorsed by: Association for
+					european paediatric and congenital cardiology (aepc), international society for heart and lung transplantation
+					(ishlt). <i>Eur Heart J</i> 2016; <b>37</b>:67-119.</li>
 
-		<li>Humbert M, Kovacs G, Hoeper MM, Badagliacca R, Berger RMF, Brida M, Carlsen J, Coats AJS, Escribano-Subias P, Ferrari P, Ferreira DS, Ghofrani HA, Giannakoulas G, Kiely DG, Mayer E, Meszaros G, Nagavci B, Olsson KM, Pepke-Zaba J, Quint JK, Rådegran G, Simonneau G, Sitbon O, Tonia T, Toshner M, Vachiery JL, Vonk Noordegraaf A, Delcroix M, Rosenkranz S, Group EESD. 2022 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary hypertension: Developed by the task force for the diagnosis and treatment of pulmonary hypertension of the European Society of Cardiology (ESC) and the European Respiratory Society (ERS). Endorsed by the International Society for Heart and Lung Transplantation (ISHLT) and the European Reference Network on rare respiratory diseases (ERN-LUNG). <i>European Heart Journal</i> 2022: ehac237.
-		</li>
+				<li>Humbert M, Kovacs G, Hoeper MM, Badagliacca R, Berger RMF, Brida M, Carlsen J, Coats AJS, Escribano-Subias
+					P, Ferrari P, Ferreira DS, Ghofrani HA, Giannakoulas G, Kiely DG, Mayer E, Meszaros G, Nagavci B, Olsson KM,
+					Pepke-Zaba J, Quint JK, Rådegran G, Simonneau G, Sitbon O, Tonia T, Toshner M, Vachiery JL, Vonk Noordegraaf
+					A, Delcroix M, Rosenkranz S, Group EESD. 2022 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary
+					hypertension: Developed by the task force for the diagnosis and treatment of pulmonary hypertension of the
+					European Society of Cardiology (ESC) and the European Respiratory Society (ERS). Endorsed by the International
+					Society for Heart and Lung Transplantation (ISHLT) and the European Reference Network on rare respiratory
+					diseases (ERN-LUNG). <i>European Heart Journal</i> 2022: ehac237.
+				</li>
 
-		<li>
-		Humbert M, Kovacs G, Hoeper MM, Badagliacca R, Berger RMF, Brida M, Carlsen J, Coats AJS, Escribano-Subias P, Ferrari P, Ferreira DS, Ghofrani HA, Giannakoulas G, Kiely DG, Mayer E, Meszaros G, Nagavci B, Olsson KM, Pepke-Zaba J, Quint JK, Rådegran G, Simonneau G, Sitbon O, Tonia T, Toshner M, Vachiery J-L, Vonk Noordegraaf A, Delcroix M, Rosenkranz S. 2022 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary hypertension. <i>European Respiratory Journal</i> 2022: 2200879.
-		</li>
+				<li>
+					Humbert M, Kovacs G, Hoeper MM, Badagliacca R, Berger RMF, Brida M, Carlsen J, Coats AJS, Escribano-Subias P,
+					Ferrari P, Ferreira DS, Ghofrani HA, Giannakoulas G, Kiely DG, Mayer E, Meszaros G, Nagavci B, Olsson KM,
+					Pepke-Zaba J, Quint JK, Rådegran G, Simonneau G, Sitbon O, Tonia T, Toshner M, Vachiery J-L, Vonk Noordegraaf
+					A, Delcroix M, Rosenkranz S. 2022 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary
+					hypertension. <i>European Respiratory Journal</i> 2022: 2200879.
+				</li>
 
-		<li>Kylhammar D, Kjellström B, Hjalmarsson C, Jansson K, Nisell M, Söderberg S, Wikström G, Rådegran G. A comprehensive risk stratification at early follow-up determines prognosis in pulmonary arterial hypertension. <i>Eur Heart J</i> 2018; <b>39</b>: 4175-4181.</li>
+				<li>Kylhammar D, Kjellström B, Hjalmarsson C, Jansson K, Nisell M, Söderberg S, Wikström G, Rådegran G. A
+					comprehensive risk stratification at early follow-up determines prognosis in pulmonary arterial hypertension.
+					<i>Eur Heart J</i> 2018; <b>39</b>: 4175-4181.
+				</li>
 
-		<li>Boucly A, Weatherald J, Savale L, Jaïs X, Cottin V, Prevot G, Picard F, de Groote P, Jevnikar M, Bergot E, Chaouat A, Chabanne C, Bourdin A, Parent F, Montani D, Simonneau G, Humbert M, Sitbon O. Risk assessment, prognosis and guideline implementation in pulmonary arterial hypertension. <i>European Respiratory Journal</i> 2017; <b>50</b>:1700889.</li>
+				<li>Boucly A, Weatherald J, Savale L, Jaïs X, Cottin V, Prevot G, Picard F, de Groote P, Jevnikar M, Bergot E,
+					Chaouat A, Chabanne C, Bourdin A, Parent F, Montani D, Simonneau G, Humbert M, Sitbon O. Risk assessment,
+					prognosis and guideline implementation in pulmonary arterial hypertension. <i>European Respiratory Journal</i>
+					2017; <b>50</b>:1700889.</li>
 
-		<li>Hoeper MM, Kramer T, Pan Z, Eichstaedt CA, Spiesshoefer J, Benjamin N, Olsson KM, Meyer K, Vizza CD, Vonk-Noordegraaf A, Distler O, Opitz C, Gibbs JSR, Delcroix M, Ghofrani HA, Huscher D, Pittrow D, Rosenkranz S, Grünig E. Mortality in pulmonary arterial hypertension: Prediction by the 2015 european pulmonary hypertension guidelines risk stratification model. <i>Eur Respir J</i> 2017; <b>50</b></li>
+				<li>Hoeper MM, Kramer T, Pan Z, Eichstaedt CA, Spiesshoefer J, Benjamin N, Olsson KM, Meyer K, Vizza CD,
+					Vonk-Noordegraaf A, Distler O, Opitz C, Gibbs JSR, Delcroix M, Ghofrani HA, Huscher D, Pittrow D, Rosenkranz
+					S, Grünig E. Mortality in pulmonary arterial hypertension: Prediction by the 2015 european pulmonary
+					hypertension guidelines risk stratification model. <i>Eur Respir J</i> 2017; <b>50</b></li>
 
-		<li>Benza RL, Gomberg-Maitland M, Elliott CG, Farber HW, Foreman AJ, Frost AE, McGoon MD, Pasta DJ, Selej M, Burger CD, Frantz RP. Predicting survival in patients with pulmonary arterial hypertension: The reveal risk score calculator 2.0 and comparison with esc/ers-based risk assessment strategies. <i>Chest</i> 2019; <b>156</b>:323-337.</li>
+				<li>Benza RL, Gomberg-Maitland M, Elliott CG, Farber HW, Foreman AJ, Frost AE, McGoon MD, Pasta DJ, Selej M,
+					Burger CD, Frantz RP. Predicting survival in patients with pulmonary arterial hypertension: The reveal risk
+					score calculator 2.0 and comparison with esc/ers-based risk assessment strategies. <i>Chest</i> 2019;
+					<b>156</b>:323-337.
+				</li>
 
-		<li>Kylhammar D, Hjalmarsson C, Hesselstrand R, Jansson K, Kavianipour M, Kjellström B, Nisell M, Söderberg S, Rådegran G. Predicting mortality during long-term follow-up in pulmonary arterial hypertension. <i>ERJ Open Research</i> 2021; <b>7</b>:00837-02020.</li>
+				<li>Kylhammar D, Hjalmarsson C, Hesselstrand R, Jansson K, Kavianipour M, Kjellström B, Nisell M, Söderberg S,
+					Rådegran G. Predicting mortality during long-term follow-up in pulmonary arterial hypertension. <i>ERJ Open
+						Research</i> 2021; <b>7</b>:00837-02020.</li>
 
-		<li>Hoeper MM, Pausch C, Olsson KM, Huscher D, Pittrow D, Grünig E, Staehler G, Vizza CD, Gall H, Distler O, Opitz C, Gibbs JSR, Delcroix M, Ghofrani HA, Park D-H, Ewert R, Kaemmerer H, Kabitz H-J, Skowasch D, Behr J, Milger K, Halank M, Wilkens H, Seyfarth H-J, Held M, Dumitrescu D, Tsangaris I, Vonk-Noordegraaf A, Ulrich S, Klose H, Claussen M, Lange TJ, Rosenkranz S. Compera 2.0: A refined four-stratum risk assessment model for pulmonary arterial hypertension. <i>European Respiratory Journal</i> 2022; <b>60</b>:2102311.</li>
+				<li>Hoeper MM, Pausch C, Olsson KM, Huscher D, Pittrow D, Grünig E, Staehler G, Vizza CD, Gall H, Distler O,
+					Opitz C, Gibbs JSR, Delcroix M, Ghofrani HA, Park D-H, Ewert R, Kaemmerer H, Kabitz H-J, Skowasch D, Behr J,
+					Milger K, Halank M, Wilkens H, Seyfarth H-J, Held M, Dumitrescu D, Tsangaris I, Vonk-Noordegraaf A, Ulrich S,
+					Klose H, Claussen M, Lange TJ, Rosenkranz S. Compera 2.0: A refined four-stratum risk assessment model for
+					pulmonary arterial hypertension. <i>European Respiratory Journal</i> 2022; <b>60</b>:2102311.</li>
 
-		<li>Boucly A, Weatherald J, Savale L, de Groote P, Cottin V, Prévot G, Chaouat A, Picard F, Horeau-Langlard D, Bourdin A, Jutant E-M, Beurnier A, Jevnikar M, Jaïs X, Simonneau G, Montani D, Sitbon O, Humbert M. External validation of a refined four-stratum risk assessment score from the french pulmonary hypertension registry. <i>European Respiratory Journal</i> 2022; <b>59</b>:2102419.</li>
+				<li>Boucly A, Weatherald J, Savale L, de Groote P, Cottin V, Prévot G, Chaouat A, Picard F, Horeau-Langlard D,
+					Bourdin A, Jutant E-M, Beurnier A, Jevnikar M, Jaïs X, Simonneau G, Montani D, Sitbon O, Humbert M. External
+					validation of a refined four-stratum risk assessment score from the french pulmonary hypertension registry.
+					<i>European Respiratory Journal</i> 2022; <b>59</b>:2102419.
+				</li>
 
-		<li>Ahmed A, Ahmed S, Kempe D, Rådegran G. Evaluation of the European Society of Crdiology-/European Respiratory Society-derived three- and four-strata risk stratification models in pulmonary arterial hypertension: introducing an internet-based risk stratification calculator, <i>European Heart Journal Open,</i>2023.</li>
+				<li>Ahmed A, Ahmed S, Kempe D, Rådegran G. Evaluation of the European Society of Crdiology-/European Respiratory
+					Society-derived three- and four-strata risk stratification models in pulmonary arterial hypertension:
+					introducing an internet-based risk stratification calculator, <i>European Heart Journal Open,</i>2023.</li>
 
-	</ol>
-	</div>
+				<li>Dardi F, Boucly F, Benza R, Frantz R, Mercurio V, Olschewski H, Rådegran G, Rubin Lewis J, Hoeper MM. Risk
+					stratification and treatment goals in pulmonary arterial hypertension, <i>European Respiratory
+						Journal,</i>2024; DOI: 10.1183/13993003.01323-2024</li>
 
-</section>
+			</ol>
+		</div>
 
-<footer class="page-footer" style="min-height: 50px; margin-top: auto;">
-	<div class="footer-copyright text-center py-3"><b>Developed by: Abdulla Ahmed, Daniel Kempe, Salaheldin Ahmed and Göran Rådegran</b>
-	</div>
-</footer>
+	</section>
+
+	<footer class="page-footer" style="min-height: 50px; margin-top: auto;">
+		<div class="footer-copyright text-center py-3"><b>Developed by: Abdulla Ahmed, Daniel Kempe, Salaheldin Ahmed and
+				Göran Rådegran</b>
+		</div>
+	</footer>
 
 </body>

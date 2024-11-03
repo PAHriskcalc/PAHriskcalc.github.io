@@ -3,75 +3,78 @@
 
 <head>
 	<title>PAH Risk Calculator</title>
-	<meta charset='UTF-8'/>
+	<meta charset='UTF-8' />
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="RiskCalc.css">
- 	<script type="text/javascript" src="RiskCalc.js"></script>
+	<script type="text/javascript" src="RiskCalc.js"></script>
 </head>
 
 <script type="text/javascript">
- function go3Strata() {
- 	if (screen.width <= 800) {
-	document.location = "RiskCalc_m.html";
-	} else {
-	document.location = "RiskCalc.html";
+	function go3Strata() {
+		if (screen.width <= 800) {
+			document.location = "RiskCalc_m.html";
+		} else {
+			document.location = "RiskCalc.html";
+		}
 	}
- }
 
- function go4Strata() {
- 	if (screen.width <= 800) {
-	document.location = "RiskCalc4_m.html";
-	} else {
-	document.location = "RiskCalc4.html";
+	function go4Strata() {
+		if (screen.width <= 800) {
+			document.location = "RiskCalc4_m.html";
+		} else {
+			document.location = "RiskCalc4.html";
+		}
 	}
- }
 </script>
 
 
-<body style="dispay: flex;flex-direction: column;justify-content: center;align-items: center; padding-top: 10px; background-color: var(--frontpage-blue); height: 100vh;">
+<body
+	style="display: flex;flex-direction: column;justify-content: center;align-items: center; padding-top: 10px; background-color: var(--frontpage-blue); height: 100vh;">
 
-<header class="page-header text-center header-title", style="color: var(--frontpage-yellow); min-height: 50px;">
+	<header class="page-header text-center header-title" , style="color: var(--frontpage-yellow); min-height: 50px;">
 		<p>Pulmonary Arterial Hypertension Risk Score Calculator</p>
 		<small>based on ESC/ERS guidelines</small>
-		
-</header>
 
-<section style="font-size: 30px;display: flex;justify-content: center;align-items: center;">
-	<p style="color: var(--frontpage-yellow);">
-	Click on the 3- or 4-strata buttons below to select the desired model for risk score calculation
-	</p>
-</section>
+	</header>
 
-<section class="button-row", style="display: flex;justify-content: center;align-items: center;">
-<table style="width: 40%">
+	<section style="font-size: 30px;display: flex;justify-content: center;align-items: center;">
+		<p style="color: var(--frontpage-yellow);">
+			Click on the 3- or 4-strata buttons below to select the desired model for risk score calculation
+		</p>
+	</section>
 
-		<tr style="display: flex;justify-content: center;align-items: center; padding-top: 50px;">
-			<th>
-				<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="go3Strata()">3-Strata</button>
-			</th>
-			<th>
-				<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="go4Strata()">4-Strata</button>
+	<section class="button-row" , style="display: flex;justify-content: center;align-items: center;">
+		<table style="width: 40%">
 
-			</th>
-		</tr>
-</table>
-</section>
-<br>
+			<tr style="display: flex;justify-content: center;align-items: center; padding-top: 50px;">
+				<th>
+					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="go3Strata()">3-Strata</button>
+				</th>
+				<th>
+					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="go4Strata()">4-Strata</button>
 
-<section class="image", style="display: flex;justify-content: center; align-items: center; font-size: 8px;">
-	<object data="heart-lung.svg" class="image-svg" width="25%" height="25%"></object>	
-</section>
-<br>
+				</th>
+			</tr>
+		</table>
+	</section>
+	<br>
 
-<!-- Footer -->
-<footer class="page-footer footer-title" style="min-height: 50px; margin-top: auto;">
-<div class="footer-copyright text-center", style="color: var(--frontpage-yellow)">
-	<p><b>Developed by:</b> Abdulla Ahmed<sup>1,2</sup>, Daniel Kempe<sup>1</sup>, Salaheldin Ahmed<sup>1,2</sup> and Göran Rådegran<sup>1,2</sup></p>
-	<p><b>Contact information:</b> abdulla.ahmed@med.lu.se; goran.radegran@med.lu.se</p>
-	<p><sup>1</sup>The Department of Clinical Sciences Lund, The Section for Cardiology, Lund University, Lund, Sweden,</p>
-	<p><sup>2</sup>The Haemodyniamic Lab, The Section for Heart Failure and Valvular Disease, Heart and Lung Medicin, Skåne University Hospital, Lund, Sweden</p>
-</div>
-</footer>
+	<section class="image" , style="display: flex;justify-content: center; align-items: center; font-size: 8px;">
+		<object data="heart-lung.svg" class="image-svg" width="25%" height="25%"></object>
+	</section>
+	<br>
+
+	<!-- Footer -->
+	<footer class="page-footer footer-title" style="min-height: 50px; margin-top: auto;">
+		<div class="footer-copyright text-center" , style="color: var(--frontpage-yellow)">
+			<p><b>Developed by:</b> Abdulla Ahmed<sup>1,2</sup>, Daniel Kempe<sup>1</sup>, Salaheldin Ahmed<sup>1,2</sup> and
+				Göran Rådegran<sup>1,2</sup></p>
+			<p><b>Contact information:</b> abdulla.ahmed@med.lu.se; goran.radegran@med.lu.se</p>
+			<p><sup>1</sup>The Department of Clinical Sciences Lund, The Section for Cardiology, Lund University, Lund,
+				Sweden,</p>
+			<p><sup>2</sup>The Haemodyniamic Lab, The Section for Heart Failure and Valvular Disease, Heart and Lung Medicin,
+				Skåne University Hospital, Lund, Sweden</p>
+		</div>
+	</footer>
 </body>
-
