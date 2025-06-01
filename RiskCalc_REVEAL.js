@@ -1,6 +1,6 @@
 // ID for result boxes
-const riskTitle = ["COMPERA"];
-var riskID = ["result_Compera"];
+const riskTitle = ["REVEAL"];
+var riskID = ["result_REVEAL"];
 const riskTitle_f = [];
 var riskID_f = [];
 // Number of risk calculations
@@ -13,17 +13,108 @@ let riskValue_f = new Array(numOfRisks_f).fill(0);
 // Array of all parameters
 let params = [];
 // Create params with buttons and add to array of params
-const WHO_FC = {
-	name: "Example", group: "Test", meta_group: "Test", weight: [1], weight_f: [1, 1], value: [1, 2, 3, 4, 5, 6],
-	title: "Example row", btnText: ["1", "2", "3", "4", "5", "6"],
+const WHO = {
+	name: "WHO", group: "", meta_group: "", weight: [1], weight_f: [1, 1], value: [0, 0, 0, 1, 2, 3],
+	title: "WHO group I subgroup", btnText: ["", "", "Other", "CTD", "Heritable", "PoPH"],
 	title_c: "", btnText_c: [],
 	title_p: "", btnText_p: []
 };
-params.push(WHO_FC);
+const MALE = {
+	name: "Male", group: "", meta_group: "", weight: [1], weight_f: [1, 1], value: [0, 0, 0, 0, 2, 0],
+	title: "Male > 60 years", btnText: ["", "", "", "", "", ""],
+	title_c: "", btnText_c: ["", "", "", "", "", ""],
+	title_p: "", btnText_p: ["", "", "", "", "", ""]
+};
+const RECENT_HOSPITALIZATION = {
+	name: "Hospitalization", group: "", meta_group: "", weight: [1], weight_f: [1, 1], value: [-2, -1, 0, 1, 2, 3],
+	title: "All-cause hospitalization within 6 months", btnText: ["", "", "No", "", "Yes", ""],
+	title_c: "", btnText_c: ["", "", "", "", "", ""],
+	title_p: "", btnText_p: ["", "", "", "", "", ""]
+};const eGFR = {
+	name: "eGFR", group: "", meta_group: "", weight: [1], weight_f: [1, 1], value: [-2, -1, 0, 1, 2, 3],
+	title: "eGFR < 60 ml/min/1.73m^2 or renal insufficiency", btnText: ["", "", "No", "Yes", "", ""],
+	title_c: "", btnText_c: ["", "", "", "", "", ""],
+	title_p: "", btnText_p: ["", "", "", "", "", ""]
+};
+const BLOOD_PRESSURE = {
+	name: "Blood pressure", group: "", meta_group: "", weight: [1], weight_f: [1, 1], value: [-2, -1, 0, 1, 2, 3],
+	title: "Systolic blood pressure (mmHg)", btnText: ["", "", ">= 110", "< 110", "", ""],
+	title_c: "", btnText_c: ["", "", "", "", "", ""],
+	title_p: "", btnText_p: ["", "", "", "", "", ""]
+};
+const NYHA = {
+	name: "NYHA", group: "", meta_group: "", weight: [1], weight_f: [1, 1], value: [-2, -1, 0, 1, 2, 3],
+	title: "NYHA/WHO functional class", btnText: ["", "I", "II", "III", "IV", ""],
+	title_c: "", btnText_c: ["", "", "", "", "", ""],
+	title_p: "", btnText_p: ["", "", "", "", "", ""]
+};
+const WALK = {
+	name: "Walk", group: "", meta_group: "", weight: [1], weight_f: [1, 1], value: [-2, -1, 0, 1, 2, 3],
+	title: "Six-minute walking distance (m)", btnText: [">= 440", " 439 - 320", "319 - 165", "< 165", "", ""],
+	title_c: "", btnText_c: ["", "", "", "", "", ""],
+	title_p: "", btnText_p: ["", "", "", "", "", ""]
+};
+const proBNP = {
+	name: "proBNP", group: "", meta_group: "", weight: [1], weight_f: [1, 1], value: [-2, -1, 0, 1, 2, 3],
+	title: "NT-proBNPP (ng/L)", btnText: ["< 300", "", "300 - 1099", "", ">= 1100", ""],
+	title_c: "", btnText_c: ["", "", "", "", "", ""],
+	title_p: "", btnText_p: ["", "", "", "", "", ""]
+};
+const BNP = {
+	name: "BPN", group: "", meta_group: "", weight: [1], weight_f: [1, 1], value: [-2, -1, 0, 1, 2, 3],
+	title: "BNP (ng/L)", btnText: ["< 50", "", "50 - 199", "200-799", ">= 800", ""],
+	title_c: "", btnText_c: ["", "", "", "", "", ""],
+	title_p: "", btnText_p: ["", "", "", "", "", ""]
+};
+const ECHOCARDIO = {
+	name: "Echocardio", group: "", meta_group: "", weight: [1], weight_f: [1, 1], value: [-2, -1, 0, 1, 2, 3],
+	title: "Pericardial effusion on echocardiogram", btnText: ["", "", "No", "Yes", "", ""],
+	title_c: "", btnText_c: ["", "", "", "", "", ""],
+	title_p: "", btnText_p: ["", "", "", "", "", ""]
+};
+const DLco = {
+	name: "DLco", group: "", meta_group: "", weight: [1], weight_f: [1, 1], value: [-2, -1, 0, 1, 2, 3],
+	title: "DLco (% predicted) < 40%", btnText: ["", "", "No", "Yes", "", ""],
+	title_c: "", btnText_c: ["", "", "", "", "", ""],
+	title_p: "", btnText_p: ["", "", "", "", "", ""]
+};
+const RAP = {
+	name: "RAP", group: "", meta_group: "", weight: [1], weight_f: [1, 1], value: [-2, -1, 0, 1, 2, 3],
+	title: "RAP > 20 mmHg within 1 year", btnText: ["", "", "No", "Yes", "", ""],
+	title_c: "", btnText_c: ["", "", "", "", "", ""],
+	title_p: "", btnText_p: ["", "", "", "", "", ""]
+};
+const PVR = {
+	name: "PVR", group: "", meta_group: "", weight: [1], weight_f: [1, 1], value: [-2, -1, 0, 1, 2, 3],
+	title: "PVR < 50 WU", btnText: ["", "Yes", "No", "", "", ""],
+	title_c: "", btnText_c: ["", "", "", "", "", ""],
+	title_p: "", btnText_p: ["", "", "", "", "", ""]
+};
+
+// const PH_NAME = {
+// 	name: "", group: "", meta_group: "", weight: [1], weight_f: [1, 1], value: [-2, -1, 0, 1, 2, 3],
+// 	title: "", btnText: [],
+// 	title_c: "", btnText_c: [],
+// 	title_p: "", btnText_p: []
+// };
+
+params.push(WHO);
+params.push(MALE);
+params.push(RECENT_HOSPITALIZATION);
+params.push(eGFR);
+params.push(BLOOD_PRESSURE);
+params.push(NYHA);
+params.push(WALK);
+params.push(proBNP);
+params.push(BNP);
+params.push(ECHOCARDIO);
+params.push(DLco);
+params.push(RAP);
+params.push(PVR);
 //
 // Set group titles
 const groupTitle = {
-	Test: "Example group"
+	Test: "meta"
 };
 const metaGroupTitle = { Test: "META"};
 
@@ -32,8 +123,6 @@ const numOfParams = params.length;
 
 // Create array with test values
 let testValue = new Array(numOfParams).fill(0);
-
-
 
 
 // Update all risks
