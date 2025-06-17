@@ -42,52 +42,76 @@
     justify-content: center;
     align-items: center;
   }
-  .radioButton:hover input[value="1"] ~ .checkmark {
+  .radioButton:hover input[value="-2"] ~ .checkmark {
     /*background-color: var(--low-green);*/
-    border: 3px solid var(--low-green);
+    border: 3px solid var(--highlight-blue);
+  }
+  .radioButton:hover input[value="-1"] ~ .checkmark {
+    /*background-color: var(--low-green);*/
+    border: 3px solid var(--highlight-blue);
+  }
+  .radioButton:hover input[value="0"] ~ .checkmark {
+    /*background-color: var(--low-green);*/
+    border: 3px solid var(--highlight-blue);
+  }
+  .radioButton:hover input[value="1"] ~ .checkmark {
+    /*background-color: var(--mid-yellow);*/
+    border: 3px solid var(--highlight-blue);
   }
   .radioButton:hover input[value="2"] ~ .checkmark {
     /*background-color: var(--mid-yellow);*/
-    border: 3px solid var(--mid-yellow);
+    border: 3px solid var(--highlight-blue);
   }
   .radioButton:hover input[value="3"] ~ .checkmark {
     /*background-color: var(--high-red);*/
-    border: 3px solid var(--mid-orange);
+    border: 3px solid var(--highlight-blue);
   }
   .radioButton:hover input[value="4"] ~ .checkmark {
     /*background-color: var(--high-red);*/
-    border: 3px solid var(--high-red);
+    border: 3px solid var(--highlight-blue);
   }
   .radioButton:hover input[value="5"] ~ .checkmark {
     /*background-color: var(--high-red);*/
-    border: 3px solid var(--background-blue);
+    border: 3px solid var(--highlight-blue);
   }
   .radioButton:hover input[value="6"] ~ .checkmark {
     /*background-color: var(--high-red);*/
     border: 3px solid var(--highlight-blue);
   }
+  .btn-cell input[value="-2"]:checked ~ .checkmark {
+    background-color: var(--highlight-blue);
+    font-weight: bold;
+  }
+  .btn-cell input[value="-1"]:checked ~ .checkmark {
+    background-color: var(--highlight-blue);
+    font-weight: bold;
+  }
+  .btn-cell input[value="0"]:checked ~ .checkmark {
+    background-color: var(--highlight-blue);
+    font-weight: bold;
+  }
   .btn-cell input[value="1"]:checked ~ .checkmark {
-    background-color: var(--low-green);
+    background-color: var(--highlight-blue);
     font-weight: bold;
   }
   .btn-cell input[value="2"]:checked ~ .checkmark {
-    background-color: var(--mid-yellow);
+    background-color: var(--highlight-blue);
     font-weight: bold;
   }
   .btn-cell input[value="3"]:checked ~ .checkmark {
-    background-color: var(--mid-orange);
+    background-color: var(--highlight-blue);
     font-weight: bold;
   }
   .btn-cell input[value="4"]:checked ~ .checkmark {
-    background-color: var(--high-red);
+    background-color: var(--highlight-blue);
     font-weight: bold;
   }
   .btn-cell input[value="5"]:checked ~ .checkmark {
-    background-color: var(--high-red);
+    background-color: var(--highlight-blue);
     font-weight: bold;
   }
   .btn-cell input[value="6"]:checked ~ .checkmark {
-    background-color: var(--high-red);
+    background-color: var(--highlight-blue);
     font-weight: bold;
   }
   .radioButton:hover input:checked ~ .checkmark {
