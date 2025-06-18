@@ -112,28 +112,36 @@
 
 	<tr class="header-row">
 		<th class="header-cell">N</th>
-		<th class="header-cell" colspan="6" style="text-align: left;padding-left: 10px">Risk Assesment Strategy</th>
-		<th class="header-cell">Risk Score</th>
-		<!--<th class="header-cell" colspan="2">Key for Interpretation</th>-->
+		<th class="header-cell" colspan="5" style="text-align: left;padding-left: 10px">Risk Assesment Strategy</th>
+		<th class="header-cell" colspan="2">Risk Score (+ 6 points correction factor)</th>
+		<!-- <th class="header-cell" colspan="1">Key for Interpretation</th> -->
 	</tr>
 
-	<!--<tr class="title-row">
+	<!-- <tr class="title-row">
 		<th colspan="6">
 		SPAHR-equation derived risk score
 		</th>
-		<td colspan="2" rowspan="5" class="image-cell">
+		<td colspan="2" rowspan="2" class="image-cell">
 			<object data="interpretation-key.svg" class="image-svg" width="100%" height="100%"></object>
 		</td>
-	</tr>-->
+	</tr> -->
 
-
+	<!-- REVEAL Score -->
 	<tr class="result-row">
-		<td class="result-cell" id="result_Compera_count">0/3</td>
-		<td class="title-cell" colspan="6" onmouseenter="highlightParam('result_Compera')" onmouseout="highlightParam()">
-			COMPERA 2.0 <small> (each variable is graded from 1-4 corresponding to low-, intermediete-low, intermediete high, and high risk, respectively. The mean is rounded off to the nearest integer) </small>
-				
+		<td class="result-cell" id="result_REVEAL_count">0/14</td>
+		<td class="title-cell" colspan="6" onmouseenter="highlightParam('result_REVEAL')" onmouseout="highlightParam()">
+			REVEAL 2.0
 		</td>
-		<td class="result-cell" id="result_Compera">Use 3 parameters</td>
+		<td class="result-cell" id="result_REVEAL">Use &GreaterEqual;&nbsp;7 parameters</td>
+	</tr>
+	
+	<!-- REVEAL Lite Score -->
+	<tr class="result-row">
+		<td class="result-cell" id="result_REVEAL_Lite_count">0/7</td>
+		<td class="title-cell" colspan="6" onmouseenter="highlightParam('result_REVEAL_Lite')" onmouseout="highlightParam()">
+			REVEAL Lite 2 (parameters marked ¤)
+		</td>
+		<td class="result-cell" id="result_REVEAL_Lite">Use &GreaterEqual;&nbsp;3 parameters</td>
 	</tr>
 	
 	</table>

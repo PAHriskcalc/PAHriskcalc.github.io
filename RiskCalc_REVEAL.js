@@ -1,86 +1,92 @@
 // ID for result boxes
-const riskTitle = ["REVEAL"];
-var riskID = ["result_REVEAL"];
+const riskTitle = ["REVEAL", "REVEAL_Lite"];
+var riskID = ["result_REVEAL", "result_REVEAL_Lite"];
 // Number of risk calculations
 var numOfRisks = riskID.length;
-let riskValue = new Array(numOfRisks).fill(0);
+var riskValue = new Array(numOfRisks).fill(0);
 
 // Array of all parameters
 let params = [];
 // Create params with buttons and add to array of params
 const WHO = {
-	name: "WHO", group: "", meta_group: "", weight: [1], value: [NaN, NaN, 0, 1, 2, 3],
+	name: "WHO", group: "", meta_group: "", weight: [1, 0], value: [NaN, NaN, 0, 1, 2, 3],
 	title: "WHO group I subgroup", btnText: ["", "", "Other", "CTD", "Heritable", "PoPH"],
 	title_c: "", btnText_c: [],
 	title_p: "", btnText_p: []
 };
 const MALE = {
-	name: "Male", group: "", meta_group: "", weight: [1], value: [NaN, NaN, 0, NaN, 2, NaN],
+	name: "Male", group: "", meta_group: "", weight: [1, 0], value: [NaN, NaN, 0, NaN, 2, NaN],
 	title: "Male > 60 years", btnText: ["", "", "No", "", "Yes", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const RECENT_HOSPITALIZATION = {
-	name: "Hospitalization", group: "", meta_group: "", weight: [1], value: [NaN, NaN, 0, 1, NaN, NaN],
+	name: "Hospitalization", group: "", meta_group: "", weight: [1, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "All-cause hospitalization within 6 months", btnText: ["", "", "No", "Yes", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };const eGFR = {
-	name: "eGFR", group: "", meta_group: "", weight: [1], value: [NaN, NaN, 0, 1, NaN, NaN],
-	title: "eGFR < 60 ml/min/1.73m^2 or renal insufficiency", btnText: ["", "", "No", "Yes", "", ""],
+	name: "eGFR", group: "", meta_group: "", weight: [1, 1], value: [NaN, NaN, 0, 1, NaN, NaN],
+	title: "eGFR < 60 ml/min/1.73m^2 or renal insufficiency ¤*", btnText: ["", "", "No", "Yes", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const BLOOD_PRESSURE = {
-	name: "BloodPressure", group: "", meta_group: "", weight: [1], value: [NaN, NaN, 0, 1, NaN, NaN],
-	title: "Systolic blood pressure (mmHg)", btnText: ["", "", ">= 110", "< 110", "", ""],
+	name: "BloodPressure", group: "", meta_group: "", weight: [1, 1], value: [NaN, NaN, 0, 1, NaN, NaN],
+	title: "Systolic blood pressure (mmHg) ¤", btnText: ["", "", "&GreaterEqual; 110", "< 110", "", ""],
+	title_c: "", btnText_c: ["", "", "", "", "", ""],
+	title_p: "", btnText_p: ["", "", "", "", "", ""]
+};
+const HEART_RATE = {
+	name: "HeartRate", group: "", meta_group: "", weight: [1, 1], value: [NaN, NaN, 0, 1, NaN, NaN],
+	title: "Heart rate (beats/min) ¤", btnText: ["", "", "&le; 96", "> 96", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const NYHA = {
-	name: "NYHA", group: "", meta_group: "", weight: [1], value: [NaN, -1, 0, 1, 2, NaN],
-	title: "NYHA/WHO functional class", btnText: ["", "I", "II", "III", "IV", ""],
+	name: "NYHA", group: "", meta_group: "", weight: [1, 1], value: [NaN, -1, 0, 1, 2, NaN],
+	title: "NYHA/WHO functional class ¤", btnText: ["", "I", "II", "III", "IV", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const WALK = {
-	name: "Walk", group: "", meta_group: "", weight: [1], value: [-2, -1, 0, 1, NaN, NaN],
-	title: "Six-minute walking distance (m)", btnText: [">= 440", " 439 - 320", "319 - 165", "< 165", "", ""],
+	name: "Walk", group: "", meta_group: "", weight: [1, 1], value: [-2, -1, 0, 1, NaN, NaN],
+	title: "Six-minute walking distance (m) ¤^", btnText: ["&GreaterEqual; 440", " 439 - 320", "319 - 165", "< 165", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const proBNP = {
-	name: "proBNP", group: "", meta_group: "", weight: [1], value: [-2, NaN, 0, NaN, 2, NaN],
-	title: "NT-proBNPP (ng/L)", btnText: ["< 300", "", "300 - 1099", "", ">= 1100", ""],
+	name: "proBNP", group: "", meta_group: "", weight: [1, 1], value: [-2, NaN, 0, NaN, 2, NaN],
+	title: "NT-proBNPP (ng/L)  ¤^#", btnText: ["< 300", "", "300 - 1099", "", "&GreaterEqual; 1100", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const BNP = {
-	name: "BNN", group: "", meta_group: "", weight: [1], value: [-2, NaN, 0, 1, 2, NaN],
-	title: "BNP (ng/L)", btnText: ["< 50", "", "50 - 199", "200-799", ">= 800", ""],
+	name: "BNN", group: "", meta_group: "", weight: [1, 1], value: [-2, NaN, 0, 1, 2, NaN],
+	title: "BNP (ng/L)  ¤^#", btnText: ["< 50", "", "50 - 199", "200-799", "&GreaterEqual; 800", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const ECHOCARDIO = {
-	name: "Echocardio", group: "", meta_group: "", weight: [1], value: [NaN, NaN, 0, 1, NaN, NaN],
+	name: "Echocardio", group: "", meta_group: "", weight: [1, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "Pericardial effusion on echocardiogram", btnText: ["", "", "No", "Yes", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const DLco = {
-	name: "DLco", group: "", meta_group: "", weight: [1], value: [NaN, NaN, 0, 1, NaN, NaN],
+	name: "DLco", group: "", meta_group: "", weight: [1, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "DLco (% predicted) < 40%", btnText: ["", "", "No", "Yes", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const RAP = {
-	name: "RAP", group: "", meta_group: "", weight: [1], value: [NaN, NaN, 0, 1, NaN, NaN],
+	name: "RAP", group: "", meta_group: "", weight: [1, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "RAP > 20 mmHg within 1 year", btnText: ["", "", "No", "Yes", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const PVR = {
-	name: "PVR", group: "", meta_group: "", weight: [1], value: [NaN, -1, 0, NaN, NaN, NaN],
+	name: "PVR", group: "", meta_group: "", weight: [1, 0], value: [NaN, -1, 0, NaN, NaN, NaN],
 	title: "PVR < 50 WU", btnText: ["", "Yes", "No", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
@@ -98,6 +104,7 @@ params.push(MALE);
 params.push(RECENT_HOSPITALIZATION);
 params.push(eGFR);
 params.push(BLOOD_PRESSURE);
+params.push(HEART_RATE);
 params.push(NYHA);
 params.push(WALK);
 params.push(proBNP);
@@ -115,7 +122,7 @@ const metaGroupTitle = {};
 const numOfParams = params.length;
 
 // Create array with test values
-let testValue = new Array(numOfParams).fill(NaN);
+var testValue = new Array(numOfParams).fill(NaN);
 
 
 // Update all risks
@@ -125,73 +132,68 @@ function updateRisk() {
 	let w = new Array(numOfRisks).fill(0);
 	let paramCount = new Array(numOfRisks).fill(0); // Count the number of used params
 	let paramTotal = new Array(numOfRisks).fill(0); // Count total available params
-	const paramMin = 3; // The minimum number of params for which a value is displayed.
+	const paramMin = [7, 3]; // The minimum number of params for which a value is displayed.
 
 	// Add up the sum and weights of all params for each risk
 	for (let i = 0; i < numOfRisks; i++) {
 		for (let j = 0; j < numOfParams; j++) {
-			let param_value = 0;
-			if (Number.isInteger(testValue[j])) {
-				param_value = testValue[j];
+			if (!Number.isNaN(testValue[j])) {
+				sum[i] += params[j].weight[i] * testValue[j];
+				w[i] += params[j].weight[i];
+				paramCount[i] += (params[j].weight[i] != 0);
 			}
-			sum[i] += params[j].weight[i] * param_value;
-			w[i] += (param_value != 0) * params[j].weight[i];
-			paramCount[i] += (param_value != 0) * (params[j].weight[i] != 0);
-			paramTotal[i] += (params[j].weight[i] != 0) * (params[j].name != "BNP");
+			paramTotal[i] += (params[j].weight[i] != 0);
 		}
 	}
 
 	// Special code for BNP/proBNP hierarchy
-	let BNP_index;
-	let proBNP_index;
-	for (let j = 0; j < numOfParams; j++) {
-		if (params[j].name === "BNP") {
-			BNP_index = j;
-		} else if (params[j].name === "proBNP") {
-			proBNP_index = j;
-		}
-	}
-	if (Number.isInteger(testValue[BNP_index]) && Number.isInteger(testValue[proBNP_index])) {
-		for (let i = 0; i < numOfRisks; i++) {
-			sum[i] -= testValue[BNP_index] * params[BNP_index].weight[i];
-			w[i] -= params[BNP_index].weight[i];
-			paramCount[i] -= (params[BNP_index].weight[i] != 0);
-		}
-	}
+	// let BNP_index;
+	// let proBNP_index;
+	// for (let j = 0; j < numOfParams; j++) {
+	// 	if (params[j].name === "BNP") {
+	// 		BNP_index = j;
+	// 	} else if (params[j].name === "proBNP") {
+	// 		proBNP_index = j;
+	// 	}
+	// }
+	// if (!Number.isNaN(testValue[BNP_index]) && !Number.isNaN(testValue[proBNP_index])) {
+	// 	for (let i = 0; i < numOfRisks; i++) {
+	// 		sum[i] -= testValue[BNP_index] * params[BNP_index].weight[i];
+	// 		w[i] -= params[BNP_index].weight[i];
+	// 		paramCount[i] -= (params[BNP_index].weight[i] != 0);
+	// 	}
+	// }
 
-	// Calculate the average of all params
+	// Calculate the sum of all params (+ correction factor)
+	let correction_factor = 6;
 	for (let i = 0; i < numOfRisks; i++) {
 		riskValue[i] = 0;
 		if (w[i] !== 0) {
-			riskValue[i] = sum[i] / w[i];
+			riskValue[i] = sum[i] + correction_factor;
 		}
 	}
 
 	for (let i = 0; i < numOfRisks; i++) {
 		//Set param count for each risk
 		document.getElementById(riskID[i] + "_count").innerHTML = `${paramCount[i]}/${paramTotal[i]}`;
-		if (riskValue[i] && paramCount[i] >= paramMin) {
-			const riskRate = ["&nbsp;<small>(Low)</small>", "&nbsp;<small>(Intermediate-Low)</small>", "&nbsp;<small>(Intermediate-High)</small>", "&nbsp;<small>(High)</small>"];
+		if (riskValue[i] && paramCount[i] >= paramMin[i]) {
+			const riskRate = ["&nbsp;<small>(Low risk)</small>", "&nbsp;<small>(Intermediate risk)</small>", "&nbsp;<small>(High risk)</small>"];
 
-			if (riskValue[i] < 1.5) {
-				// If riskValue rounds to 1
+			if (riskValue[i] <= 6) {
+				// Low risk (<= 6)
 				document.getElementById(riskID[i]).style.backgroundColor = "var(--low-green)";
-				document.getElementById(riskID[i]).innerHTML = riskValue[i].toFixed(2) + riskRate[0];
-			} else if (riskValue[i] < 2.5) {
-				// If riskValue rounds to 2
+				document.getElementById(riskID[i]).innerHTML = riskValue[i].toFixed(0) + riskRate[0];
+			} else if (riskValue[i] <= 8) {
+				// Medium risk (7-8)
 				document.getElementById(riskID[i]).style.backgroundColor = "var(--mid-yellow)";
-				document.getElementById(riskID[i]).innerHTML = riskValue[i].toFixed(2) + riskRate[1];
-			} else if (riskValue[i] < 3.5) {
-				// If riskValue rounds to 2
-				document.getElementById(riskID[i]).style.backgroundColor = "var(--mid-orange)";
-				document.getElementById(riskID[i]).innerHTML = riskValue[i].toFixed(2) + riskRate[2];
-			} else if (riskValue[i] >= 3.5) {
-				// If riskValue rounds to 3
+				document.getElementById(riskID[i]).innerHTML = riskValue[i].toFixed(0) + riskRate[1];
+			} else if (riskValue[i] >= 9) {
+				// High risk (>= 9)
 				document.getElementById(riskID[i]).style.backgroundColor = "var(--high-red)";
-				document.getElementById(riskID[i]).innerHTML = riskValue[i].toFixed(2) + riskRate[3];
+				document.getElementById(riskID[i]).innerHTML = riskValue[i].toFixed(0) + riskRate[2];
 			}
 		} else { // Do if too few parameters were used.
-			document.getElementById(riskID[i]).innerHTML = `Use ${paramMin} parameters`;
+			document.getElementById(riskID[i]).innerHTML = `Use &ge; ${paramMin[i]} parameters`;
 			document.getElementById(riskID[i]).style.backgroundColor = "white";
 		}
 
@@ -309,12 +311,6 @@ function copyData() {
 		risk_group = riskGroup[Math.round(4 * riskValue[i] / 3) - 1];
 		copyStr += `\n${riskTitle[i]}\t${risk_group}\t${riskValue[i].toFixed(2)}`;
 	}
-	//riskGroup = ["Low risk", "Low risk", "High risk"];
-	//copyStr += "\nFrench Risk Strategy";
-	//for ( let i = 0; i<riskID_f.length; i++) {
-	//	risk_group = riskGroup[Math.round(riskValue_f[i])];
-	//	copyStr += `\n${riskTitle_f[i]}\t${risk_group}\t${riskValue_f[i]}`;
-	//}
 	navigator.clipboard.writeText(copyStr);
 }
 
@@ -326,7 +322,7 @@ function createButton(name, value, btn_text) {
 	var label = document.createElement("LABEL");
 	label.setAttribute("class", "radioButton");
 	// Create radio button with name and val
-	if(Number.isInteger(value)) {
+	if(!Number.isNaN(value)) {
 		var btn = document.createElement("INPUT");
 		btn.setAttribute("type", "radio");
 		btn.setAttribute("name", name);
