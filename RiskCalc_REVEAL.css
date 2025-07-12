@@ -1,0 +1,126 @@
+:root {
+    --low-green: #c6e0b4;
+    --mid-yellow: #ffd966;
+    --mid-yellow-orange: #fbb84a;
+    --mid-orange: #f7972d;
+    --high-red: #ff5050;
+    --background-blue: #203764;
+    --highlight-blue: #3e6ca8;
+    --highlight-active: lightgrey;
+  }
+  
+  
+  /* Style custom radio buttons */
+  .radioButton {
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+    display: block;
+  }
+  .radioButton input {
+    position: absolute;
+    opacity:  0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .checkmark {
+    position: absolute;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    font-size: 10px;
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .radioButton:hover input[value="-2"] ~ .checkmark {
+    /*background-color: var(--low-green);*/
+    border: 3px solid var(--highlight-blue);
+  }
+  .radioButton:hover input[value="-1"] ~ .checkmark {
+    /*background-color: var(--low-green);*/
+    border: 3px solid var(--highlight-blue);
+  }
+  .radioButton:hover input[value="0"] ~ .checkmark {
+    /*background-color: var(--low-green);*/
+    border: 3px solid var(--highlight-blue);
+  }
+  .radioButton:hover input[value="1"] ~ .checkmark {
+    /*background-color: var(--mid-yellow);*/
+    border: 3px solid var(--highlight-blue);
+  }
+  .radioButton:hover input[value="2"] ~ .checkmark {
+    /*background-color: var(--mid-yellow);*/
+    border: 3px solid var(--highlight-blue);
+  }
+  .radioButton:hover input[value="3"] ~ .checkmark {
+    /*background-color: var(--high-red);*/
+    border: 3px solid var(--highlight-blue);
+  }
+  .radioButton:hover input[value="4"] ~ .checkmark {
+    /*background-color: var(--high-red);*/
+    border: 3px solid var(--highlight-blue);
+  }
+  .radioButton:hover input[value="5"] ~ .checkmark {
+    /*background-color: var(--high-red);*/
+    border: 3px solid var(--highlight-blue);
+  }
+  .radioButton:hover input[value="6"] ~ .checkmark {
+    /*background-color: var(--high-red);*/
+    border: 3px solid var(--highlight-blue);
+  }
+  .btn-cell input[value="-2"]:checked ~ .checkmark {
+    background-color: var(--highlight-blue);
+    font-weight: bold;
+  }
+  .btn-cell input[value="-1"]:checked ~ .checkmark {
+    background-color: var(--highlight-blue);
+    font-weight: bold;
+  }
+  .btn-cell input[value="0"]:checked ~ .checkmark {
+    background-color: var(--highlight-blue);
+    font-weight: bold;
+  }
+  .btn-cell input[value="1"]:checked ~ .checkmark {
+    background-color: var(--highlight-blue);
+    font-weight: bold;
+  }
+  .btn-cell input[value="2"]:checked ~ .checkmark {
+    background-color: var(--highlight-blue);
+    font-weight: bold;
+  }
+  .btn-cell input[value="3"]:checked ~ .checkmark {
+    background-color: var(--highlight-blue);
+    font-weight: bold;
+  }
+  .btn-cell input[value="4"]:checked ~ .checkmark {
+    background-color: var(--highlight-blue);
+    font-weight: bold;
+  }
+  .btn-cell input[value="5"]:checked ~ .checkmark {
+    background-color: var(--highlight-blue);
+    font-weight: bold;
+  }
+  .btn-cell input[value="6"]:checked ~ .checkmark {
+    background-color: var(--highlight-blue);
+    font-weight: bold;
+  }
+  .radioButton:hover input:checked ~ .checkmark {
+    /*background-color: white;*/
+    border: 3px solid white;
+  }
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  /* End of Radio button style */

@@ -26,6 +26,14 @@
 			document.location = "RiskCalc4.html";
 		}
 	}
+
+	function goREVEAL() {
+		if (screen.width <= 800) {
+			document.location = "RiskCalc_REVEAL.html";
+		} else {
+			document.location = "RiskCalc_REVEAL.html";
+		}
+	}
 </script>
 
 
@@ -44,7 +52,7 @@
 		</p>
 	</section>
 
-	<section class="button-row" , style="display: flex;justify-content: center;align-items: center;">
+	<section class="button-row" , style="display: flex;justify-content: center;align-items: center; margin-bottom: 150px;">
 		<table style="width: 40%">
 
 			<tr style="display: flex;justify-content: center;align-items: center; padding-top: 50px;">
@@ -55,13 +63,17 @@
 					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="go4Strata()">4-Strata</button>
 
 				</th>
+				<th>
+					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="goREVEAL()">REVEAL 2.0</button>
+
+				</th>
 			</tr>
 		</table>
 	</section>
 	<br>
 
 	<section class="image" , style="display: flex;justify-content: center; align-items: center; font-size: 8px;">
-		<object data="heart-lung.svg" class="image-svg" width="25%" height="25%"></object>
+		<object data="heart-lung.svg" class="image-svg" width="125%" height="125%"></object>
 	</section>
 	<br>
 
