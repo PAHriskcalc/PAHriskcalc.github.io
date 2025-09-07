@@ -22,12 +22,12 @@ const MALE = {
 };
 const RECENT_HOSPITALIZATION = {
 	name: "Hospitalization", group: "", meta_group: "", weight: [1, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
-	title: "All-cause hospitalization within 6 months", btnText: ["", "", "No", "Yes", "", ""],
+	title: "All-cause hospitalizations within 6 months", btnText: ["", "", "No", "Yes", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };const eGFR = {
 	name: "eGFR", group: "", meta_group: "", weight: [1, 1], value: [NaN, NaN, 0, 1, NaN, NaN],
-	title: "eGFR < 60 ml/min/1.73m^2 or renal insufficiency ¤*", btnText: ["", "", "No", "Yes", "", ""],
+	title: "eGFR < 60 ml/min/1.73m<sup>2</sup> or renal insufficiency ¤*", btnText: ["", "", "No", "Yes", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
@@ -45,7 +45,7 @@ const HEART_RATE = {
 };
 const NYHA = {
 	name: "NYHA", group: "", meta_group: "", weight: [1, 1], value: [NaN, -1, 0, 1, 2, NaN],
-	title: "NYHA/WHO functional class ¤", btnText: ["", "I", "II", "III", "IV", ""],
+	title: "NYHA/WHO functional class ¤^", btnText: ["", "I", "II", "III", "IV", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
@@ -57,13 +57,13 @@ const WALK = {
 };
 const proBNP = {
 	name: "proBNP", group: "", meta_group: "", weight: [1, 1], value: [-2, NaN, 0, NaN, 2, NaN],
-	title: "NT-proBNPP (ng/L)  ¤^#", btnText: ["< 300", "", "300 - 1099", "", "&GreaterEqual; 1100", ""],
+	title: "NT-proBNP (ng/L)  ¤^#", btnText: ["< 300", "", "300 - 1099", "", "&GreaterEqual; 1100", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const BNP = {
-	name: "BNN", group: "", meta_group: "", weight: [1, 1], value: [-2, NaN, 0, 1, 2, NaN],
-	title: "BNP (ng/L)  ¤^#", btnText: ["< 50", "", "50 - 199", "200-799", "&GreaterEqual; 800", ""],
+	name: "BNP", group: "", meta_group: "", weight: [1, 1], value: [-2, NaN, 0, 1, 2, NaN],
+	title: "BNP (ng/L)  ¤^#", btnText: ["< 50", "", "50 - 199", "200 - 799", "&GreaterEqual; 800", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
@@ -81,13 +81,13 @@ const DLco = {
 };
 const RAP = {
 	name: "RAP", group: "", meta_group: "", weight: [1, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
-	title: "RAP > 20 mmHg within 1 year", btnText: ["", "", "No", "Yes", "", ""],
+	title: "mRAP > 20 mmHg within 1 year", btnText: ["", "", "No", "Yes", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const PVR = {
 	name: "PVR", group: "", meta_group: "", weight: [1, 0], value: [NaN, -1, 0, NaN, NaN, NaN],
-	title: "PVR < 50 WU", btnText: ["", "Yes", "No", "", "", ""],
+	title: "PVR < 5 WU", btnText: ["", "Yes", "No", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };

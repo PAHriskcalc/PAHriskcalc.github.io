@@ -79,39 +79,48 @@
     border: 3px solid var(--highlight-blue);
   }
   .btn-cell input[value="-2"]:checked ~ .checkmark {
-    background-color: var(--highlight-blue);
+    background-color: var(--background-blue);
+    color: white;
     font-weight: bold;
   }
   .btn-cell input[value="-1"]:checked ~ .checkmark {
-    background-color: var(--highlight-blue);
+    background-color: var(--background-blue);
+    color: white;
     font-weight: bold;
   }
   .btn-cell input[value="0"]:checked ~ .checkmark {
-    background-color: var(--highlight-blue);
+    background-color: var(--background-blue);
+    color: white;
     font-weight: bold;
   }
   .btn-cell input[value="1"]:checked ~ .checkmark {
-    background-color: var(--highlight-blue);
+    background-color: var(--background-blue);
+    color: white;
     font-weight: bold;
   }
   .btn-cell input[value="2"]:checked ~ .checkmark {
-    background-color: var(--highlight-blue);
+    background-color: var(--background-blue);
+    color: white;
     font-weight: bold;
   }
   .btn-cell input[value="3"]:checked ~ .checkmark {
-    background-color: var(--highlight-blue);
+    background-color: var(--background-blue);
+    color: white;
     font-weight: bold;
   }
   .btn-cell input[value="4"]:checked ~ .checkmark {
-    background-color: var(--highlight-blue);
+    background-color: var(--background-blue);
+    color: white;
     font-weight: bold;
   }
   .btn-cell input[value="5"]:checked ~ .checkmark {
-    background-color: var(--highlight-blue);
+    background-color: var(--background-blue);
+    color: white;
     font-weight: bold;
   }
   .btn-cell input[value="6"]:checked ~ .checkmark {
-    background-color: var(--highlight-blue);
+    background-color: var(--background-blue);
+    color: white;
     font-weight: bold;
   }
   .radioButton:hover input:checked ~ .checkmark {
