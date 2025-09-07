@@ -41,14 +41,15 @@
 	style="display: flex;flex-direction: column;justify-content: center;align-items: center; padding-top: 10px; background-color: var(--frontpage-blue); height: 100vh;">
 
 	<header class="page-header text-center header-title" , style="color: var(--frontpage-yellow); min-height: 50px;">
-		<p>Pulmonary Arterial Hypertension Risk Score Calculator</p>
-		<small>based on ESC/ERS guidelines</small>
+		<p>Pulmonary Arterial Hypertension Risk Score Calculators</p>
+		<br>
+		<small>Based on ESC/ERS guidelines, WSPH proceedings, and the ISHLT consensus document</small>
 
 	</header>
 
 	<section style="font-size: 30px;display: flex;justify-content: center;align-items: center;">
 		<p style="color: var(--frontpage-yellow);">
-			Click on the 3- or 4-strata buttons below to select the desired model for risk score calculation
+			Click on buttons below to select the desired model for risk score calculation
 		</p>
 	</section>
 
@@ -57,14 +58,22 @@
 
 			<tr style="display: flex;justify-content: center;align-items: center; padding-top: 50px;">
 				<th>
-					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="go3Strata()">3-Strata</button>
+					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="go3Strata()">
+						ESC/ERS 
+						3-Strata
+					</button>
 				</th>
 				<th>
-					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="go4Strata()">4-Strata</button>
+					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="go4Strata()">
+						ESC/ERS 
+						4-Strata
+					</button>
 
 				</th>
 				<th>
-					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="goREVEAL()">REVEAL 2.0</button>
+					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="goREVEAL()">
+						REVEAL 2.0
+					</button>
 
 				</th>
 			</tr>
