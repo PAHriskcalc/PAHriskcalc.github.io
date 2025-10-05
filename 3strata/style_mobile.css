@@ -1,13 +1,5 @@
-:root {
-  --low-green: #c6e0b4;
-  --mid-yellow: #ffd966;
-  --mid-yellow-orange: #fbb84a;
-  --mid-orange: #f7972d;
-  --high-red: #ff5050;
-  --background-blue: #203764;
-  --highlight-blue: #3e6ca8;
-  --highlight-active: lightgrey;
-}
+@import "../utility/color.css";
+
 /* table styling start */
 table {
   width: 1px;

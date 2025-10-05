@@ -1,15 +1,5 @@
-:root {
-  --low-green: #c6e0b4;
-  --mid-yellow: #ffd966;
-  --frontpage-yellow:  #ffd961;
-  --frontpage-blue:  #17375e;
-  --mid-yellow-orange: #fbb84a;
-  --mid-orange: #f7972d;
-  --high-red: #ff5050;
-  --background-blue: #203764;
-  --highlight-blue: #3e6ca8;
-  --highlight-active: lightgrey;
-}
+@import "../utility/color.css";
+
 /* title page style */
 .header-title {
   justify-content: center;
