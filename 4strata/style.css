@@ -1,45 +1,5 @@
 @import "../utility/color.css";
 
-/* Style custom radio buttons */
-.radioButton {
-  height: 100%;
-  min-height: 100%;
-  width: 100%;
-  position: relative;
-  padding: 0px;
-  margin: 0px;
-  cursor: pointer;
-  display: block;
-}
-.radioButton input {
-  position: absolute;
-  opacity:  0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-.checkmark {
-  position: absolute;
-  height: 100%;
-  min-height: 100%;
-  width: 100%;
-  font-size: 10px;
-  padding: 0px;
-  margin: 0px;
-  background-color: white;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.radioButton:hover input[value="1"] ~ .checkmark {
-  /*background-color: var(--low-green);*/
-  border: 3px solid var(--low-green);
-}
-.radioButton:hover input[value="2"] ~ .checkmark {
-  /*background-color: var(--mid-yellow);*/
-  border: 3px solid var(--mid-yellow);
-}
 .radioButton:hover input[value="3"] ~ .checkmark {
   /*background-color: var(--high-red);*/
   border: 3px solid var(--mid-orange);
