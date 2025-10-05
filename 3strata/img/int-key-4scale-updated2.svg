@@ -130,9 +130,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7071068"
-     inkscape:cx="450.42701"
-     inkscape:cy="-229.10259"
+     inkscape:zoom="2.0000001"
+     inkscape:cx="458.74999"
+     inkscape:cy="62.499998"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -237,18 +237,18 @@
        y="236.14584"
        id="text1513" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.260544px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 150.16199,240.90912 v 42.33333"
+       style="fill:none;stroke:#000000;stroke-width:0.247928px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 150.16222,239.85134 v 38.333"
        id="path1497-4"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 110.47427,240.90902 v 42.33333"
+       style="fill:none;stroke:#000000;stroke-width:0.251772px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 110.47427,240.90902 v 38.333"
        id="path1493-2"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 70.786708,240.90902 c 0,42.33333 0,42.33333 0,42.33333"
+       style="fill:none;stroke:#000000;stroke-width:0.251772px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 70.786708,239.851 c 0,38.333 0,38.333 0,38.333"
        id="path1489-1"
        inkscape:connector-curvature="0" />
     <rect
@@ -373,7 +373,7 @@
          sodipodi:type="star" />
     </g>
     <g
-       transform="matrix(0.99666703,0,0,1,118.12036,89.520265)"
+       transform="matrix(0.99666703,0,0,1,118.12036,85.286673)"
        id="g6857-1-87-9-3"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-opacity:1">
       <path
@@ -419,7 +419,7 @@
     <g
        id="g7070-2"
        style="fill:#ffc600;fill-opacity:1;stroke:#ffc600;stroke-opacity:1"
-       transform="matrix(0.99666703,0,0,1,-16.3675,135.82272)">
+       transform="matrix(0.99666703,0,0,1,-16.3675,131.58875)">
       <path
          inkscape:connector-curvature="0"
          id="path7059-0"
@@ -505,25 +505,25 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.63503px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264142"
        x="73.413521"
-       y="285.46985"
+       y="282.30011"
        id="text7222-4"
        transform="scale(0.99833209,1.0016707)"><tspan
          sodipodi:role="line"
          id="tspan7230-2"
          x="73.413521"
-         y="285.46985"
+         y="282.30011"
          style="stroke-width:0.264142">Interm.-Low</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.63503px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264142"
        x="112.33607"
-       y="285.44785"
+       y="282.47388"
        id="text7226-4"
        transform="scale(0.99833209,1.0016707)"><tspan
          sodipodi:role="line"
          id="tspan7228-9"
          x="112.33607"
-         y="285.44785"
+         y="282.47388"
          style="stroke-width:0.264142">Interm.-High</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -571,20 +571,20 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="89.134987"
-       y="293.84274"
+       y="291.72604"
        id="text7222-7-8"><tspan
          sodipodi:role="line"
          id="tspan7230-4-4"
          x="89.134987"
-         y="293.84274">Updated SPAHR</tspan></text>
+         y="291.72604">Updated SPAHR</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.363;stroke-linejoin:bevel;marker-end:url(#Triangle)"
-       d="m 134.26483,291.1012 h 15.61042"
+       d="m 134.26483,289.51369 h 15.61042"
        id="path2"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.363;stroke-linejoin:bevel;marker-end:url(#Triangle-6)"
-       d="M 88.458041,291.1012 H 72.847621"
+       d="M 88.458041,289.51369 H 72.847621"
        id="path2-9"
        sodipodi:nodetypes="cc" />
   </g>
