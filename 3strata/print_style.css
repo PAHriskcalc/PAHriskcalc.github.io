@@ -27,9 +27,6 @@ tr {
   vertical-align: middle;
   padding-left: 10px;
 }
-.image-cell {
-
-}
 .meta-cell > .meta-text {
   -webkit-transform:rotate(-90deg);
 }

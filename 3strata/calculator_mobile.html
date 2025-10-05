@@ -6,9 +6,10 @@
 	<meta charset='UTF-8'/>
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="../utility/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../utility/style.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="style_mobile.css">
-	<link rel="stylesheet" media="print" href="print_style.css">
+ 	<script type="text/javascript" src="../utility/utility.js"></script>
  	<script type="text/javascript" src="RiskCalc.js"></script>
 </head>
 
@@ -22,12 +23,8 @@
 </header>
 
 <section class="resultbar">
-	<!--
-	<button class="reset-btn" onclick="printTable()">Print</button>
-	-->
-	<button class="reset-btn" onclick="copyData()">Copy</button>
-
 	<button class="reset-btn" onclick="resetCalc()">Reset</button>
+	<button class="reset-btn" onclick="goToStart()">Back</button>
 </section>
 
 
@@ -35,14 +32,6 @@
 
 	<table class="table table-bordered" id="mainTable" style="width:100%;border:2px solid black;margin-top: 60px">
 	
-	<!--
-	<tr>
-		<th></th>
-		<th style="width:150px"></th>
-		<th style="width:150px"></th>
-		<th style="width:150px"></th>
-	</tr>
-	-->
 	<tbody class="solid-border">
 	<tr class="title-row">
 		<th colspan="4">
@@ -57,9 +46,6 @@
 
 	<tbody class="solid-border">
 	<tr class="header-row">
-		<!--<th class="header-cell" rowspan="2">
-			Determinants of prognosis
-		</th>-->
 		<th class="header-cell" colspan="3">
 			Risk Group Corresponding to 1-year Mortality
 		</th>
@@ -198,6 +184,12 @@
 
 
 </section>
+
+<footer class="page-footer" style="min-height: 50px; margin-top: auto;">
+	<div class="footer-copyright text-center py-3">
+		Developed by Abdulla Ahmed, Daniel Kempe, Salaheldin Ahmed and Göran Rådegran
+	</div>
+</footer>
 
 
 </body>
