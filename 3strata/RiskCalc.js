@@ -523,17 +523,17 @@ function copyData() {
 
 function goTo3() {
 	if (screen.width <= 700) {
-		document.location = "RiskCalc_m.html";
+		document.location = "3strata/calculator_mobile.html";
 	} else {
-		document.location = "RiskCalc.html";
+		document.location = "3strata/calculator.html";
 	}
 }
 
 function goTo4() {
 	if (screen.width <= 700) {
-		document.location = "RiskCalc4_m.html";
+		document.location = "4strata/calculator_mobile.html";
 	} else {
-		document.location = "RiskCalc4.html";
+		document.location = "4strata/calculator.html";
 	}
 }
 

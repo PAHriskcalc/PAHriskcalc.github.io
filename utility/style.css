@@ -1,0 +1,254 @@
+:root {
+  --low-green: #c6e0b4;
+  --mid-yellow: #ffd966;
+  --frontpage-yellow:  #ffd961;
+  --frontpage-blue:  #17375e;
+  --mid-yellow-orange: #fbb84a;
+  --mid-orange: #f7972d;
+  --high-red: #ff5050;
+  --background-blue: #203764;
+  --highlight-blue: #3e6ca8;
+  --highlight-active: lightgrey;
+}
+/* title page style */
+.header-title {
+  justify-content: center;
+  border-bottom: 1px solid var(--frontpage-yellow);
+}
+.header-title > p {
+  font-size: 30pt;
+  font-weight: bold;
+}
+.header-title > small {
+  font-size: 22pt;
+}
+.footer-title {
+  border-top: 1px solid var(--frontpage-yellow);
+  padding-top: 10px;
+}
+/* title page style end */
+
+/* table styling start */
+table {
+  width: 1px;
+  height: 1px;
+  border-spacing: 0px;
+}
+tr {
+  height: 30px;
+}
+#mainTable {
+  width: 80%;
+  border: 2px solid black
+}
+.table > tbody > tr > th,
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
+.btn-row > .title-cell {
+  font-size: 14px;
+  font-weight: bold;
+  vertical-align: middle;
+  padding-left: 15px;
+  border-right: 2px solid black;
+}
+.result-row > .title-cell {
+  font-size: 14px;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+.image-cell {
+
+}
+.meta-cell {
+  max-width: 40px;
+  overflow: hidden;
+  text-align: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.meta-cell > .meta-text {
+  display: flex;
+  align-text: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-top: 10px;
+  -webkit-transform:rotate(-90deg);
+}
+.header-row > .header-cell {
+  font-size: 12px;
+  vertical-align: middle;
+  text-align: center;
+  /*border: 2px solid black;*/
+  border: none;
+}
+.title-row > th {
+  height: 40px;
+  font-size: 16px;
+  background-color: var(--background-blue);
+  color: white;
+  text-align: center;
+  border: 2px solid black;
+}
+.highlight-active > td, .highlight-active > td > label > .checkmark {
+  background-color: var(--highlight-active);
+}
+.result-row > .title-cell:hover {
+  background-color: var(--highlight-active);
+}
+.result-cell {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+.table > .solid-border{
+  border: 2px solid black;
+  border-collapse: collapse;
+  display: table-row-group;
+}
+/* table styling end */
+
+/* Style custom radio buttons */
+.radioButton {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+  cursor: pointer;
+  display: block;
+}
+.radioButton input {
+  position: absolute;
+  opacity:  0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  font-size: 10px;
+  padding: 0px;
+  margin: 0px;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.radioButton:hover input[value="1"] ~ .checkmark {
+  /*background-color: var(--low-green);*/
+  border: 3px solid var(--low-green);
+}
+.radioButton:hover input[value="2"] ~ .checkmark {
+  /*background-color: var(--mid-yellow);*/
+  border: 3px solid var(--mid-yellow);
+}
+.radioButton:hover input[value="3"] ~ .checkmark {
+  /*background-color: var(--high-red);*/
+  border: 3px solid var(--high-red);
+}
+.btn-cell input[value="1"]:checked ~ .checkmark {
+  background-color: var(--low-green);
+  font-weight: bold;
+}
+.btn-cell input[value="2"]:checked ~ .checkmark {
+  background-color: var(--mid-yellow);
+  font-weight: bold;
+}
+.btn-cell input[value="3"]:checked ~ .checkmark {
+  background-color: var(--high-red);
+  font-weight: bold;
+}
+.radioButton:hover input:checked ~ .checkmark {
+  /*background-color: white;*/
+  border: 3px solid white;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* End of Radio button style */
+
+
+/* Style of sidebar with results */
+.resultbar {
+  position: fixed;
+  float: left;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  margin: 80px;
+}
+.reset-btn {
+  height: 60px;
+  width: 180px;
+  font-size: 18px;
+  color: white;
+  background-color: var(--background-blue);
+  margin-top: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reset-btn:hover {
+  background-color: var(--highlight-blue);
+}
+.nav-btn {
+  height: 80px;
+  width: 300px;
+  font-size: 30px;
+  border-radius: 15px;
+  color: var(--frontpage-blue);
+  background-color: var(--frontpage-yellow);
+  margin-top: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-btn:hover {
+  background-color: var(--mid-yellow-orange);
+}
+/* End of sidebar style */
+
+/* Collapsible content */
+.collapsible {
+  color: white;
+  background-color: var(--background-blue);
+  cursor: pointer;
+  width: 80%;
+  border: none;
+  text-align: center;
+  font-size: 18px;
+}
+.collapsible_open, .collapsible:hover {
+  background-color: var(--highlight-blue);
+}
+.collapsible-content {
+  background-color: white;
+  width: 80%;
+  /*display: block;*/
+  overflow: hidden;
+  padding: 0px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+  max-height: 0px;
+  transition: max-height 0.2s ease-out;
+}
+/* End of collapsible */
+
+.image-svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
