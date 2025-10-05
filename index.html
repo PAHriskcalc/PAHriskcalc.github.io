@@ -10,33 +10,6 @@
 	<script type="text/javascript" src="utility/utility.js"></script>
 </head>
 
-<script type="text/javascript">
-	function go3Strata() {
-		if (screen.width <= 800) {
-			document.location = "3strata/calculator_mobile.html";
-		} else {
-			document.location = "3strata/calculator.html";
-		}
-	}
-
-	function go4Strata() {
-		if (screen.width <= 800) {
-			document.location = "4strata/calculator_mobile.html";
-		} else {
-			document.location = "4strata/calculator.html";
-		}
-	}
-
-	function goREVEAL() {
-		if (screen.width <= 800) {
-			document.location = "reveal/calculator_mobile.html";
-		} else {
-			document.location = "reveal/calculator.html";
-		}
-	}
-</script>
-
-
 <body
 	style="display: flex;flex-direction: column;justify-content: center;align-items: center; padding-top: 10px; background-color: var(--frontpage-blue); height: 100vh;">
 
@@ -58,18 +31,18 @@
 
 			<tr style="display: flex;justify-content: center;align-items: center; padding-top: 50px;">
 				<th>
-					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="go3Strata()">
+					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="goTo3Strata()">
 						ESC/ERS 3-Strata
 					</button>
 				</th>
 				<th>
-					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="go4Strata()">
+					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="goTo4Strata()">
 						ESC/ERS 4-Strata
 					</button>
 
 				</th>
 				<th>
-					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="goREVEAL()">
+					<button style="margin-top: 10px;margin: 50px;" class="nav-btn" onclick="goToREVEAL()">
 						REVEAL 2.0/Lite 2
 					</button>
 

@@ -521,22 +521,6 @@ function copyData() {
 	navigator.clipboard.writeText(copyStr);
 }
 
-function goTo3() {
-	if (screen.width <= 700) {
-		document.location = "3strata/calculator_mobile.html";
-	} else {
-		document.location = "3strata/calculator.html";
-	}
-}
-
-function goTo4() {
-	if (screen.width <= 700) {
-		document.location = "4strata/calculator_mobile.html";
-	} else {
-		document.location = "4strata/calculator.html";
-	}
-}
-
 function createButton(name, value, btn_text) {
 	// Creates cell for button
 	var cell = document.createElement("TD")
