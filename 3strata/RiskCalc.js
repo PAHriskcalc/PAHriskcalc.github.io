@@ -442,27 +442,6 @@ function highlightParam_f(id = null) {
 	}
 }
 
-function collapseContent(btn) {
-	btn.classList.toggle("collapsible_open");
-	var content = btn.nextElementSibling;
-	/*
-	if (content.style.display === "none") {
-		content.style.display = "block";
-
-	} else {
-		content.style.display = "none";
-	}
-	*/
-	//console.log(content.style.maxHeight);
-	if (content.style.maxHeight) {
-		content.style.maxHeight = null;
-		//console.log("Closed collapsible!");
-	} else {
-		content.style.maxHeight = content.scrollHeight + "px";
-		//console.log(`Opened collapsible! ${content.scrollHeight}`);
-	}
-}
-
 function resetCalc() {
 
 	for (let i = 0; i < numOfParams; i++) {
