@@ -5,17 +5,13 @@
 	<title>PAH Risk Calculator</title>
 	<meta charset='UTF-8' />
 	<meta name="viewport" content="width=device-width, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="RiskCalc.css">
-	<link rel="stylesheet" media="print" href="RiskCalc_print.css">
+	<link rel="stylesheet" type="text/css" href="../utility/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../utility/style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" media="print" href="print_style.css">
+	<script type="text/javascript" src="../utility/utility.js"></script>
 	<script type="text/javascript" src="RiskCalc.js"></script>
 </head>
-
-<script type="text/javascript">
-	function goBack() {
-		document.location = "index.html";
-	}
-</script>
 
 <body onload="createTable()">
 
@@ -28,18 +24,16 @@
 
 	<section class="resultbar">
 		<!--
-	<button class="reset-btn" onclick="copyData()">Copy to Clipboard</button>
-	-->
+		<button class="reset-btn" onclick="copyData()">Copy to Clipboard</button>
+		-->
 
 		<!--
-	<button class="reset-btn" onclick="window.print()">Print</button>
-	-->
+		<button class="reset-btn" onclick="window.print()">Print</button>
+		-->
 
 		<button class="reset-btn" onclick="resetCalc()">Reset</button>
 
-		<!-- <button class="reset-btn" onclick="goTo4()">View 4-strata model</button> -->
-
-		<button class="reset-btn" onclick="goBack()">Back</button>
+		<button class="reset-btn" onclick="goToStart()">Back</button>
 	</section>
 
 
@@ -64,10 +58,6 @@
 						<small>Select the available risk category for each parameter</small>
 					</th>
 				</tr>
-				<!--<tr class="title-row">
-		<th colspan="2" onclick="goTo3()" style="background: var(--highlight-blue);border-top: none;">3 Strata Model</th>
-		<th colspan="3" onclick="goTo4()" style="border-top: none;">4 Strata Model</th>
-	</tr>-->
 			</tbody>
 
 			<tbody class="solid-border">
@@ -118,7 +108,7 @@
 					SPAHR-equation derived risk scores
 				</th>
 				<td colspan="2" rowspan="4" class="image-cell">
-					<object data="int-key-4scale.svg" class="image-svg" width="100%" height="100%"></object>
+					<object data="img/int-key-4scale.svg" class="image-svg" width="100%" height="100%"></object>
 				</td>
 			</tr>
 

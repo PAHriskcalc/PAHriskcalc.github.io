@@ -5,10 +5,11 @@
 	<title>PAH Risk Calculator</title>
 	<meta charset='UTF-8'/>
 	<meta name="viewport" content="width=device-width, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="RiskCalc_m.css">
-	<link rel="stylesheet" media="print" href="RiskCalc_print.css">
- 	<script type="text/javascript" src="RiskCalc.js"></script>
+	<link rel="stylesheet" type="text/css" href="../utility/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style_mobile.css">
+	<link rel="stylesheet" media="print" href="print_style.css">
+ 	<script type="text/javascript" src="RiskCalc4.js"></script>
 </head>
 
 <body onload="createTable_m()">
@@ -21,14 +22,13 @@
 </header>
 
 <section class="resultbar">
-	<!--
-	<button class="reset-btn" onclick="printTable()">Print</button>
-	-->
-	<button class="reset-btn" onclick="copyData()">Copy</button>
 
+	<button class="reset-btn" onclick="copyData()">Copy</button>
+	<!--
+	<button class="reset-btn" onclick="window.print()">Print</button>
+	-->
 	<button class="reset-btn" onclick="resetCalc()">Reset</button>
 
-	<!-- <button class="reset-btn" onclick="goTo4()">View 4-strata</button> -->
 </section>
 
 
@@ -47,104 +47,73 @@
 	<tbody class="solid-border">
 	<tr class="title-row">
 		<th colspan="4">
-		Pulmonary Arterial Hypertension <br>Risk Score Calculator - 3 Strata Model
+		Pulmonary Arterial Hypertension <br>Risk Score Calculator - 4 Strata Model
 		<br>
 		<small style="font-size: 14px;">Select the available risk category for each parameter</small><br>
 		<small style="font-size: 11px;">Developed by:<br> Abdulla Ahmed, Daniel Kempe, Salaheldin Ahmed and Göran Rådegran</small>
-		</th>
 		</th>
 	</tr>
 	</tbody>
 
 	<tbody class="solid-border">
 	<tr class="header-row">
-		<!--<th class="header-cell" rowspan="2">
+		<!--<th class="header-cell" colspan="1" rowspan="3" style="border: 2px solid black;">
 			Determinants of prognosis
 		</th>-->
-		<th class="header-cell" colspan="3">
+		<th class="header-cell" colspan="4" style="border: 2px solid black;">
 			Risk Group Corresponding to 1-year Mortality
 		</th>
 	</tr>
 
 	<tr class="header-row">
-		<th class="header-cell" style="width:32%;background-color: var(--low-green);">Low risk (<5%)</th>
-		<th class="header-cell" style="width:32%;background-color: var(--mid-yellow);">Intermediate risk (5-20%)</th>
-		<th class="header-cell" style="width:32%;background-color: var(--high-red);">High risk (>20%)</th>
+		<th class="header-cell" rowspan="2" style="width:25%;background-color: var(--low-green);">Low risk (<5%)</th>
+		<th class="header-cell" colspan="2" style="background: linear-gradient(to right, var(--mid-yellow), var(--mid-yellow-orange), var(--mid-orange));">Intermediete risk (5-20%)</th>
+		<th class="header-cell" rowspan="2" style="width:25%;background-color: var(--high-red);">High risk (>20%)</th>
 	</tr>
-	</tbody>
+	<tr class="header-row">
+		<th class="header-cell" style="width:25%;background: linear-gradient(to right, var(--mid-yellow), var(--mid-yellow-orange));;">Intermediate-Low</th>
+		<th class="header-cell" style="width:25%;background: linear-gradient(to right, var(--mid-yellow-orange), var(--mid-orange));;">Intermediate-High</th>
+	</tr>
+		</tbody>
 
-	<!-- Start of rows of parameters -->
-	<!-- Section 1 start -->
+
+	<!-- Parameters go here -->
 	<tbody class="solid-border" id="misc">
 	</tbody>
-	<!-- End of rows of parameters -->
+
 
 	<!-- Start of result section -->
 	<tr class="title-row">
-		<th colspan="3">
-			Calculated Risk Scores <sup>1-7</sup>
+		<th colspan="4">
+			Calculated ESC/ERS Risk Score<sup>1-7</sup>
 		</th>
 	</tr>
 
 	<tr class="header-row">
+		<th class="header-cell">N</th>
 		<th class="header-cell" colspan="2">Risk Assesment Strategy</th>
 		<th class="header-cell">Risk Score</th>
+		<!--<th class="header-cell" colspan="2">Key for Interpretation</th>-->
 	</tr>
 
 	<tr class="title-row">
-		<th colspan="3">
-		SPAHR-equation derived risk scores
+		<th colspan="4">
+		SPAHR-equation derived risk score
 		</th>
+		<!--<td colspan="2" rowspan="5" class="image-cell">
+			<object data="interpretation-key.svg" class="image-svg" width="100%" height="100%"></object>
+		</td>-->
 	</tr>
 
-	<tr>
-		<td colspan="2">Extended<small>(using all available parameters above in SPAHR equation)</small></td>
-		<td class="result-cell" id="result_Full">Use &geq; 3 parameters</td>
-	</tr>
 
-	<tr>
-		<td colspan="2">SPAHR-Kylhammar<small>(up to 8 determinats of prognosis)</small></td>
-		<td class="result-cell" id="result_SPAHR">Use &geq; 3 parameters</td>
-	</tr>
-
-	<tr>
-		<td colspan="2">COMPERA<small>(up to 6 parameters, without RA and pericardial effusion)</small></td>
+	<tr class="result-row">
+		<td class="result-cell" id="result_Compera_count">0/3</td>
+		<td class="title-cell" colspan="2" onmouseenter="highlightParam('result_Compera')" onmouseout="highlightParam()">
+			COMPERA 2.0 <small> (each variable is graded from 1-4 corresponding to low risk - high risk, respectively. <br>The mean is rounded to the nearest integer) </small>				
+		</td>
 		<td class="result-cell" id="result_Compera">Use &geq; 3 parameters</td>
 	</tr>
-
-	<tr>
-		<td style="text-align: center;">
-			Key for interpretation
-		</td>
-		<td colspan="2">
-			<object data="int-key-4scale.svg" class="image-svg" width="100%" height="100%"></object>
-		</td>
-	</tr>
-
-	<tr class="title-row">
-		<th colspan="3">
-		French strategy - number of low-risk parameters
-		</th>
-	</tr>
-
-	<tr>
-		<td colspan="2">French invasive<small>(WHO-FC, 6MWD, RAP, CI)</small></td>
-		<td class="result-cell" id="result_french1">1.0</td>
-	</tr>
-
-	<tr>
-		<td colspan="2">French non-invasive<small>(WHO-FC, 6MWD, BNP/NT-proBNP)</small></td>
-		<td class="result-cell" id="result_french2">1.0</td>
-	</tr>
-
-	<tr>
-		<td style="text-align: center;">
-			Key for interpretation
-		</td>
-		<td colspan="2">
-			<object data="int-key-french.svg" class="image-svg" width="100%" height="100%"></object>
-		</td>
-	</tr>
+	
 	</table>
 
 	<!-- Collapsible enviroment with extra information -->
@@ -172,16 +141,13 @@
 		</li>		
 	</ul>
 	*<small>Note that if both NT-proBNP and BNP are selected, only NT-proBNP will be included in the calculated risk score.</small>
-	<br>
-	¤<small>Indicates the parameters used in the SPAHR-Kylhammar equation. In COMPERA, RA area and pericardial effusion are not included.</small>
 	</div>
 
 	<!-- Collapsible enviroment with article references -->
-	<button class="collapsible"  onclick="collapseContent(this)">References</button>
+	<button class="collapsible"  onclick="collapseContent(this)">Click to show References</button>
 	<div id="ref" class="collapsible-content">
 	<ol>
 		<li>Galiè N, Humbert M, Vachiery J-L, Gibbs S, Lang I, Torbicki A, Simonneau G, Peacock A, Vonk Noordegraaf A, Beghetti M, Ghofrani A, Gomez Sanchez MA, Hansmann G, Klepetko W, Lancellotti P, Matucci M, McDonagh T, Pierard LA, Trindade PT, Zompatori M, Hoeper M. 2015 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary hypertension. European Respiratory Journal 2015: 46(4): 903.</li>
-		
 		<li>Kylhammar D, Kjellström B, Hjalmarsson C, Jansson K, Nisell M, Söderberg S, Wikström G, Rådegran G. A comprehensive risk stratification at early follow-up determines prognosis in pulmonary arterial hypertension. Eur Heart J 2018 (first published June 01, 2017): 39(47): 4175-4181.</li>
 		
 		<li>Hoeper MM, Kramer T, Pan Z, Eichstaedt CA, Spiesshoefer J, Benjamin N, Olsson KM, Meyer K, Vizza CD, Vonk-Noordegraaf A, Distler O, Opitz C, Gibbs JSR, Delcroix M, Ghofrani HA, Huscher D, Pittrow D, Rosenkranz S, Grünig E. Mortality in pulmonary arterial hypertension: Prediction by the 2015 European pulmonary hypertension guidelines risk stratification model. European Respiratory Journal 2017 (published August 03, 2017): 50(2).</li>
@@ -196,7 +162,6 @@
 		<li>Ahmed A, Ahmed S, Kempe D, Rådegran G. Evaluation of the European Society of Crdiology-/European Respiratory Society-derived three- and four-strata risk stratification models in pulmonary arterial hypertension: introducing an internet-based risk stratification calculator, <i>European Heart Journal Open,</i>2023.</li>
 	</ol>
 	</div>
-
 
 </section>
 

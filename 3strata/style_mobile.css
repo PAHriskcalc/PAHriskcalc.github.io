@@ -1,0 +1,92 @@
+@import "../utility/color.css";
+
+tr {
+  height: 40px;
+}
+.table > tbody > tr > th,
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
+.btn-row > .title-cell {
+  vertical-align: middle;
+  padding-left: 15px;
+  border-right: 2px solid black;
+}
+.title-cell {
+  font-size: 16px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding-left: 10px;
+}
+.header-row > .header-cell {
+  vertical-align: middle;
+  text-align: center;
+  border: 2px solid black;
+}
+.title-row > th {
+  height: 60px;
+  font-size: 20px;
+  background-color: var(--background-blue);
+  color: white;
+  text-align: center;
+  border: 2px solid black;
+}
+.result-cell {
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+.table > .solid-border{
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+/* table styling end */
+
+/* End of Radio button style */
+
+
+/* Style of sidebar with results */
+.resultbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  margin-bottom: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+}
+.reset-btn {
+  height: 40px;
+  width: 30%;
+  font-size: 14px;
+  color: white;
+  background-color: var(--background-blue);
+  margin: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*.reset-btn:hover {
+  background-color: var(--highlight-blue);
+}*/
+/* End of sidebar style */
+
+/* Collapsible content */
+.collapsible {
+  color: white;
+  background-color: var(--background-blue);
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: center;
+  font-size: 24px;
+}
+.collapsible_open {
+  background-color: var(--highlight-blue);
+}
