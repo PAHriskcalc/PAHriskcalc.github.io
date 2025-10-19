@@ -220,7 +220,8 @@ tr {
   color: var(--frontpage-blue);
   font-weight: bold;
   background-color: var(--frontpage-yellow);
-  margin-top: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   display: flex;
   justify-content: center;

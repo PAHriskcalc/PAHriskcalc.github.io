@@ -12,32 +12,34 @@
 
 <body class = "body-title">
 
-	<header class="page-header text-center header-title">
-		<p>Pulmonary Arterial Hypertension Risk Score Calculators</p>
-		<br>
-		<small>Based on ESC/ERS PH guidelines, WSPH 2024 proceedings, and the ISHLT 2024 consensus document</small>
+	<header>
+		<div class="page-header text-center header-title">
+			<p>Pulmonary Arterial Hypertension Risk Score Calculators</p>
+
+			<small>Based on ESC/ERS PH guidelines, WSPH 2024 proceedings, and the ISHLT 2024 consensus document</small>
+		</div>
 	</header>
 
-	<section style="font-size: 30px;display: flex;justify-content: center;align-items: center; margin-top: 25px;">
-		<p>
-			Click on buttons below to select the desired model for risk score calculation
-		</p>
-	</section>
-
 	<div class="container-fluid">
+		<div class="text-center">
+			<p style="font-size: 30px;">
+				Click on buttons below to select the desired model for risk score calculation
+			</p>
+		</div>
+
 		<div class="row">
 			<div class="col-md-4">
-				<button style="margin-top: 10px;margin: 40px;" class="nav-btn" onclick="goTo3Strata()">
+				<button style="margin-top: 10px;margin: 20px;" class="nav-btn" onclick="goTo3Strata()">
 					ESC/ERS 3-Strata
 				</button>
 			</div>
 			<div class="col-md-4">
-				<button style="margin-top: 10px;margin: 40px;" class="nav-btn" onclick="goTo4Strata()">
+				<button style="margin-top: 10px;margin: 20px;" class="nav-btn" onclick="goTo4Strata()">
 					ESC/ERS 4-Strata
 				</button>
 			</div>
 			<div class="col-md-4">
-				<button style="margin-top: 10px;margin: 40px;" class="nav-btn" onclick="goToREVEAL()">
+				<button style="margin-top: 10px;margin: 20px;" class="nav-btn" onclick="goToREVEAL()">
 					REVEAL 2.0/Lite 2
 				</button>
 			</div>
@@ -46,7 +48,8 @@
 
 	<br>
 
-	<section class="image" , style="display: flex;justify-content: center; align-items: center; font-size: 8px;">
+	<section class="image" , 
+		style="display: flex;justify-content: center; align-items: center; font-size: 8px; margin: 20px;">
 		<object data="landing/img/heart-lung.svg" class="image-svg" width="125%" height="125%"></object>
 	</section>
 	<br>
