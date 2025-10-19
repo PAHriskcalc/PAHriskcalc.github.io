@@ -175,7 +175,11 @@ function updateRisk() {
 
 	for (let i = 0; i < numOfRisks; i++) {
 		//Set param count for each risk
-		document.getElementById(riskID[i] + "_count").innerHTML = `${paramCount[i]}/${paramTotal[i]}`;
+		counter_element = document.getElementById(riskID[i] + "_count");
+		if (counter_element) {
+			counter_element.innerHTML = `${paramCount[i]}/${paramTotal[i]}`;
+		}
+		// document.getElementById(riskID[i] + "_count").innerHTML = `${paramCount[i]}/${paramTotal[i]}`;
 		if (riskValue[i] && paramCount[i] >= paramMin[i]) {
 			const riskRate = ["&nbsp;<small>(Low risk)</small>", "&nbsp;<small>(Intermediate risk)</small>", "&nbsp;<small>(High risk)</small>"];
 
@@ -458,11 +462,12 @@ function createTable() {
 		document.getElementById(meta_id).appendChild(row);
 	}
 }
-function createTable_m() {
+function createTable_mobile() {
 	let groups = ["misc"];
 	let groupCount = { misc: 0 };
 	var group_id;
 	const max_btns = 6;
+	const max_col = 4;
 	for (let i = 0; i < numOfParams; i++) {
 		if (group_id = params[i].group) {
 			if (groupCount[group_id]) {
@@ -490,7 +495,7 @@ function createTable_m() {
 				var title_row = document.createElement("TR");
 				title_row.setAttribute("class", "btn-row");
 				var title_cell = createTitleCell(groupTitle[group_id]);
-				title_cell.setAttribute("colspan", max_btns);
+				title_cell.setAttribute("colspan", max_col);
 				title_row.appendChild(title_cell);
 			}
 		} else {
@@ -504,13 +509,15 @@ function createTable_m() {
 			var title_row = document.createElement("TR");
 			title_row.setAttribute("class", "btn-row");
 			var title_cell = createTitleCell(param.title);
-			title_cell.setAttribute("colspan", max_btns);
+			title_cell.setAttribute("colspan", max_col);
 			title_row.appendChild(title_cell);
 		}
 
 		for (let j = 0; j < max_btns; j++) {
-			btnCell = createButton(params[i].name, params[i].value[j], params[i].btnText[j]);
-			btn_row.appendChild(btnCell);
+			if(!Number.isNaN(params[i].value[j])) {
+				btnCell = createButton(params[i].name, params[i].value[j], params[i].btnText[j]);
+				btn_row.appendChild(btnCell);
+			}
 		}
 		if (title_row) {
 			document.getElementById(group_id).appendChild(title_row);
