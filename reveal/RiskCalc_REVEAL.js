@@ -349,6 +349,7 @@ function createButton(name, value, btn_text) {
 function createTitleCell(title, span = 1) {
 	var title_cell = document.createElement("TD");
 	title_cell.setAttribute("class", "title-cell");
+	title_cell.setAttribute("colspan", 2);
 	title_cell.innerHTML = title;
 	if (span > 1) {
 		title_cell.setAttribute("rowspan", span);
@@ -420,22 +421,22 @@ function createTable() {
 		/*
 			If "misc" is the only meta group, don't create the meta-titles.
 		*/
-		if (metaGroupCount[meta_id] > 0) {
-			// Create cell for meta title with rowspan equal to meta count.
-			var meta_cell = document.createElement("TD");
-			meta_cell.setAttribute("class", "meta-cell");
-			meta_cell.setAttribute("style", "border-right: 2px solid black");
-			meta_cell.setAttribute("rowspan", metaGroupCount[meta_id]);
-			if (meta_id = "misc") {
-				meta_cell.style.backgroundColor = "var(--background-blue";
-				meta_cell.innerHTML = `<p class="meta-text"></p>`;
-			} else {
-				meta_cell.innerHTML = `<p class="meta-text">${metaGroupTitle[meta_id]}</p>`;
-			}
-			row.appendChild(meta_cell);
-			// Set counter for meta group to 0.
-			metaGroupCount[meta_id] = 0;
-		}
+		// if (metaGroupCount[meta_id] > 0) {
+		// 	// Create cell for meta title with rowspan equal to meta count.
+		// 	var meta_cell = document.createElement("TD");
+		// 	meta_cell.setAttribute("class", "meta-cell");
+		// 	meta_cell.setAttribute("style", "border-right: 2px solid black");
+		// 	meta_cell.setAttribute("rowspan", metaGroupCount[meta_id]);
+		// 	if (meta_id = "misc") {
+		// 		meta_cell.style.backgroundColor = "var(--background-blue";
+		// 		meta_cell.innerHTML = `<p class="meta-text"></p>`;
+		// 	} else {
+		// 		meta_cell.innerHTML = `<p class="meta-text">${metaGroupTitle[meta_id]}</p>`;
+		// 	}
+		// 	row.appendChild(meta_cell);
+		// 	// Set counter for meta group to 0.
+		// 	metaGroupCount[meta_id] = 0;
+		// }
 
 		// Check if group title cell or individual title cell should be appended.
 		if (group_id = params[i].group) {

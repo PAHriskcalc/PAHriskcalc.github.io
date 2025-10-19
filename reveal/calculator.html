@@ -41,14 +41,18 @@
 
 	<table class="table table-bordered" id="mainTable">
 	
-	<!--
-	<tr>
-		<th></th>
-		<th style="width:150px"></th>
-		<th style="width:150px"></th>
-		<th style="width:150px"></th>
+	<!-- Hidden row to set column size -->
+	<tr style="height: 0px;">
+		<th style="width: 7%"></th>
+		<th style="width: 33%"></th>
+		<th style="width: 10%"></th>
+		<th style="width: 10%"></th>
+		<th style="width: 10%"></th>
+		<th style="width: 10%"></th>
+		<th style="width: 10%"></th>
+		<th style="width: 10%"></th>
 	</tr>
-	-->
+	
 	<tbody class="solid-border">
 	<tr class="title-row">
 		<th colspan="8">
@@ -58,7 +62,6 @@
 		  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
 		</svg>-->
 		<br>
-		<!--<small>Developed by Abdulla Ahmed, Daniel Kempe, Salaheldin Ahmed and Göran Rådegran</small><br>-->
 		Select the available value for each parameter
 		</th>
 	</tr>
@@ -118,15 +121,6 @@
 		<th class="header-cell" colspan="3">Key for Interpretation</th>
 	</tr>
 
-	<!-- <tr class="title-row">
-		<th colspan="6">
-		SPAHR-equation derived risk score
-		</th>
-		<td colspan="2" rowspan="2" class="image-cell">
-			<object data="interpretation-key.svg" class="image-svg" width="100%" height="100%"></object>
-		</td>
-	</tr> -->
-
 	<!-- REVEAL Score -->
 	<tr class="result-row">
 		<td class="result-cell" id="result_REVEAL_count">0/14</td>
@@ -137,8 +131,16 @@
 		</td>
 		<td class="result-cell" id="result_REVEAL">Use &GreaterEqual;&nbsp;7 parameters</td>
 
-		<td colspan="4" rowspan="2">
-			EMTPY -> INFO IMAGE
+		<td colspan="4" rowspan="1">
+			<p style="color: var(--low-green); padding:0%; margin: 0%;">
+				Low risk score < 7 points
+			</p>
+			<p style="color: var(--mid-yellow-orange); padding:0%; margin: 0%;">
+				Intermediate risk score: 7-8 points
+			</p>
+			<p style="color: var(--high-red); padding:0%; margin: 0%;">
+				High risk score > 9 points
+			</p>
 		</td>
 	</tr>
 	
@@ -152,6 +154,18 @@
 			(parameters marked <span style="color: orange;">&#9679</span>)
 		</td>
 		<td class="result-cell" id="result_REVEAL_Lite">Use &GreaterEqual;&nbsp;3 parameters</td>
+
+		<td colspan="4" rowspan="1">
+			<p style="color: var(--low-green); padding:0%; margin: 0%;">
+				Low risk score < 6 points
+			</p>
+			<p style="color: var(--mid-yellow-orange); padding:0%; margin: 0%;">
+				Intermediate risk score: 6-7 points
+			</p>
+			<p style="color: var(--high-red); padding:0%; margin: 0%;">
+				High risk score > 8 
+			</p>
+		</td>
 	</tr>
 	
 	</table>
