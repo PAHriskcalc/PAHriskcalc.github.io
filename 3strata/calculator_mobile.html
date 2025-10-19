@@ -15,19 +15,6 @@
 
 <body onload="createTable_m()">
 
-<header class="container">
-	<div class="row">
-		<nav class="col-xs-8 text-right">
-		</nav>
-	</div>
-</header>
-
-<section class="resultbar">
-	<button class="reset-btn" onclick="resetCalc()">Reset</button>
-	<button class="reset-btn" onclick="goToStart()">Back</button>
-</section>
-
-
 <section class="container">
 
 	<table class="table table-bordered" id="mainTable" style="width:100%;border:2px solid black;margin-top: 60px">
@@ -129,6 +116,18 @@
 		</td>
 	</tr>
 	</table>
+
+	<!-- Reset and Return buttons -->
+	<header class="container">
+		<div class="row text-center">
+			<div class="col-sm-6">
+				<button class="reset-btn" onclick="resetCalc()">Reset</button>
+			</div>
+			<div class="col-sm-6"></divclass>
+				<button class="reset-btn" onclick="goToStart()">Back</button>
+			</div>
+		</div>
+	</header>
 
 	<!-- Collapsible enviroment with extra information -->
 	<button class="collapsible"  onclick="collapseContent(this)">Additional Information</button>

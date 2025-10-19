@@ -4,54 +4,52 @@
 <head>
 	<title>PAH Risk Calculator</title>
 	<meta charset='UTF-8' />
-	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="utility/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="utility/style.css">
 	<script type="text/javascript" src="utility/utility.js"></script>
 </head>
 
-<header class="page-header text-center header-title" , style="color: var(--frontpage-yellow); min-height: 50px; margin-bottom: 25px">
-	<p>Pulmonary Arterial Hypertension Risk Score Calculators</p>
-	<br>
-	<small>Based on ESC/ERS PH guidelines, WSPH 2024 proceedings, and the ISHLT 2024 consensus document</small>
-</header>
+<body class = "body-title">
 
-<body
-	style="display: flex;flex-direction: column;justify-content: center;align-items: center; padding-top: 10px; padding-bottom: 10px; background-color: var(--frontpage-blue); height: 100vh;">
+	<header>
+		<div class="page-header text-center header-title">
+			<p>Pulmonary Arterial Hypertension Risk Score Calculators</p>
 
-	<section style="font-size: 30px;display: flex;justify-content: center;align-items: center; margin-top: 25px;">
-		<p style="color: var(--frontpage-yellow);">
-			Click on buttons below to select the desired model for risk score calculation
-		</p>
-	</section>
+			<small>Based on ESC/ERS PH guidelines, WSPH 2024 proceedings, and the ISHLT 2024 consensus document</small>
+		</div>
+	</header>
 
-	<section class="button-row" , style="display: flex;justify-content: center;align-items: center; margin-bottom: 150px; margin-top: 25px;">
-		<table style="width: 80%">
+	<div class="container-fluid">
+		<div class="text-center">
+			<p style="font-size: 30px;">
+				Click on buttons below to select the desired model for risk score calculation
+			</p>
+		</div>
 
-			<tr style="display: flex;flex-direction: row;justify-content: center;align-items: center; padding-top: 50px;">
-				<th>
-					<button style="margin-top: 10px;margin: 40px;" class="nav-btn" onclick="goTo3Strata()">
-						ESC/ERS 3-Strata
-					</button>
-				</th>
-				<th>
-					<button style="margin-top: 10px;margin: 40px;" class="nav-btn" onclick="goTo4Strata()">
-						ESC/ERS 4-Strata
-					</button>
+		<div class="row">
+			<div class="col-md-4">
+				<button style="margin-top: 10px;margin: 20px;" class="nav-btn" onclick="goTo3Strata()">
+					ESC/ERS 3-Strata
+				</button>
+			</div>
+			<div class="col-md-4">
+				<button style="margin-top: 10px;margin: 20px;" class="nav-btn" onclick="goTo4Strata()">
+					ESC/ERS 4-Strata
+				</button>
+			</div>
+			<div class="col-md-4">
+				<button style="margin-top: 10px;margin: 20px;" class="nav-btn" onclick="goToREVEAL()">
+					REVEAL 2.0/Lite 2
+				</button>
+			</div>
+		</div>
+	</div>
 
-				</th>
-				<th>
-					<button style="margin-top: 10px;margin: 40px;" class="nav-btn" onclick="goToREVEAL()">
-						REVEAL 2.0/Lite 2
-					</button>
-
-				</th>
-			</tr>
-		</table>
-	</section>
 	<br>
 
-	<section class="image" , style="display: flex;justify-content: center; align-items: center; font-size: 8px;">
+	<section class="image" , 
+		style="display: flex;justify-content: center; align-items: center; font-size: 8px; margin: 20px;">
 		<object data="landing/img/heart-lung.svg" class="image-svg" width="125%" height="125%"></object>
 	</section>
 	<br>

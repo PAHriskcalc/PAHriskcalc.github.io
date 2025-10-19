@@ -1,46 +1,4 @@
-@import "color.css";
-/* title page style */
-.header-title {
-  justify-content: center;
-  border-bottom: 1px solid var(--frontpage-yellow);
-  color: var(--frontpage-yellow);
-  min-height: 50px;
-  margin-bottom: 25px;
-  width: 90vw;
-}
-.header-title > p {
-  font-size: 30pt;
-  font-weight: bold;
-}
-.header-title > small {
-  font-size: 22pt;
-}
-.body-title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 25px;
-  background-color: var(--frontpage-blue);
-  height: 100vh;
-  /* width: 80vw; */
-  color: var(--frontpage-yellow);
-}
-.button-row {
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 150px;
-  margin-top: 25px;
-}
-.footer-title {
-  border-top: 1px solid var(--frontpage-yellow);
-  padding-top: 10px;
-}
-/* title page style end */
-
+@import "../utility/color.css";
 /* table styling start */
 table {
   width: 1px;
@@ -48,10 +6,10 @@ table {
   border-spacing: 0px;
 }
 tr {
-  height: 30px;
+  height: 25px;
 }
 #mainTable {
-  width: 80%;
+  width: 100%;
   border: 2px solid black
 }
 .table > tbody > tr > th,
@@ -59,52 +17,31 @@ tr {
   vertical-align: middle;
 }
 .btn-row > .title-cell {
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 10px;
   vertical-align: middle;
-  padding-left: 15px;
+  padding-left: 10px;
   border-right: 2px solid black;
 }
 .result-row > .title-cell {
-  font-size: 14px;
+  font-size: 12px;
   vertical-align: middle;
   padding-left: 10px;
 }
-.meta-cell {
-  max-width: 40px;
-  overflow: hidden;
-  text-align: center;
-  justify-content: center;
-  font-weight: bold;
-}
 .meta-cell > .meta-text {
-  display: flex;
-  align-text: center;
-  justify-content: center;
-  font-size: 12px;
-  margin-top: 10px;
   -webkit-transform:rotate(-90deg);
 }
 .header-row > .header-cell {
-  font-size: 12px;
   vertical-align: middle;
   text-align: center;
-  /*border: 2px solid black;*/
-  border: none;
+  border: 2px solid black;
 }
 .title-row > th {
   height: 40px;
-  font-size: 16px;
+  font-size: 14px;
   background-color: var(--background-blue);
   color: white;
   text-align: center;
   border: 2px solid black;
-}
-.highlight-active > td, .highlight-active > td > label > .checkmark {
-  background-color: var(--highlight-active);
-}
-.result-row > .title-cell:hover {
-  background-color: var(--highlight-active);
 }
 .result-cell {
   font-size: 14px;
@@ -189,6 +126,7 @@ tr {
 
 /* Style of sidebar with results */
 .resultbar {
+  visibility: hidden;
   position: fixed;
   float: left;
   z-index: 1;
@@ -212,52 +150,19 @@ tr {
 .reset-btn:hover {
   background-color: var(--highlight-blue);
 }
-.nav-btn {
-  height: 80px;
-  width: 300px;
-  font-size: 30px;
-  border-radius: 15px;
-  color: var(--frontpage-blue);
-  font-weight: bold;
-  background-color: var(--frontpage-yellow);
-  margin-top: 10px;
-  margin-bottom: 10px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.nav-btn:hover {
-  background-color: var(--mid-yellow-orange);
-}
 /* End of sidebar style */
 
 /* Collapsible content */
 .collapsible {
-  color: white;
-  background-color: var(--background-blue);
-  cursor: pointer;
-  width: 80%;
-  border: none;
-  text-align: center;
-  font-size: 18px;
-}
-.collapsible_open, .collapsible:hover {
-  background-color: var(--highlight-blue);
+  visibility: hidden;
 }
 .collapsible-content {
-  background-color: white;
-  width: 80%;
-  /*display: block;*/
-  overflow: hidden;
-  padding: 0px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-
-  max-height: 0px;
-  transition: max-height 0.2s ease-out;
+  display: flex;
 }
 /* End of collapsible */
+#ref {
+  visibility: hidden;
+}
 
 .image-svg {
   display: flex;
