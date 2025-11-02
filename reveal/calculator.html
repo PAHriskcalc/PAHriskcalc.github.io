@@ -116,29 +116,29 @@
 
 	<tr class="header-row">
 		<th class="header-cell">N</th>
-		<th class="header-cell" colspan="2" style="text-align: left;padding-left: 10px">Risk Assesment Strategy</th>
-		<th class="header-cell" colspan="2">Risk Score (+ 6 points correction factor)</th>
+		<th class="header-cell" colspan="1" style="text-align: left;padding-left: 10px">Risk Assesment Strategy</th>
+		<th class="header-cell" colspan="3">Risk Score (+ 6 points correction factor)</th>
 		<th class="header-cell" colspan="3">Key for Interpretation</th>
 	</tr>
 
 	<!-- REVEAL Score -->
 	<tr class="result-row">
 		<td class="result-cell" id="result_REVEAL_count">0/14</td>
-		<td class="title-cell" colspan="3" onmouseenter="highlightParam('result_REVEAL')" onmouseout="highlightParam()">
+		<td class="title-cell" colspan="1" onmouseenter="highlightParam('result_REVEAL')" onmouseout="highlightParam()">
 			<b>
 				REVEAL 2.0
 			</b>
 		</td>
-		<td class="result-cell" id="result_REVEAL">Use &GreaterEqual;&nbsp;7 parameters</td>
+		<td class="result-cell" colspan="3" id="result_REVEAL">Use &GreaterEqual;&nbsp;7 parameters</td>
 
-		<td colspan="4" rowspan="1">
-			<p style="color: var(--low-green); padding:0%; margin: 0%;">
-				Low risk score < 7 points
+		<td colspan="4" rowspan="1" style="font-weight: bold;">
+			<p style="color: var(--low-green); padding-left:5px; margin: 0%;">
+				Low risk score &le;&nbsp;7 points
 			</p>
-			<p style="color: var(--mid-yellow-orange); padding:0%; margin: 0%;">
+			<p style="color: var(--mid-yellow-orange); padding-left:5px; margin: 0%;">
 				Intermediate risk score: 7-8 points
 			</p>
-			<p style="color: var(--high-red); padding:0%; margin: 0%;">
+			<p style="color: var(--high-red); padding-left:5px; margin: 0%;">
 				High risk score > 9 points
 			</p>
 		</td>
@@ -147,22 +147,22 @@
 	<!-- REVEAL Lite Score -->
 	<tr class="result-row">
 		<td class="result-cell" id="result_REVEAL_Lite_count">0/7</td>
-		<td class="title-cell" colspan="3" onmouseenter="highlightParam('result_REVEAL_Lite')" onmouseout="highlightParam()">
+		<td class="title-cell" colspan="1" onmouseenter="highlightParam('result_REVEAL_Lite')" onmouseout="highlightParam()">
 			<b>
 				REVEAL Lite 2
 			</b>
 			(parameters marked <span style="color: orange;">&#9679</span>)
 		</td>
-		<td class="result-cell" id="result_REVEAL_Lite">Use &GreaterEqual;&nbsp;3 parameters</td>
+		<td class="result-cell" colspan="3" id="result_REVEAL_Lite">Use &GreaterEqual;&nbsp;3 parameters</td>
 
-		<td colspan="4" rowspan="1">
-			<p style="color: var(--low-green); padding:0%; margin: 0%;">
-				Low risk score < 6 points
+		<td colspan="4" rowspan="1" style="font-weight: bold;">
+			<p style="color: var(--low-green); padding-left:5px; margin: 0%;">
+				Low risk score &le;&nbsp;6 points
 			</p>
-			<p style="color: var(--mid-yellow-orange); padding:0%; margin: 0%;">
+			<p style="color: var(--mid-yellow-orange); padding-left:5px; margin: 0%;">
 				Intermediate risk score: 6-7 points
 			</p>
-			<p style="color: var(--high-red); padding:0%; margin: 0%;">
+			<p style="color: var(--high-red); padding-left:5px; margin: 0%;">
 				High risk score > 8 
 			</p>
 		</td>
@@ -227,11 +227,6 @@
 	<b style="font-size: 20px;">*</b>
 	<small>
 		Renal insufficiency can be defined by the clinican if eGFR is not available.[2,3]
-	</small>
-	<br>
-	<b style="font-size: 15px;">^</b>
-	<small> Indicates the parameters used in the initial COMPERA model, including; WHO-FC, 6MWD,
-		BNP/NT-proBNP, RAP, CI, and S<sub>V</sub>O<sub>2</sub>.
 	</small>
 	<br>
 	<b style="font-size: 15px;">#</b>
