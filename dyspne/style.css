@@ -1,6 +1,6 @@
 @import "../utility/color.css";
 
-.dypsne-body {
+.dyspne-body {
     background-color: var(--background-grey);
 }
 .image-box{
@@ -21,10 +21,16 @@ p {
     font-size: 1.2em;
     font-weight: bold;
 }
+.additional-info {
+    font-weight: normal;
+    font-size: 1.0em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
 .footer-title {
     font-size: 0.8em;
     font-weight: normal;
     border-top: 1px solid black;
     margin-top: auto;
     padding-top: 1em;
-  }
+}
