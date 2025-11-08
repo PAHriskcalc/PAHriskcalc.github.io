@@ -23,6 +23,7 @@ params.push(PH_NAME);
 const RV_Fail = {
 	name: "RV_Fail", group: "Sympt", meta_group: "Clinical", weight: [1, 0, 0, 0], weight_f: [0, 0], value: [1, 0, 3],
 	title: "Signs of right heart failure", btnText: ["Absent", "-", "Present"],
+	title_m: "", btnText_m: ["", "", ""],
 	title_c: "", btnText_c: ["", "", ""],
 	title_p: "", btnText_p: []
 };
@@ -31,6 +32,7 @@ params.push(RV_Fail);
 const Sympt_Prog = {
 	name: "Sympt_Prog", group: "Sympt", meta_group: "Clinical", weight: [1, 0, 0, 0], weight_f: [0, 0], value: [1, 2, 3],
 	title: "Progression of symptoms and clinical manifestation", btnText: ["No", "Slow", "Rapid"],
+	title_m: "Progression of symptoms", btnText_m: ["", "", ""],
 	title_c: "", btnText_c: ["", "", ""],
 	title_p: "", btnText_p: []
 };
@@ -39,6 +41,7 @@ params.push(Sympt_Prog);
 const Syncope = {
 	name: "Syncope", group: "Sympt", meta_group: "Clinical", weight: [1, 0, 0, 0], weight_f: [0, 0], value: [1, 2, 3],
 	title: "Syncope", btnText: ["No", "Occasionally", "Repeated syncope"],
+	title_m: "", btnText_m: ["No", "Occasionally", "Repeated"],
 	title_c: "", btnText_c: ["", "", ""],
 	title_p: "", btnText_p: []
 };
@@ -47,6 +50,7 @@ params.push(Syncope);
 const WHO_FC = {
 	name: "WHO_FC", group: "WHO_walk", meta_group: "Modifiable", weight: [1, 1, 1, 2], weight_f: [1, 1], value: [1, 2, 3],
 	title: "WHO functional class <sup>¤ #</sup>", btnText: ["I, II", "III", "IV"],
+	title_m: "WHO-FC <sup>¤ #</sup>", btnText_m: ["", "", ""],
 	title_c: "WHO functional class", btnText_c: ["", "", ""],
 	title_p: "", btnText_p: []
 };
@@ -55,6 +59,7 @@ params.push(WHO_FC);
 const MWT = {
 	name: "MWT", group: "WHO_walk", meta_group: "Modifiable", weight: [1, 1, 1, 1], weight_f: [1, 1], value: [1, 2, 3],
 	title: "Six-minute walking distance <sup>¤ #</sup>", btnText: ["> 440 m", "165 - 440 m", "< 165 m"],
+	title_m: "6MWD (m)", btnText_m: [">440", "165-440", "<165"],
 	title_c: "Six-minute walking distance", btnText_c: ["", "", ""],
 	title_p: "", btnText_p: []
 };
@@ -64,6 +69,7 @@ params.push(MWT);
 const Peak_VO2 = {
 	name: "Peak_VO2", group: "Cardiopulmonary", meta_group: "Modifiable", weight: [1, 0, 0, 0], weight_f: [0, 0], value: [1, 2, 3],
 	title: "Peak VO2", btnText: ["Peak VO<sub>2</sub> &nbsp;> 15 ml/min/kg", "Peak VO<sub>2</sub>&nbsp;11 - 15 ml/min/kg", "Peak VO<sub>2</sub> &nbsp;< 11 ml/min/kg"],
+	title_m: "Peak VO<sub>2</sub> (ml/min/kg)", btnText_m: ["> 15", "11 - 15", "< 11"],
 	title_c: "", btnText_c: [">15 ml/min/kg", "11-15 ml/min/kg", "< 11 ml/min/kg"],
 	title_p: "", btnText_p: []
 };
@@ -78,6 +84,7 @@ params.push(Predicted_VO2); Removed in new update */
 const VE_slope = {
 	name: "VE_slope", group: "Cardiopulmonary", meta_group: "Modifiable", weight: [1, 0, 0, 0], weight_f: [0, 0], value: [1, 2, 3],
 	title: "VE/VO2-slope", btnText: ["VE/VO<sub>2</sub>-slope &nbsp;< 36", "VE/VO<sub>2</sub>-slope 36 - 44.9", "VE/VO<sub>2</sub>-slope &nbsp;&GreaterEqual; 45"],
+	title_m: "VE/VE<sub>2</sub>", btnText_m: ["< 36", "36-44.9", "&GreaterEqual; 45"],
 	title_c: "VE/VO_2 -slope", btnText_c: ["< 36", "36-44.9", "=> 45"],
 	title_p: "", btnText_p: []
 };
@@ -87,6 +94,7 @@ params.push(VE_slope);
 const proBNP = {
 	name: "proBNP", group: "Biochem", meta_group: "Modifiable", weight: [1, 1, 1, 1], weight_f: [0, 1], value: [1, 2, 3],
 	title: "NT-proBNP", btnText: ["NT-proBNP &nbsp;< 300 ng/L", "NT-proBNP 300 - 1100 ng/L", "NT-proBNP &nbsp;> 1100 ng/L"],
+	title_m: "NT-proBNP (ng/L) <sup>¤ # *</sup>", btnText_m: ["< 300", "300-1100", "> 1100"],
 	title_c: "", btnText_c: ["< 300 ng/L", "300-1100 ng/L", "> 1100 ng/L"],
 	title_p: "", btnText_p: []
 };
@@ -95,6 +103,7 @@ params.push(proBNP);
 const BNP = {
 	name: "BNP", group: "Biochem", meta_group: "Modifiable", weight: [1, 1, 1, 1], weight_f: [0, 1], value: [1, 2, 3],
 	title: "BNP", btnText: ["BNP &nbsp;< 50 ng/L", "BNP 50 - 800 ng/L", "BNP &nbsp;> 800 ng/L"],
+	title_m: "BNP (ng/L) <sup>¤ # *</sup>", btnText_m: ["< 50", "50-800", "> 800"],
 	title_c: "", btnText_c: ["< 50 ng/L", "50-800 ng/L", "> 800 ng/L"],
 	title_p: "", btnText_p: []
 };
@@ -104,6 +113,7 @@ params.push(BNP);
 const RAarea = {
 	name: "RAarea", group: "Imaging", meta_group: "Modifiable", weight: [1, 0, 1, 0], weight_f: [0, 0], value: [1, 2, 3],
 	title: "RA area", btnText: ["RA area &nbsp;< 18 cm<sup>2</sup>", "RA area 18 - 26 cm<sup>2</sup>", "RA area &nbsp;> 26 cm<sup>2</sup>"],
+	title_m: "Right atrial area (cm<sup>2</sup>) <sup>¤</sup>", btnText_m: ["< 18", "18-26", "> 26"],
 	title_c: "", btnText_c: ["< 18 cm^2", "18-26 cm^2", "> 26 cm^2"],
 	title_p: "", btnText_p: []
 };
@@ -112,6 +122,7 @@ params.push(RAarea);
 const sPAP = {
 	name: "sPAP", group: "Imaging", meta_group: "Modifiable", weight: [1, 0, 0, 0], weight_f: [0, 0], value: [1, 2, 3],
 	title: "TAPSE/sPAP", btnText: ["TAPSE/sPAP &nbsp; >0.32 mm/mmHg", "TAPSE/sPAP 0.19 - 0.32 mm/mmHg", "TAPSE/sPAP &nbsp;< 0.19 mm/mmHg"],
+	title_m: "TAPSE/sPAP (mm/mmHg) <sup>¤</sup>", btnText_m: ["< 0.32", "0.19 - 0.32", "< 0.19"],
 	title_c: "TAPSE/sPAP", btnText_c: [">0.32 mm/mmHg", "0.19-0.32 mm/mmHg", "<0.19 mm/mmHg"],
 	title_p: "", btnText_p: []
 };
@@ -120,6 +131,7 @@ params.push(sPAP);
 const Pericardial_Effusion = {
 	name: "Pericardial_Effusion", meta_group: "Modifiable", group: "Imaging", weight: [1, 0, 1, 0], weight_f: [0, 0], value: [1, 2, 3],
 	title: "Pericardial effusion", btnText: ["No pericardial effusion", "Minimal pericardial effusion", "Pericardial effusion"],
+	title_m: "Pericardial Effusion <sup>¤</sup>", btnText_m: ["None", "Minimal", "Significant"],
 	title_c: "", btnText_c: ["", "", ""],
 	title_p: "", btnText_p: []
 };
@@ -129,6 +141,7 @@ params.push(Pericardial_Effusion);
 const RVEF = {
 	name: "RVEF", group: "cMRI", meta_group: "Modifiable", weight: [1, 0, 0, 0], weight_f: [0, 0], value: [1, 2, 3],
 	title: "RVEF", btnText: ["RVEF &nbsp;> 54%", "RVEF 37 - 54%", "RVEF &nbsp;< 37%"],
+	title_m: "RVEF (cMRI, %)", btnText_m: ["> 54", "37-54", "< 37"],
 	title_c: "", btnText_c: ["", "", ""],
 	title_p: "", btnText_p: []
 };
@@ -137,6 +150,7 @@ params.push(RVEF);
 const SVI_MRI = {
 	name: "SVI_MRI", group: "cMRI", meta_group: "Modifiable", weight: [1, 0, 0, 0], weight_f: [0, 0], value: [1, 2, 3],
 	title: "SVI", btnText: ["SVI &nbsp;> 40 mL/m<sup>2</sup>", "SVI 26 - 40 mL/m<sup>2</sup>", "SVI &nbsp;< 26 mL/m<sup>2</sup>"],
+	title_m: "SVI (cMRI, mL/m<sup>2</sup>)", btnText_m: ["> 40", "26-40", "< 26"],
 	title_c: "", btnText_c: ["", "", ""],
 	title_p: "", btnText_p: []
 };
@@ -145,6 +159,7 @@ params.push(SVI_MRI);
 const RVESVI = {
 	name: "RVESVI", group: "cMRI", meta_group: "Modifiable", weight: [1, 0, 0, 0], weight_f: [0, 0], value: [1, 2, 3],
 	title: "RVESVI", btnText: ["RVESVI &nbsp;< 42 mL/m<sup>2</sup>", "RVESVI 42 - 54 mL/m<sup>2</sup>", "RVESVI &nbsp;> 54 mL/m<sup>2</sup>"],
+	title_m: "RVESVI (cMRI, mL/m<sup>2</sup>)", btnText_m: ["< 42", "42 - 54", "> 54"],
 	title_c: "", btnText_c: ["", "", ""],
 	title_p: "", btnText_p: []
 };
@@ -154,6 +169,7 @@ params.push(RVESVI);
 const MRAP = {
 	name: "MRAP", group: "Haemodynamics", meta_group: "Modifiable", weight: [1, 1, 1, 0], weight_f: [1, 0], value: [1, 2, 3],
 	title: "MRAP", btnText: ["RAP &nbsp;< 8 mmHg", "RAP 8 - 14 mmHg", "RAP &nbsp;> 14 mmHg"],
+	title_m: "RAP (RHC, mmHg) <sup>¤ #</sup>", btnText_m: ["< 8", "8 - 14", "> 14"],
 	title_c: "", btnText_c: ["=< 8 mmHg", "8-14 mmHg", "> 14 mmHg"],
 	title_p: "", btnText_p: []
 };
@@ -162,6 +178,7 @@ params.push(MRAP);
 const CI = {
 	name: "CI", group: "Haemodynamics", meta_group: "Modifiable", weight: [1, 1, 1, 0], weight_f: [1, 0], value: [1, 2, 3],
 	title: "CI", btnText: ["CI &nbsp;&GreaterEqual; 2.5 l/min/m<sup>2</sup>", "CI 2.0 - 2.4 l/min/m<sup>2</sup>", "CI &nbsp;< 2.0 l/min/m<sup>2</sup>"],
+	title_m: "CI (RHC, L/min/m<sup>2</sup>) <sup>¤ #</sup>", btnText_m: ["&GreaterEqual; 2.5", "2.0 - 2.4", "< 2.0"],
 	title_c: "", btnText_c: [">= 2.5 l/min/m^2", "2.0-2.4 l/min/m^2", "< 2.0 l/min/m^2"],
 	title_p: "", btnText_p: []
 };
@@ -170,6 +187,7 @@ params.push(CI);
 const SVI = {
 	name: "SVI", group: "Haemodynamics", meta_group: "Modifiable", weight: [1, 0, 0, 0], weight_f: [0, 0], value: [1, 2, 3],
 	title: "SVI", btnText: ["SVI &nbsp;> 38 mL/m<sup>2</sup>", "SVI 31 - 38 mL/m<sup>2</sup>", "SVI &nbsp;< 31 mL/m<sup>2</sup>"],
+	title_m: "SVI (RHC, mL/m<sup>2</sup>) <sup>¤ #</sup>", btnText_m: ["> 38", "31 - 38", "< 31"],
 	title_c: "", btnText_c: ["", "", ""],
 	title_p: "", btnText_p: []
 };
@@ -178,6 +196,7 @@ params.push(SVI);
 const SvO2 = {
 	name: "SvO2", group: "Haemodynamics", meta_group: "Modifiable", weight: [1, 1, 1, 0], weight_f: [0, 0], value: [1, 2, 3],
 	title: "SvO2", btnText: ["SvO<sub>2</sub> &nbsp; > 65%", "SvO<sub>2</sub> &nbsp; 60% - 65%", "SvO<sub>2</sub> &nbsp; < 60%"],
+	title_m: "SvO<sub>2</sub> (RHC, %) <sup>¤ #</sup>", btnText_m: ["> 65", "60 - 65", "< 60"],
 	title_c: "SvO_2", btnText_c: ["> 65%", "60%-65%", "< 60%"],
 	title_p: "", btnText_p: []
 };
@@ -663,31 +682,26 @@ function createTable_m() {
 		var param = params[i];
 		var title_row = 0;
 
-		if (group_id = params[i].group) {
-			if (!document.getElementById(group_id).hasChildNodes() && groupTitle[group_id]) {
-				var title_row = document.createElement("TR");
-				title_row.setAttribute("class", "btn-row");
-				var title_cell = createTitleCell(groupTitle[group_id]);
-				title_cell.setAttribute("colspan", "3");
-				title_row.appendChild(title_cell);
-			}
-		} else {
-			group_id = "misc";
-		}
 		var btn_row = document.createElement("TR");
 		btn_row.setAttribute("class", "btn-row");
 		btn_row.setAttribute("id", params[i].name);
 
-		if (!groupTitle[group_id]) {
-			var title_row = document.createElement("TR");
-			title_row.setAttribute("class", "btn-row");
-			var title_cell = createTitleCell(param.title);
-			title_cell.setAttribute("colspan", "3");
-			title_row.appendChild(title_cell);
+		var title_row = document.createElement("TR");
+		title_row.setAttribute("class", "btn-row");
+		var title_text =  param.title;
+		if (param.title_m) {
+			title_text = param.title_m;
 		}
+		var title_cell = createTitleCell(title_text);
+		title_cell.setAttribute("colspan", "3");
+		title_row.appendChild(title_cell);
 
 		for (let j = 0; j < max_btns; j++) {
-			btnCell = createButton(params[i].name, params[i].value[j], params[i].btnText[j]);
+			var button_text = params[i].btnText[j];
+			if (params[i].btnText_m[j]) {
+				button_text = params[i].btnText_m[j];
+			}
+			btnCell = createButton(params[i].name, params[i].value[j], button_text);
 			btn_row.appendChild(btnCell);
 		}
 		if (title_row) {

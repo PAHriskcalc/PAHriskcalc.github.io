@@ -11,93 +11,100 @@ let params = [];
 const WHO = {
 	name: "WHO", group: "", meta_group: "", weight: [1, 0], value: [NaN, NaN, 0, 1, 2, 3],
 	title: "WHO group I subgroup", btnText: ["", "", "Other", "CTD", "Heritable", "PoPH"],
+	title_m: "WHO group I subgroup", btnText_m: ["", "", "Other", "CTD", "Heritable", "PoPH"],
 	title_c: "", btnText_c: [],
 	title_p: "", btnText_p: []
 };
 const MALE = {
 	name: "Male", group: "", meta_group: "", weight: [1, 0], value: [NaN, NaN, 0, NaN, 2, NaN],
 	title: "Male > 60 years", btnText: ["", "", "No", "", "Yes", ""],
+	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const RECENT_HOSPITALIZATION = {
 	name: "Hospitalization", group: "", meta_group: "", weight: [1, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "All-cause hospitalizations within 6 months", btnText: ["", "", "No", "Yes", "", ""],
+	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };const eGFR = {
 	name: "eGFR", group: "", meta_group: "", weight: [1, 1], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "eGFR < 60 ml/min/1.73m<sup>2</sup> or renal insufficiency <span style='color: orange'>&#9679</span>*", btnText: ["", "", "No", "Yes", "", ""],
+	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const BLOOD_PRESSURE = {
 	name: "BloodPressure", group: "", meta_group: "", weight: [1, 1], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "Systolic blood pressure (mmHg) <span style='color: orange'>&#9679</span>", btnText: ["", "", "&GreaterEqual; 110", "< 110", "", ""],
+	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const HEART_RATE = {
 	name: "HeartRate", group: "", meta_group: "", weight: [1, 1], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "Heart rate (beats/min) <span style='color: orange'>&#9679</span>", btnText: ["", "", "&le; 96", "> 96", "", ""],
+	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const NYHA = {
 	name: "NYHA", group: "", meta_group: "", weight: [1, 1], value: [NaN, -1, 0, 1, 2, NaN],
 	title: "NYHA/WHO functional class <span style='color: orange'>&#9679</span>", btnText: ["", "I", "II", "III", "IV", ""],
+	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const WALK = {
 	name: "Walk", group: "", meta_group: "", weight: [1, 1], value: [-2, -1, 0, 1, NaN, NaN],
 	title: "Six-minute walking distance (m) <span style='color: orange'>&#9679</span>", btnText: ["&GreaterEqual; 440", " 439 - 320", "319 - 165", "< 165", "", ""],
+	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const proBNP = {
 	name: "proBNP", group: "", meta_group: "", weight: [1, 1], value: [-2, NaN, 0, NaN, 2, NaN],
 	title: "NT-proBNP (ng/L)  <span style='color: orange'>&#9679</span>#", btnText: ["< 300", "", "300 - 1099", "", "&GreaterEqual; 1100", ""],
+	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const BNP = {
 	name: "BNP", group: "", meta_group: "", weight: [1, 1], value: [-2, NaN, 0, 1, 2, NaN],
 	title: "BNP (ng/L)  <span style='color: orange'>&#9679</span>#", btnText: ["< 50", "", "50 - 199", "200 - 799", "&GreaterEqual; 800", ""],
+	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const ECHOCARDIO = {
 	name: "Echocardio", group: "", meta_group: "", weight: [1, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "Pericardial effusion on echocardiogram", btnText: ["", "", "No", "Yes", "", ""],
+	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const DLco = {
 	name: "DLco", group: "", meta_group: "", weight: [1, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "DLco (% predicted) < 40%", btnText: ["", "", "No", "Yes", "", ""],
+	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const RAP = {
 	name: "RAP", group: "", meta_group: "", weight: [1, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "mRAP > 20 mmHg within 1 year", btnText: ["", "", "No", "Yes", "", ""],
+	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const PVR = {
 	name: "PVR", group: "", meta_group: "", weight: [1, 0], value: [NaN, -1, 0, NaN, NaN, NaN],
 	title: "PVR < 5 WU", btnText: ["", "Yes", "No", "", "", ""],
+	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
-
-// const PH_NAME = {
-// 	name: "", group: "", meta_group: "", weight: [1], weight_f: [1, 1], value: [-2, -1, 0, 1, 2, 3],
-// 	title: "", btnText: [],
-// 	title_c: "", btnText_c: [],
-// 	title_p: "", btnText_p: []
-// };
 
 params.push(WHO);
 params.push(MALE);
@@ -492,13 +499,13 @@ function createTable_mobile() {
 		var title_row = 0;
 
 		if (group_id = params[i].group) {
-			if (!document.getElementById(group_id).hasChildNodes() && groupTitle[group_id]) {
-				var title_row = document.createElement("TR");
-				title_row.setAttribute("class", "btn-row");
-				var title_cell = createTitleCell(groupTitle[group_id]);
-				title_cell.setAttribute("colspan", max_col);
-				title_row.appendChild(title_cell);
-			}
+		// 	if (!document.getElementById(group_id).hasChildNodes() && groupTitle[group_id]) {
+		// 		var title_row = document.createElement("TR");
+		// 		title_row.setAttribute("class", "btn-row");
+		// 		var title_cell = createTitleCell(groupTitle[group_id]);
+		// 		title_cell.setAttribute("colspan", max_col);
+		// 		title_row.appendChild(title_cell);
+			// }
 		} else {
 			group_id = "misc";
 		}
@@ -506,17 +513,25 @@ function createTable_mobile() {
 		btn_row.setAttribute("class", "btn-row");
 		btn_row.setAttribute("id", params[i].name);
 
-		if (!groupTitle[group_id]) {
-			var title_row = document.createElement("TR");
-			title_row.setAttribute("class", "btn-row");
-			var title_cell = createTitleCell(param.title);
-			title_cell.setAttribute("colspan", max_col);
-			title_row.appendChild(title_cell);
+		// if (!groupTitle[group_id]) {
+		var title_row = document.createElement("TR");
+		title_row.setAttribute("class", "btn-row");
+		var title_text = param.title;
+		if (param.title_m) {
+			title_text = param.title_m;
 		}
+		var title_cell = createTitleCell(param.title);
+		title_cell.setAttribute("colspan", max_col);
+		title_row.appendChild(title_cell);
+		// }
 
 		for (let j = 0; j < max_btns; j++) {
 			if(!Number.isNaN(params[i].value[j])) {
-				btnCell = createButton(params[i].name, params[i].value[j], params[i].btnText[j]);
+				var button_text = params[i].btnText[j];
+				if (params[i].btnText_m[j]) {
+					button_text = params[i].btnText_m[j];
+				}
+				btnCell = createButton(params[i].name, params[i].value[j], button_text);
 				btn_row.appendChild(btnCell);
 			}
 		}

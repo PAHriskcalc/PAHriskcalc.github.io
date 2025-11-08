@@ -16,6 +16,7 @@ let params = [];
 const WHO_FC = {
 	name: "WHO_FC", group: "WHO_walk", meta_group: "Modifiable", weight: [1], weight_f: [1, 1], value: [1, 0, 3, 4],
 	title: "WHO functional class", btnText: ["I, II", "-", "III", "IV"],
+	title_m: "WHO_FC", btnText_m:  ["I, II", "-", "III", "IV"],
 	title_c: "", btnText_c: [],
 	title_p: "", btnText_p: []
 };
@@ -24,6 +25,7 @@ params.push(WHO_FC);
 const MWT = {
 	name: "MWT", group: "WHO_walk", meta_group: "Modifiable", weight: [1], weight_f: [1, 1], value: [1, 2, 3, 4],
 	title: "Six-minute walking distance", btnText: ["> 440 m", "440 - 320 m", "319 - 165 m", "< 165 m"],
+	title_m: "6MWD (m)", btnText_m:  ["> 440", "320 - 440", "165 - 319", "< 165"],
 	title_c: "", btnText_c: [],
 	title_p: "", btnText_p: []
 };
@@ -32,6 +34,7 @@ params.push(MWT);
 const proBNP = {
 	name: "proBNP", group: "Biochem", meta_group: "Modifiable", weight: [1], weight_f: [0, 1], value: [1, 2, 3, 4],
 	title: "NT-proBNP", btnText: ["NT-proBNP &nbsp;< 300 ng/l", "NT-proBNP 300 - 649 ng/l", "NT-proBNP 650 - 1100 ng/l", "NT-proBNP &nbsp;> 1100 ng/l"],
+	title_m: "NT-proBNP (ng/L) <sup>*</sup>", btnText_m:  ["< 300", "300 - 649", "650 - 1100", "> 1100"],
 	title_c: "", btnText_c: [],
 	title_p: "", btnText_p: []
 };
@@ -40,6 +43,7 @@ params.push(proBNP);
 const BNP = {
 	name: "BNP", group: "Biochem", meta_group: "Modifiable", weight: [1], weight_f: [0, 1], value: [1, 2, 3, 4],
 	title: "BNP", btnText: ["BNP &nbsp;< 50 ng/l", "BNP 50 - 199 ng/l", "BNP 200 - 800 ng/l", "BNP &nbsp;> 800 ng/l"],
+	title_m: "BNP (ng/L) <sup>*</sup>", btnText_m:  ["< 50", "50 - 199", "200 - 800", "> 800"],
 	title_c: "", btnText_c: [],
 	title_p: "", btnText_p: []
 };
@@ -531,13 +535,6 @@ function createTable_m() {
 		var title_row = 0;
 
 		if (group_id = params[i].group) {
-			if (!document.getElementById(group_id).hasChildNodes() && groupTitle[group_id]) {
-				var title_row = document.createElement("TR");
-				title_row.setAttribute("class", "btn-row");
-				var title_cell = createTitleCell(groupTitle[group_id]);
-				title_cell.setAttribute("colspan", max_btns);
-				title_row.appendChild(title_cell);
-			}
 		} else {
 			group_id = "misc";
 		}
@@ -545,16 +542,24 @@ function createTable_m() {
 		btn_row.setAttribute("class", "btn-row");
 		btn_row.setAttribute("id", params[i].name);
 
-		if (!groupTitle[group_id]) {
-			var title_row = document.createElement("TR");
-			title_row.setAttribute("class", "btn-row");
-			var title_cell = createTitleCell(param.title);
-			title_cell.setAttribute("colspan", max_btns);
-			title_row.appendChild(title_cell);
+		// if (!groupTitle[group_id]) {
+		var title_row = document.createElement("TR");
+		title_row.setAttribute("class", "btn-row");
+		var title_text = param.title;
+		if (param.title_m) {
+			title_text = param.title_m;
 		}
+		var title_cell = createTitleCell(title_text);
+		title_cell.setAttribute("colspan", max_btns);
+		title_row.appendChild(title_cell);
+		// }
 
 		for (let j = 0; j < max_btns; j++) {
-			btnCell = createButton(params[i].name, params[i].value[j], params[i].btnText[j]);
+			var button_text = params[i].btnText[j];
+			if (params[i].btnText_m[j]) {
+				button_text = params[i].btnText_m[j];
+			}
+			btnCell = createButton(params[i].name, params[i].value[j], button_text);
 			btn_row.appendChild(btnCell);
 		}
 		if (title_row) {
