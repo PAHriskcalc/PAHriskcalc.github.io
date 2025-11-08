@@ -52,7 +52,7 @@
 	<!-- Start of result section -->
 	<tr class="title-row">
 		<th colspan="2">
-			Calculated Risk Scores <sup>1-7</sup>
+			Calculated Risk Scores <sup>1-14</sup>
 		</th>
 		<th>
 			<button class="table-btn" onclick="resetCalc()">
@@ -131,51 +131,171 @@
 	<!-- Collapsible enviroment with extra information -->
 	<button class="collapsible"  onclick="collapseContent(this)">Additional Information</button>
 	<div id="info" class="collapsible-content">
-	<p style="font-weight: bold;">By using the PAH risk calculator, the user agrees to and consent to be bound to the terms of use, as follows:</p>
-	<ul>
-		<li>
-			The risk calculator variables and cut-offs are based on expert opinion according to the 2015 ESC/ERS pulmonary hypertension guidelines <small>[1]</small>, which have been validated in a series of studies <small>[2-6]</small>. The risk calculator assists in the calculation of risk scores. No proportion of the risk calculator is intended to be used as or replacing clinical or medical assessment, diagnosis, or treatment.
-		</li>
-		<li>
-			The risk calculator assists in the calculation of risk scores. No proportion of the risk calculator is intented to be used as or to replace clinical or medical assessment, diagnosis or treatment. N indicates the number of parameters used in the risk calculation.
-		</li>
-		<li>
-			 The user take full responsibility, including but not limited to decision making, for all data input and calculated scores.
-		</li>
-		<li>
-			The developers are not liable for any errors or inaccuracies in the algorithms or other content within or related to the calculation tool. 
-		</li>
-		<li>
-			The final decision making has to be made on balanced clinical judgement by the user in relation to the clinical presentation. The risk calculator serves only as a supporting tool to calculate risk scores.
-		</li>
-		<li>
-			The risk score calculator will be updated after the upcoming ESC/ERS guidelines in 2022.
-		</li>		
-	</ul>
-	*<small>Note that if both NT-proBNP and BNP are selected, only NT-proBNP will be included in the calculated risk score.</small>
-	<br>
-	¤<small>Indicates the parameters used in the SPAHR-Kylhammar equation. In COMPERA, RA area and pericardial effusion are not included.</small>
+		<p style="font-weight: bold;">By using the PAH risk score calculator the user agrees and consents to be bound to
+			the terms of use, as follows:</p>
+		<ul>
+			<li>
+				The risk score calculator variables and cut-offs were initially based on expert opinion according to the 2015
+				ESC/ERS pulmonary hypertension guidelines, [1,2] and have thereafter been validated in a series of studies,
+				[5-13] and further expanded in the 2022 ESC/ERS pulmonary hypertension guidelines. [3,4]
+			</li>
+
+			<li>
+				The risk score calculator assists in the calculation of risk scores, but is not intended to replace general
+				clinical assessment, judgement, or treatment decisions.
+			</li>
+			<li>
+				N indicates the number of parameters used in the risk score calculation.
+			</li>
+			<li>
+				The user takes full responsibility, for all data input, calculated risk scores, and decision making.
+			</li>
+			<li>
+				The developers are not liable for any errors or inaccuracies in the algorithms or content within or related to
+				the calculation tool.
+			</li>
+			<li>
+				The final decision making has to be made by the user on a comprehensive and balanced clinical judgement in
+				relation to the clinical presentation. The risk score calculator serves only as a supporting tool.
+			</li>
+			<li>
+				The risk score calculator may be updated in accordance with the prevailing ESC/ERS guidelines.
+			</li>
+		</ul>
+
+		<p style="font-weight: bold;">The SPAHR-Kylhammar equation for the SPAHR three-strata model without and with
+			divided intermediate risk group</p>
+		<p>The SPAHR equation was initially described by Kylhammar et al, assessing a score of 1, 2 or 3, to each
+			parameter depending on the thresholds defined by the 2015 ESC/ERS guidelines. The sum is divided by the numbers
+			of parameters included, and thereafter rounded off to the nearest integer. [1,2,5]</p>
+		<p>The original SPAHR three-strata model categorizes patients into low, intermediate, or high risk for one year
+			mortality, by assigning a score <br>(low risk = 1, intermediate risk = 2 and high risk = 3) to parameters based
+			on thresholds defined initially by the 2015 and subsequently by the 2022 ESC/ERS guidelines. The overall risk
+			category (low risk, intermediate risk, or high risk) is determined by the average from the scores of the
+			available parameters for each patient, rounded off to the nearest integer (1 - 1.49 = low risk, 1.5 - 2.49 =
+			intermediate risk, and ≥ 2.5 high-risk). [1-5]</p>
+		<p>In the new updated SPAHR three-strata model with divided intermediate risk group, the calculated mean is
+			rounded off according to modified thresholds for the intermediate risk (1.5 - 1.99 = intermediate-low risk, 2.0
+			- 2.49 = intermediate-high risk; instead of 1.5 - 2.49 = intermediate risk in the original SAPHR three-strata).
+			[9]</p>
+		<p>The SPAHR-Kylhammar three-strata strategies may be used at diagnosis and at follow-up. To allow a simplified
+			and more granular method at follow-up, the new four-strata strategy based on the COMPERA 2.0 three-parameter
+			model (WHO-FC, 6MWD, BNP/ NT-pro-BNP) may be used. A more comprehensive and precise long-term prognostic
+			prediction can, however, be achieved by using additional prognostic parameters, applying the updated SPAHR
+			three-strata strategy, with divided intermediate risk group. [3,4,10,11,12]</p>
+
+		<p style="font-weight: bold;">The French invasive and non-invasive model</p>
+		<p>The invasive and non-invasive French pulmonary hypertension registry based models complies the number of
+			low-risk criteria achieved, as defined by the 2015 ESC/ERS risk stratification strategy. Notably, the number of
+			low risk criteria cannot be interpreted into three different risk categories, i.e low-, intermediate-, and high
+			risk.</p>
+
+
+		<b style="font-size: 20px;">*</b><small> Note that if both NT-proBNP and BNP are selected, only NT-proBNP will be
+			included in the calculated risk score.</small>
+		<br>
+		<b>¤</b><small> Indicates the parameters used in the SPAHR-Kylhammar equation, including; WHO-FC, 6MWD,
+			BNP/NT-proBNP, RA area, pericardial effusion, RAP, CI, and
+			S<sub>V</sub>O<sub>2</sub>.<!--In COMPERA, RA area and pericardial effusion are not included.--></small>
+		<br>
+		<b>#</b><small> Indicates the parameters used in the initial COMPERA model, including; WHO-FC, 6MWD,
+			BNP/NT-proBNP, RAP, CI, and S<sub>V</sub>O<sub>2</sub>.
 	</div>
 
 	<!-- Collapsible enviroment with article references -->
 	<button class="collapsible"  onclick="collapseContent(this)">References</button>
 	<div id="ref" class="collapsible-content">
-	<ol>
-		<li>Galiè N, Humbert M, Vachiery J-L, Gibbs S, Lang I, Torbicki A, Simonneau G, Peacock A, Vonk Noordegraaf A, Beghetti M, Ghofrani A, Gomez Sanchez MA, Hansmann G, Klepetko W, Lancellotti P, Matucci M, McDonagh T, Pierard LA, Trindade PT, Zompatori M, Hoeper M. 2015 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary hypertension. European Respiratory Journal 2015: 46(4): 903.</li>
-		
-		<li>Kylhammar D, Kjellström B, Hjalmarsson C, Jansson K, Nisell M, Söderberg S, Wikström G, Rådegran G. A comprehensive risk stratification at early follow-up determines prognosis in pulmonary arterial hypertension. Eur Heart J 2018 (first published June 01, 2017): 39(47): 4175-4181.</li>
-		
-		<li>Hoeper MM, Kramer T, Pan Z, Eichstaedt CA, Spiesshoefer J, Benjamin N, Olsson KM, Meyer K, Vizza CD, Vonk-Noordegraaf A, Distler O, Opitz C, Gibbs JSR, Delcroix M, Ghofrani HA, Huscher D, Pittrow D, Rosenkranz S, Grünig E. Mortality in pulmonary arterial hypertension: Prediction by the 2015 European pulmonary hypertension guidelines risk stratification model. European Respiratory Journal 2017 (published August 03, 2017): 50(2).</li>
-		
-		<li>Boucly A, Weatherald J, Savale L, Jaïs X, Cottin V, Prevot G, Picard F, De Groote P, Jevnikar M, Bergot E, Chaouat A, Chabanne C, Bourdin A, Parent F, Montani D, Simonneau G, Humbert M, Sitbon O. Risk assessment, prognosis and guideline implementation in pulmonary arterial hypertension. European Respiratory Journal 2017 (published August 03, 2017): 50(2).</li>
-		
-		<li>Benza RL, Gomberg-Maitland M, Elliott CG, Farber HW, Foreman AJ, Frost AE, McGoon MD, Pasta DJ, Selej M, Burger CD, Frantz RP. Predicting Survival in Patients With Pulmonary Arterial Hypertension: The REVEAL Risk Score Calculator 2.0 and Comparison With ESC/ERS-Based Risk Assessment Strategies. Chest 2019 (February 14, 2019): 156(2): 323-337.
-		</li>
-		
-		<li>Kylhammar D, Hjalmarsson C, Hesselstrand R, Jansson K, Kavianipour M, Kjellström B, Nisell M, Söderberg S, Rådegran G. Predicting mortality during long-term follow-up in pulmonary arterial hypertension. ERJ Open Research 2021 (published May 31 2021): 00837-2020.</li>
-		
-		<li>Ahmed A, Ahmed S, Kempe D, Rådegran G. Evaluation of the European Society of Crdiology-/European Respiratory Society-derived three- and four-strata risk stratification models in pulmonary arterial hypertension: introducing an internet-based risk stratification calculator, <i>European Heart Journal Open,</i>2023.</li>
-	</ol>
+		<ol>
+			<li>Galiè N, Humbert M, Vachiery J-L, Gibbs S, Lang I, Torbicki A, Simonneau G, Peacock A, Vonk Noordegraaf A,
+				Beghetti M, Ghofrani A, Gomez Sanchez MA, Hansmann G, Klepetko W, Lancellotti P, Matucci M, McDonagh T,
+				Pierard LA, Trindade PT, Zompatori M, Hoeper M. 2015 ESC/ERS Guidelines for the diagnosis and treatment of
+				pulmonary hypertension. <i>European Respiratory Journal</i> 2015; <b>46</b>:903.</li>
+
+			<li>Galiè N, Humbert M, Vachiery JL, Gibbs S, Lang I, Torbicki A, Simonneau G, Peacock A, Vonk Noordegraaf A,
+				Beghetti M, Ghofrani A, Gomez Sanchez MA, Hansmann G, Klepetko W, Lancellotti P, Matucci M, McDonagh T,
+				Pierard LA, Trindade PT, Zompatori M, Hoeper M. 2015 esc/ers guidelines for the diagnosis and treatment of
+				pulmonary hypertension: The joint task force for the diagnosis and treatment of pulmonary hypertension of the
+				european society of cardiology (esc) and the european respiratory society (ers): Endorsed by: Association for
+				european paediatric and congenital cardiology (aepc), international society for heart and lung transplantation
+				(ishlt). <i>Eur Heart J</i> 2016; <b>37</b>:67-119.</li>
+
+			<li>Humbert M, Kovacs G, Hoeper MM, Badagliacca R, Berger RMF, Brida M, Carlsen J, Coats AJS, Escribano-Subias
+				P, Ferrari P, Ferreira DS, Ghofrani HA, Giannakoulas G, Kiely DG, Mayer E, Meszaros G, Nagavci B, Olsson KM,
+				Pepke-Zaba J, Quint JK, Rådegran G, Simonneau G, Sitbon O, Tonia T, Toshner M, Vachiery JL, Vonk Noordegraaf
+				A, Delcroix M, Rosenkranz S, Group EESD. 2022 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary
+				hypertension: Developed by the task force for the diagnosis and treatment of pulmonary hypertension of the
+				European Society of Cardiology (ESC) and the European Respiratory Society (ERS). Endorsed by the International
+				Society for Heart and Lung Transplantation (ISHLT) and the European Reference Network on rare respiratory
+				diseases (ERN-LUNG). <i>European Heart Journal</i> 2022: ehac237.
+			</li>
+
+			<li>
+				Humbert M, Kovacs G, Hoeper MM, Badagliacca R, Berger RMF, Brida M, Carlsen J, Coats AJS, Escribano-Subias P,
+				Ferrari P, Ferreira DS, Ghofrani HA, Giannakoulas G, Kiely DG, Mayer E, Meszaros G, Nagavci B, Olsson KM,
+				Pepke-Zaba J, Quint JK, Rådegran G, Simonneau G, Sitbon O, Tonia T, Toshner M, Vachiery J-L, Vonk Noordegraaf
+				A, Delcroix M, Rosenkranz S. 2022 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary
+				hypertension. <i>European Respiratory Journal</i> 2022: 2200879.
+			</li>
+
+			<li>Kylhammar D, Kjellström B, Hjalmarsson C, Jansson K, Nisell M, Söderberg S, Wikström G, Rådegran G. A
+				comprehensive risk stratification at early follow-up determines prognosis in pulmonary arterial hypertension.
+				<i>Eur Heart J</i> 2018; <b>39</b>: 4175-4181.
+			</li>
+
+			<li>Boucly A, Weatherald J, Savale L, Jaïs X, Cottin V, Prevot G, Picard F, de Groote P, Jevnikar M, Bergot E,
+				Chaouat A, Chabanne C, Bourdin A, Parent F, Montani D, Simonneau G, Humbert M, Sitbon O. Risk assessment,
+				prognosis and guideline implementation in pulmonary arterial hypertension. <i>European Respiratory Journal</i>
+				2017; <b>50</b>:1700889.</li>
+
+			<li>Hoeper MM, Kramer T, Pan Z, Eichstaedt CA, Spiesshoefer J, Benjamin N, Olsson KM, Meyer K, Vizza CD,
+				Vonk-Noordegraaf A, Distler O, Opitz C, Gibbs JSR, Delcroix M, Ghofrani HA, Huscher D, Pittrow D, Rosenkranz
+				S, Grünig E. Mortality in pulmonary arterial hypertension: Prediction by the 2015 european pulmonary
+				hypertension guidelines risk stratification model. <i>Eur Respir J</i> 2017; <b>50</b></li>
+
+			<li>Benza RL, Gomberg-Maitland M, Elliott CG, Farber HW, Foreman AJ, Frost AE, McGoon MD, Pasta DJ, Selej M,
+				Burger CD, Frantz RP. Predicting survival in patients with pulmonary arterial hypertension: The reveal risk
+				score calculator 2.0 and comparison with esc/ers-based risk assessment strategies. <i>Chest</i> 2019;
+				<b>156</b>:323-337.
+			</li>
+
+			<li>Kylhammar D, Hjalmarsson C, Hesselstrand R, Jansson K, Kavianipour M, Kjellström B, Nisell M, Söderberg S,
+				Rådegran G. Predicting mortality during long-term follow-up in pulmonary arterial hypertension. <i>ERJ Open
+					Research</i> 2021; <b>7</b>:00837-02020.</li>
+
+			<li>Hoeper MM, Pausch C, Olsson KM, Huscher D, Pittrow D, Grünig E, Staehler G, Vizza CD, Gall H, Distler O,
+				Opitz C, Gibbs JSR, Delcroix M, Ghofrani HA, Park D-H, Ewert R, Kaemmerer H, Kabitz H-J, Skowasch D, Behr J,
+				Milger K, Halank M, Wilkens H, Seyfarth H-J, Held M, Dumitrescu D, Tsangaris I, Vonk-Noordegraaf A, Ulrich S,
+				Klose H, Claussen M, Lange TJ, Rosenkranz S. Compera 2.0: A refined four-stratum risk assessment model for
+				pulmonary arterial hypertension. <i>European Respiratory Journal</i> 2022; <b>60</b>:2102311.</li>
+
+			<li>Boucly A, Weatherald J, Savale L, de Groote P, Cottin V, Prévot G, Chaouat A, Picard F, Horeau-Langlard D,
+				Bourdin A, Jutant E-M, Beurnier A, Jevnikar M, Jaïs X, Simonneau G, Montani D, Sitbon O, Humbert M. External
+				validation of a refined four-stratum risk assessment score from the french pulmonary hypertension registry.
+				<i>European Respiratory Journal</i> 2022; <b>59</b>:2102419.
+			</li>
+
+			<li>Ahmed A, Ahmed S, Kempe D, Rådegran G. Evaluation of the European Society of Crdiology-/European Respiratory
+				Society-derived three- and four-strata risk stratification models in pulmonary arterial hypertension:
+				introducing an internet-based risk stratification calculator, <i>European Heart Journal Open,</i>2023.</li>
+
+			<li>Dardi F, Boucly F, Benza R, Frantz R, Mercurio V, Olschewski H, Rådegran G, Rubin Lewis J, Hoeper MM. Risk
+				stratification and treatment goals in pulmonary arterial hypertension, <i>European Respiratory
+					Journal,</i>2024; DOI: 10.1183/13993003.01323-2024
+			</li>
+
+			<li>
+				<!-- Authors -->
+				Sahay S, Visovatti S, Tonelli AR, Villasmil Hernandez N, Austin ED, Badagliacca R, Berger RMF, Boucly A, Chen Y,
+				Church C, Delcroix M, Everett AD, Farber HW, Fauvel C, Gomberg-Maitland M, Griffiths M, Haddad F, Han Y, Hemnes A,
+				Hoeper MM, Kanwar MK, Lachant D, Murthy S, Olsson KM, Preston I, Rådegran G, Sitbon O, Trivieri MG, Vachiery J-L, Vanderpool R,
+				Weatherald J, White RJ, Whitford H, Wilson M, L. Benza R.
+				<!-- Title -->
+				International society for heart and lung transplantation (ishlt) consensus statement on risk stratification in pulmonary arterial hypertension.
+				<!-- Journal -->
+				Journal of Heart and Lung Transplantation. doi: 10.1016/j.healun.2025.04.015. Epub 2025 Sep 05.
+			</li>
+
+		</ol>
 	</div>
 
 
