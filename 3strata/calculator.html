@@ -22,33 +22,10 @@
 		</div>
 	</header>
 
-	<section class="resultbar">
-		<!--
-		<button class="reset-btn" onclick="copyData()">Copy to Clipboard</button>
-		-->
-
-		<!--
-		<button class="reset-btn" onclick="window.print()">Print</button>
-		-->
-
-		<button class="reset-btn" onclick="resetCalc()">Reset</button>
-
-		<button class="reset-btn" onclick="goToStart()">Back</button>
-	</section>
-
-
 	<section class="container">
 
 		<table class="table table-bordered" id="mainTable">
 
-			<!--
-	<tr>
-		<th></th>
-		<th style="width:150px"></th>
-		<th style="width:150px"></th>
-		<th style="width:150px"></th>
-	</tr>
-	-->
 			<tbody class="solid-border">
 				<tr class="title-row">
 					<th colspan="5">
@@ -91,8 +68,13 @@
 
 			<!-- Start of result section -->
 			<tr class="title-row">
-				<th colspan="5">
+				<th colspan="4">
 					Calculated ESC/ERS Risk Scores <sup>1-14</sup>
+				</th>
+				<th>
+					<button class="table-btn" onclick="resetCalc()">
+						Reset
+					</button>
 				</th>
 			</tr>
 

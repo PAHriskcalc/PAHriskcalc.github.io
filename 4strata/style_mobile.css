@@ -73,8 +73,6 @@ tr {
   font-size: 18px;
   color: white;
   background-color: var(--background-blue);
-  margin: 5px;
-
   display: flex;
   justify-content: center;
   align-items: center;

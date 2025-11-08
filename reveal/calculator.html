@@ -22,21 +22,6 @@
 	</div>
 </header>
 
-<section class="resultbar">
-	<!--
-	<button class="reset-btn" onclick="copyData()">Copy to Clipboard</button>
-	-->
-
-	<!--
-	<button class="reset-btn" onclick="window.print()">Print</button>
-	-->
-
-	<button class="reset-btn" onclick="resetCalc()">Reset</button>
-
-	<button class="reset-btn" onclick="goToStart()">Back</button>
-</section>
-
-
 <section class="container">
 
 	<table class="table table-bordered" id="mainTable">
@@ -57,10 +42,6 @@
 	<tr class="title-row">
 		<th colspan="8">
 		Pulmonary Arterial Hypertension Risk Score Calculators - REVEAL 2.0 and REVEAL Lite 2
-		<!--<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
-		  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-		  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-		</svg>-->
 		<br>
 		Select the available value for each parameter
 		</th>
@@ -109,8 +90,13 @@
 
 	<!-- Start of result section -->
 	<tr class="title-row">
-		<th colspan="8">
+		<th colspan="6">
 			Calculated REVEAL Risk Scores <sup>1-7</sup>
+		</th>
+		<th colspan = "2">
+			<button class="table-btn" onclick="resetCalc()">
+				Reset
+			</button>
 		</th>
 	</tr>
 
@@ -320,77 +306,6 @@
 
 	</ol>
 	</div>
-
-	<!-- Start of collapisble enviroment 
-	<button class="collapsible" onclick="collapseContent(this)">Collapse</button>
-	<div class="collapsible_content">
-	<div class="buttonSet">
-		<h3 class="col-xs-6">NAME</h3>
-	<div class="buttonRow">
-		<label id="PH_NAME_1" class="radioButton col-xs-2">
-		<input type="radio" name="PH_NAME" value="1" onclick="inputButton(this.name, this.value)">
-		<span class="checkmark">Button 1</span>
-		</label>
-		<label id="PH_NAME_2" class="radioButton col-xs-2">
-		<input type="radio" name="PH_NAME" value="2" onclick="inputButton(this.name, this.value)">
-		<span class="checkmark">Button 2</span>
-		</label>
-		<label id="PH_NAME_3" class="radioButton col-xs-2">
-		<input type="radio" name="PH_NAME" value="3" onclick="inputButton(this.name, this.value)">
-		<span class="checkmark">Button 3</span>
-		</label>
-	</div>
-	</div>
-	</div>
-	End of collapsible enviroment -->
-
-<!-- 	
-	<div class="buttonSet">
-		<h3 class="col-xs-6">Place holder NAME</h3>
-	<div class="buttonRow">
-		<label id="PH_NAME_1" class="radioButton col-xs-2">
-		<input type="radio" name="PH_NAME" value="1" onclick="inputButton(this.name, this.value)">
-		<span class="checkmark">Button 1</span>
-		</label>
-		<label id="PH_NAME_2" class="radioButton col-xs-2">
-		<input type="radio" name="PH_NAME" value="2" onclick="inputButton(this.name, this.value)">
-		<span class="checkmark">Button 2</span>
-		</label>
-		<label id="PH_NAME_3" class="radioButton col-xs-2">
-		<input type="radio" name="PH_NAME" value="3" onclick="inputButton(this.name, this.value)">
-		<span class="checkmark">Button 3</span>
-		</label>
-	</div>
-	</div> -->
-
-<!--
-	<tr class="btn-row">
-		<td class="title-cell">
-		PH NAME
-		</td>
-
-		<td class="btn-cell">
-		<label id="PH_NAME_1" class="radioButton">
-		<input type="radio" name="RV_Fail" value="1" onclick="inputButton(this.name, this.value)">
-		<span class="checkmark">-</span>
-		</label>
-		</td>
-
-		<td class="btn-cell">
-		<label id="PH_NAME_2" class="radioButton">
-		<input type="radio" name="PH_NAME" value="2" onclick="inputButton(this.name, this.value)">
-		<span class="checkmark">--</span>
-		</label>
-		</td>
-
-		<td class="btn-cell">
-		<label id="PH_NAME_3" class="radioButton">
-		<input type="radio" name="PH_NAME" value="3" onclick="inputButton(this.name, this.value)">
-		<span class="checkmark">---</span>
-		</label>
-		</td>
-	</tr>
--->
 
 <footer class="page-footer" style="min-height: 50px; margin-top: auto;">
 	<div class="footer-copyright text-center py-3">

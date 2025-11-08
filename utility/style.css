@@ -51,7 +51,7 @@ tr {
   height: 30px;
 }
 #mainTable {
-  width: 80%;
+  width: 100%;
   border: 2px solid black
 }
 .table > tbody > tr > th,
@@ -203,13 +203,26 @@ tr {
   font-size: 18px;
   color: white;
   background-color: var(--background-blue);
-  margin-top: 5px;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .reset-btn:hover {
+  background-color: var(--highlight-blue);
+}
+.table-btn {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 18px;
+  color: white;
+  background-color: var(--background-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table-btn:hover {
   background-color: var(--highlight-blue);
 }
 .nav-btn {
@@ -237,7 +250,7 @@ tr {
   color: white;
   background-color: var(--background-blue);
   cursor: pointer;
-  width: 80%;
+  width: 100%;
   border: none;
   text-align: center;
   font-size: 18px;
@@ -247,7 +260,7 @@ tr {
 }
 .collapsible-content {
   background-color: white;
-  width: 80%;
+  width: 100%;
   /*display: block;*/
   overflow: hidden;
   padding: 0px;
