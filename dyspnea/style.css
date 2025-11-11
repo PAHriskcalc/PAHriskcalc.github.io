@@ -3,16 +3,20 @@
 .dyspne-body {
     background-color: var(--background-grey);
 }
-.image-box{
+.image-box {
     display: flex;
     justify-content: center;
     align-items: center;
     min-width: 400px;
     max-width: 2000px;
 }
-/* .image {
-    
-} */
+.collapsible {
+    color: white;
+    background-color: black;
+}
+.collapsible-content {
+    background-color: var(--background-grey);
+}
 h4 {
     font-size: 1.4em;
     font-weight: bold;
