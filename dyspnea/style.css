@@ -16,6 +16,8 @@
 }
 .collapsible-content {
     background-color: var(--background-grey);
+    padding-left: 2%;
+    padding-right: 2%;
 }
 h4 {
     font-size: 1.4em;
