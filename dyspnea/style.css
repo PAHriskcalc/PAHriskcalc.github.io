@@ -7,8 +7,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 400px;
-    max-width: 2000px;
 }
 .collapsible {
     color: white;
@@ -16,8 +14,6 @@
 }
 .collapsible-content {
     background-color: var(--background-grey);
-    padding-left: 2%;
-    padding-right: 2%;
 }
 h4 {
     font-size: 1.4em;
