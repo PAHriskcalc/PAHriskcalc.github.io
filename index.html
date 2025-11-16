@@ -21,38 +21,47 @@
 	</header>
 
 	<div class="container-fluid">
-		<div class="text-center">
+		<div class="text-center row">
 			<p style="font-size: 30px;">
 				Click on buttons below to select the desired model for risk score calculation
 			</p>
 		</div>
 
+		<!-- Navigation buttons -->
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-12">
 				<button style="margin-top: 10px;margin: 20px;" class="nav-btn" onclick="goTo3Strata()">
 					ESC/ERS 3-Strata
 				</button>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-12">
 				<button style="margin-top: 10px;margin: 20px;" class="nav-btn" onclick="goTo4Strata()">
 					ESC/ERS 4-Strata
 				</button>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-12">
 				<button style="margin-top: 10px;margin: 20px;" class="nav-btn" onclick="goToREVEAL()">
 					REVEAL 2.0/Lite 2
 				</button>
 			</div>
 		</div>
+
+		<div class = "row">
+			<!-- Padding left -->
+			<div class = "col-md-3 col-sm-2 col-xs-0"></div>
+
+			<!-- Heart image -->
+			<div class = "col-md-6 col-sm-8 col-xs-12">		
+				<div class="image" , 
+					style="display: flex;justify-content: center; align-items: center; font-size: 0.5em; margin: 1.5em;">
+					<object data="landing/img/heart-lung.svg" class="image-svg" width="90%" height="90%"></object>
+				</div>
+			</div>
+
+			<!-- Padding right -->
+			<div class = "col-md-3 col-sm-2 col-xs-0"></div>
+		</div>
 	</div>
-
-	<br>
-
-	<section class="image" , 
-		style="display: flex;justify-content: center; align-items: center; font-size: 8px; margin: 20px;">
-		<object data="landing/img/heart-lung.svg" class="image-svg" width="125%" height="125%"></object>
-	</section>
-	<br>
 
 	<!-- Footer -->
 	<footer class="page-footer footer-title" style="min-height: 50px; margin-top: auto;">
