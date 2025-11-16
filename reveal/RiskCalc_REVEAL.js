@@ -64,7 +64,7 @@ const WALK = {
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const proBNP = {
-	name: "proBNP", group: "", meta_group: "", weight: [1, 1], value: [-2, NaN, 0, NaN, 2, NaN],
+	name: "BNP", group: "", meta_group: "", weight: [1, 1], value: [-2, NaN, 0, NaN, 2, NaN],
 	title: "NT-proBNP (ng/L)  <span style='color: orange'>&#9679</span>#", btnText: ["< 300", "", "300 - 1099", "", "&GreaterEqual; 1100", ""],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
@@ -129,7 +129,10 @@ const metaGroupTitle = {};
 const numOfParams = params.length;
 
 // Create array with test values
-var testValue = new Array(numOfParams).fill(NaN);
+var testValue = new Map();
+for (i = 0; i < numOfParams; i++) {
+	testValue.set(params[i].name, NaN);
+}
 
 
 // Update all risks
@@ -143,33 +146,21 @@ function updateRisk() {
 
 	// Add up the sum and weights of all params for each risk
 	for (let i = 0; i < numOfRisks; i++) {
+		var paramSet = new Set();
 		for (let j = 0; j < numOfParams; j++) {
-			if (!Number.isNaN(testValue[j])) {
-				sum[i] += params[j].weight[i] * testValue[j];
+			param_name = params[j].name;
+			value = testValue.get(param_name);
+			if (!Number.isNaN(value) && !paramSet.has(param_name)) {
+				sum[i] += params[j].weight[i] * value;
 				w[i] += params[j].weight[i];
 				paramCount[i] += (params[j].weight[i] != 0);
 			}
-			paramTotal[i] += (params[j].weight[i] != 0);
+			if (params[j].weight[i] != 0) {
+				paramSet.add(params[j].name);
+			}
 		}
+		paramTotal[i] = paramSet.size;
 	}
-
-	// Special code for BNP/proBNP hierarchy
-	// let BNP_index;
-	// let proBNP_index;
-	// for (let j = 0; j < numOfParams; j++) {
-	// 	if (params[j].name === "BNP") {
-	// 		BNP_index = j;
-	// 	} else if (params[j].name === "proBNP") {
-	// 		proBNP_index = j;
-	// 	}
-	// }
-	// if (!Number.isNaN(testValue[BNP_index]) && !Number.isNaN(testValue[proBNP_index])) {
-	// 	for (let i = 0; i < numOfRisks; i++) {
-	// 		sum[i] -= testValue[BNP_index] * params[BNP_index].weight[i];
-	// 		w[i] -= params[BNP_index].weight[i];
-	// 		paramCount[i] -= (params[BNP_index].weight[i] != 0);
-	// 	}
-	// }
 
 	// Calculate the sum of all params (+ correction factor)
 	let correction_factor = 6;
@@ -186,7 +177,6 @@ function updateRisk() {
 		if (counter_element) {
 			counter_element.innerHTML = `${paramCount[i]}/${paramTotal[i]}`;
 		}
-		// document.getElementById(riskID[i] + "_count").innerHTML = `${paramCount[i]}/${paramTotal[i]}`;
 		if (riskValue[i] && paramCount[i] >= paramMin[i]) {
 			const riskRate = ["&nbsp;(Low risk)", "&nbsp;(Intermediate risk)", "&nbsp;(High risk"];
 
@@ -211,21 +201,22 @@ function updateRisk() {
 	}
 }
 
-function inputButton(name, val) {
+function inputButton(name, value, checked) {
 	//updateButton(id, testNum, btnNum);
 	for (let i = 0; i < numOfParams; i++) {
-		if (name === params[i].name) {
-			// If selected: uncheck; else: check
-			if (testValue[i] == val) {
-				var radio = document.querySelector(`input[type=radio][name=${name}]:checked`);
-				radio.checked = false;
-				testValue[i] = NaN;
-			} else {
-				var radio = document.querySelector(`input[type=radio][name=${name}]:checked`);
-				radio.checked = true;
-				testValue[i] = val;
-			}
-		}
+		// if (name === params[i].name) {
+		// 	// If selected: uncheck; else: check
+		// 	if (checked) {
+		// 		// var radio = document.querySelector(`input[type=radio][name=${name}]:checked`);
+		// 		// radio.checked = false;
+		// 		testValue[i] = NaN;
+		// 	} else {
+		// 		// var radio = document.querySelector(`input[type=radio][name=${name}]:checked`);
+		// 		// radio.checked = true;
+		// 		testValue[i] = value;
+		// 	}
+		// }
+		testValue.set(name, value);
 	}
 	if (numOfRisks) { updateRisk(); }
 }
@@ -282,48 +273,48 @@ function resetCalc() {
 		if (radio = document.querySelector(`input[type=radio][name=${name}]:checked`)) {
 			radio.checked = false;
 		}
-		testValue[i] = NaN;
+		testValue.set(name, NaN);
 	}
 	updateRisk();
 }
 
-function copyData() {
-	let copyStr = "";// = `Parameter\tDiagnosis\tValue`;
-	let paramTitle; let paramText; let testVal;
-	for (let i = 0; i < numOfParams; i++) {
-		testVal = testValue[i];
-		if (params[i].title_c) {
-			paramTitle = params[i].title_c;
-		} else {
-			paramTitle = params[i].title;
-		}
-		if (params[i].btnText_c[testValue[i] - 1]) {
-			paramText = params[i].btnText_c[testValue[i] - 1];
-		} else {
-			paramText = params[i].btnText[testValue[i] - 1];
-		}
-		if (testVal == 0) {
-			paramText = " ";
-		}
-		// BNP exeption
-		if (params[i].title == "BNP") {
-			if (testValue[i - 1]) {
-				testVal = 0;
-				paramText = " ";
-			}
-		}
+// function copyData() {
+// 	let copyStr = "";// = `Parameter\tDiagnosis\tValue`;
+// 	let paramTitle; let paramText; let testVal;
+// 	for (let i = 0; i < numOfParams; i++) {
+// 		testVal = testValue.get(params[i].name);
+// 		if (params[i].title_c) {
+// 			paramTitle = params[i].title_c;
+// 		} else {
+// 			paramTitle = params[i].title;
+// 		}
+// 		if (params[i].btnText_c[testValue[i] - 1]) {
+// 			paramText = params[i].btnText_c[testValue[i] - 1];
+// 		} else {
+// 			paramText = params[i].btnText[testValue[i] - 1];
+// 		}
+// 		if (testVal == 0) {
+// 			paramText = " ";
+// 		}
+// 		// BNP exeption
+// 		if (params[i].title == "BNP") {
+// 			if (testValue[i - 1]) {
+// 				testVal = 0;
+// 				paramText = " ";
+// 			}
+// 		}
 
-		copyStr += `\n${paramTitle}\t${paramText}\t${testVal}`;
-	}
-	var riskGroup = ["Low risk", "Intermediate-Low risk", "Intermediate-High risk", "High risk"];
-	var risk_group;
-	copyStr += "\nRisk Group";
-	for (let i = 0; i < riskID.length; i++) {
-		risk_group = riskGroup[Math.round(4 * riskValue[i] / 3) - 1];
-		copyStr += `\n${riskTitle[i]}\t${risk_group}\t${riskValue[i].toFixed(2)}`;
-	}
-	navigator.clipboard.writeText(copyStr);
-}
+// 		copyStr += `\n${paramTitle}\t${paramText}\t${testVal}`;
+// 	}
+// 	var riskGroup = ["Low risk", "Intermediate-Low risk", "Intermediate-High risk", "High risk"];
+// 	var risk_group;
+// 	copyStr += "\nRisk Group";
+// 	for (let i = 0; i < riskID.length; i++) {
+// 		risk_group = riskGroup[Math.round(4 * riskValue[i] / 3) - 1];
+// 		copyStr += `\n${riskTitle[i]}\t${risk_group}\t${riskValue[i].toFixed(2)}`;
+// 	}
+// 	navigator.clipboard.writeText(copyStr);
+// }
 
 function createButton(name, value, btn_text) {
 	// Creates cell for button
@@ -338,7 +329,7 @@ function createButton(name, value, btn_text) {
 		btn.setAttribute("type", "radio");
 		btn.setAttribute("name", name);
 		btn.setAttribute("value", value);
-		btn.setAttribute("onclick", "inputButton(this.name, this.value)");
+		btn.setAttribute("onclick", "inputButton(this.name, this.value, this.checked)");
 		label.appendChild(btn);
 	}
 	
@@ -469,6 +460,7 @@ function createTable() {
 
 		document.getElementById(meta_id).appendChild(row);
 	}
+	resetCalc();
 }
 function createTable_mobile() {
 	let groups = ["misc"];
@@ -540,4 +532,5 @@ function createTable_mobile() {
 		}
 		document.getElementById(group_id).appendChild(btn_row);
 	}
+	resetCalc();
 }

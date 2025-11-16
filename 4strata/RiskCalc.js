@@ -506,6 +506,7 @@ function createTable() {
 
 		document.getElementById(meta_id).appendChild(row);
 	}
+	resetCalc();
 }
 function createTable_m() {
 	let groups = ["misc"];
@@ -567,4 +568,5 @@ function createTable_m() {
 		}
 		document.getElementById(group_id).appendChild(btn_row);
 	}
+	resetCalc();
 }
