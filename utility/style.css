@@ -47,6 +47,7 @@ table {
   width: 1px;
   height: 1px;
   border-spacing: 0px;
+  margin-top: 1em;
 }
 tr {
   height: 1.875em;
@@ -108,7 +109,7 @@ tr {
   background-color: var(--highlight-active);
 }
 .result-cell {
-  font-size: 0.875em;
+  font-size: 0.95em;
   font-weight: bold;
   text-align: center;
   vertical-align: middle;
