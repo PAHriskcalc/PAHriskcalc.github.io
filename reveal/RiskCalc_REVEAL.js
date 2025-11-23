@@ -9,7 +9,7 @@ var riskValue = new Array(numOfRisks).fill(0);
 let params = [];
 // Create params with buttons and add to array of params
 const WHO = {
-	name: "WHO", group: "", meta_group: "",
+	name: "WHO", id: "WHO", group: "", meta_group: "",
 	weight: [1, 0], priority_param: [0, 0], value: [NaN, NaN, 0, 1, 2, 3],
 	title: "WHO group I subgroup", btnText: ["", "", "Other", "CTD", "Heritable", "PoPH"],
 	title_m: "WHO group I subgroup", btnText_m: ["", "", "Other", "CTD", "Heritable", "PoPH"],
@@ -17,7 +17,7 @@ const WHO = {
 	title_p: "", btnText_p: []
 };
 const MALE = {
-	name: "Male", group: "", meta_group: "",
+	name: "Male", id: "Male", group: "", meta_group: "",
 	weight: [1, 0], priority_param: [0, 0], value: [NaN, NaN, 0, NaN, 2, NaN],
 	title: "Male > 60 years", btnText: ["", "", "No", "", "Yes", ""],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
@@ -25,14 +25,14 @@ const MALE = {
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const RECENT_HOSPITALIZATION = {
-	name: "Hospitalization", group: "", meta_group: "",
+	name: "Hospitalization", id: "Hospitalization", group: "", meta_group: "",
 	weight: [1, 0], priority_param: [0, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "All-cause hospitalizations within 6 months", btnText: ["", "", "No", "Yes", "", ""],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };const eGFR = {
-	name: "eGFR", group: "", meta_group: "",
+	name: "eGFR", id: "eGFR", group: "", meta_group: "",
 	weight: [1, 1], priority_param: [0, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "eGFR < 60 ml/min/1.73m<sup>2</sup> or renal insufficiency <span style='color: orange'>&#9679</span>*", btnText: ["", "", "No", "Yes", "", ""],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
@@ -40,7 +40,7 @@ const RECENT_HOSPITALIZATION = {
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const BLOOD_PRESSURE = {
-	name: "BloodPressure", group: "", meta_group: "",
+	name: "BloodPressure", id: "BloodPressure", group: "", meta_group: "",
 	weight: [1, 1], priority_param: [0, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "Systolic blood pressure (mmHg) <span style='color: orange'>&#9679</span>", btnText: ["", "", "&GreaterEqual; 110", "< 110", "", ""],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
@@ -48,7 +48,7 @@ const BLOOD_PRESSURE = {
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const HEART_RATE = {
-	name: "HeartRate", group: "", meta_group: "",
+	name: "HeartRate", id: "HeartRate", group: "", meta_group: "",
 	weight: [1, 1], priority_param: [0, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "Heart rate (beats/min) <span style='color: orange'>&#9679</span>", btnText: ["", "", "&le; 96", "> 96", "", ""],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
@@ -56,7 +56,7 @@ const HEART_RATE = {
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const NYHA = {
-	name: "NYHA", group: "", meta_group: "",
+	name: "NYHA", id: "NYHA", group: "", meta_group: "",
 	weight: [1, 1], priority_param: [0, 1], value: [NaN, -1, 0, 1, 2, NaN],
 	title: "NYHA/WHO functional class <span style='color: orange'>&#9679</span>", btnText: ["", "I", "II", "III", "IV", ""],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
@@ -64,7 +64,7 @@ const NYHA = {
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const WALK = {
-	name: "Walk", group: "", meta_group: "",
+	name: "Walk", id: "WALK", group: "", meta_group: "",
 	weight: [1, 1], priority_param: [0, 1], value: [-2, -1, 0, 1, NaN, NaN],
 	title: "Six-minute walking distance (m) <span style='color: orange'>&#9679</span>", btnText: ["&GreaterEqual; 440", " 439 - 320", "319 - 165", "< 165", "", ""],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
@@ -72,7 +72,7 @@ const WALK = {
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const proBNP = {
-	name: "BNP", group: "", meta_group: "",
+	name: "BNP", id: "proBNP", group: "", meta_group: "",
 	weight: [1, 1], priority_param: [0, 1], value: [-2, NaN, 0, NaN, 2, NaN],
 	title: "NT-proBNP (ng/L)  <span style='color: orange'>&#9679</span>#", btnText: ["< 300", "", "300 - 1099", "", "&GreaterEqual; 1100", ""],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
@@ -80,7 +80,7 @@ const proBNP = {
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const BNP = {
-	name: "BNP", group: "", meta_group: "",
+	name: "BNP", id: "BNP", group: "", meta_group: "",
 	weight: [1, 1], priority_param: [0, 1], value: [-2, NaN, 0, 1, 2, NaN],
 	title: "BNP (ng/L)  <span style='color: orange'>&#9679</span>#", btnText: ["< 50", "", "50 - 199", "200 - 799", "&GreaterEqual; 800", ""],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
@@ -88,7 +88,7 @@ const BNP = {
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const ECHOCARDIO = {
-	name: "Echocardio", group: "", meta_group: "",
+	name: "Echocardio", id: "Echocardio", group: "", meta_group: "",
 	weight: [1, 0], priority_param: [0, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "Pericardial effusion on echocardiogram", btnText: ["", "", "No", "Yes", "", ""],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
@@ -96,7 +96,7 @@ const ECHOCARDIO = {
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const DLco = {
-	name: "DLco", group: "", meta_group: "",
+	name: "DLco", id: "DLco", group: "", meta_group: "",
 	weight: [1, 0], priority_param: [0, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "DLco (% predicted) < 40%", btnText: ["", "", "No", "Yes", "", ""],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
@@ -104,7 +104,7 @@ const DLco = {
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const RAP = {
-	name: "RAP", group: "", meta_group: "",
+	name: "RAP", id: "RAP", group: "", meta_group: "",
 	weight: [1, 0], priority_param: [0, 0], value: [NaN, NaN, 0, 1, NaN, NaN],
 	title: "mRAP > 20 mmHg within 1 year", btnText: ["", "", "No", "Yes", "", ""],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
@@ -112,7 +112,7 @@ const RAP = {
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
 };
 const PVR = {
-	name: "PVR", group: "", meta_group: "",
+	name: "PVR", id: "PVR", group: "", meta_group: "",
 	weight: [1, 0], priority_param: [0, 0], value: [NaN, -1, 0, NaN, NaN, NaN],
 	title: "PVR < 5 WU", btnText: ["", "Yes", "No", "", "", ""],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
@@ -220,23 +220,26 @@ function updateRisk() {
 	}
 }
 
-function inputButton(name, value, checked) {
-	//updateButton(id, testNum, btnNum);
-	for (let i = 0; i < numOfParams; i++) {
-		// if (name === params[i].name) {
-		// 	// If selected: uncheck; else: check
-		// 	if (checked) {
-		// 		// var radio = document.querySelector(`input[type=radio][name=${name}]:checked`);
-		// 		// radio.checked = false;
-		// 		testValue[i] = NaN;
-		// 	} else {
-		// 		// var radio = document.querySelector(`input[type=radio][name=${name}]:checked`);
-		// 		// radio.checked = true;
-		// 		testValue[i] = value;
-		// 	}
-		// }
+function inputButton(id) {
+
+	// If selected: uncheck; else: check
+	var radio = document.querySelector(`input[type=radio][id=${id}]`);
+	var checked = radio.getAttribute("data-checked");
+	var value = radio.getAttribute("value");
+	var name = radio.getAttribute("name");
+	if (checked == "true") {
+		radio.checked = false;
+		radio.setAttribute("data-checked", "false");
+		testValue.set(name, NaN);
+	} else {
+		// Uncheck previously checked input
+		if (checked_radio = document.querySelector(`input[type=radio][name=${name}][data-checked="true"]`)) {
+			checked_radio.setAttribute("data-checked", "false");
+		}
+		radio.setAttribute("data-checked", "true");
 		testValue.set(name, value);
 	}
+	
 	if (numOfRisks) { updateRisk(); }
 }
 
@@ -291,13 +294,14 @@ function resetCalc() {
 		var radio;
 		if (radio = document.querySelector(`input[type=radio][name=${name}]:checked`)) {
 			radio.checked = false;
+			radio.setAttribute("data-checked", "false");
 		}
 		testValue.set(name, NaN);
 	}
 	updateRisk();
 }
 
-function createButton(name, value, btn_text) {
+function createButton(name, id, value, btn_text) {
 	// Creates cell for button
 	var cell = document.createElement("TD");
 	cell.setAttribute("class", "btn-cell");
@@ -309,8 +313,10 @@ function createButton(name, value, btn_text) {
 		var btn = document.createElement("INPUT");
 		btn.setAttribute("type", "radio");
 		btn.setAttribute("name", name);
+		btn.setAttribute("id", id + value.toString());
 		btn.setAttribute("value", value);
-		btn.setAttribute("onclick", "inputButton(this.name, this.value, this.checked)");
+		btn.setAttribute("data-checked", "false");
+		btn.setAttribute("onclick", "inputButton(this.id)");
 		label.appendChild(btn);
 	}
 	
@@ -435,7 +441,7 @@ function createTable() {
 		}
 		// Append button cells.
 		for (let j = 0; j < max_btns; j++) {
-			btnCell = createButton(params[i].name, params[i].value[j], params[i].btnText[j]);
+			btnCell = createButton(params[i].name, params[i].id, params[i].value[j], params[i].btnText[j]);
 			row.appendChild(btnCell);
 		}
 
@@ -510,7 +516,7 @@ function createTable_mobile() {
 				if (params[i].btnText_m[j]) {
 					button_text = params[i].btnText_m[j];
 				}
-				btnCell = createButton(params[i].name, params[i].value[j], button_text);
+				btnCell = createButton(params[i].name, params[i].id, params[i].value[j], button_text);
 				if (btn_count == 2) {
 					btnCell.setAttribute("colspan", 2);
 				}				
