@@ -179,7 +179,7 @@ function updateRisk_f() {
 	riskValue_f[0] = sum[0];
 	riskValue_f[1] = sum[1];
 	// French invasive
-	var riskRate = ["&nbsp;<small>(Low)</small>", "&nbsp;<small>(Intermediate)</small>", "&nbsp;<small>(High)</small>"];
+	var riskRate = ["<br><small>(Low)</small>", "<br><small>(Intermediate)</small>", "<br><small>(High)</small>"];
 	//Set param count for each risk
 	document.getElementById(riskID_f[0] + "_count").innerHTML = `${paramCount[0]}/${paramTotal[0]}`;
 	//var riskRate = [" (Low risk)", " (Intermediate risk)", " (High risk)"];
