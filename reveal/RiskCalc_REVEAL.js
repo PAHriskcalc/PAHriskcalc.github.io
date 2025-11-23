@@ -278,48 +278,10 @@ function resetCalc() {
 	updateRisk();
 }
 
-// function copyData() {
-// 	let copyStr = "";// = `Parameter\tDiagnosis\tValue`;
-// 	let paramTitle; let paramText; let testVal;
-// 	for (let i = 0; i < numOfParams; i++) {
-// 		testVal = testValue.get(params[i].name);
-// 		if (params[i].title_c) {
-// 			paramTitle = params[i].title_c;
-// 		} else {
-// 			paramTitle = params[i].title;
-// 		}
-// 		if (params[i].btnText_c[testValue[i] - 1]) {
-// 			paramText = params[i].btnText_c[testValue[i] - 1];
-// 		} else {
-// 			paramText = params[i].btnText[testValue[i] - 1];
-// 		}
-// 		if (testVal == 0) {
-// 			paramText = " ";
-// 		}
-// 		// BNP exeption
-// 		if (params[i].title == "BNP") {
-// 			if (testValue[i - 1]) {
-// 				testVal = 0;
-// 				paramText = " ";
-// 			}
-// 		}
-
-// 		copyStr += `\n${paramTitle}\t${paramText}\t${testVal}`;
-// 	}
-// 	var riskGroup = ["Low risk", "Intermediate-Low risk", "Intermediate-High risk", "High risk"];
-// 	var risk_group;
-// 	copyStr += "\nRisk Group";
-// 	for (let i = 0; i < riskID.length; i++) {
-// 		risk_group = riskGroup[Math.round(4 * riskValue[i] / 3) - 1];
-// 		copyStr += `\n${riskTitle[i]}\t${risk_group}\t${riskValue[i].toFixed(2)}`;
-// 	}
-// 	navigator.clipboard.writeText(copyStr);
-// }
-
 function createButton(name, value, btn_text) {
 	// Creates cell for button
-	var cell = document.createElement("TD")
-	cell.setAttribute("class", "btn-cell")
+	var cell = document.createElement("TD");
+	cell.setAttribute("class", "btn-cell");
 	// Create label with type radioButton
 	var label = document.createElement("LABEL");
 	label.setAttribute("class", "radioButton");
@@ -516,7 +478,13 @@ function createTable_mobile() {
 		title_cell.setAttribute("colspan", max_col);
 		title_row.appendChild(title_cell);
 		// }
-
+		// Count number of buttons on row
+		var btn_count = 0;
+		for (let j = 0; j < max_btns; j++) {
+			if (!Number.isNaN(params[i].value[j])) {
+				btn_count++;
+			}
+		}
 		for (let j = 0; j < max_btns; j++) {
 			if(!Number.isNaN(params[i].value[j])) {
 				var button_text = params[i].btnText[j];
@@ -524,6 +492,10 @@ function createTable_mobile() {
 					button_text = params[i].btnText_m[j];
 				}
 				btnCell = createButton(params[i].name, params[i].value[j], button_text);
+				if (btn_count == 2) {
+					btnCell.setAttribute("colspan", 2);
+				}				
+				
 				btn_row.appendChild(btnCell);
 			}
 		}

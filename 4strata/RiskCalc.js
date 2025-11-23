@@ -543,7 +543,6 @@ function createTable_m() {
 		btn_row.setAttribute("class", "btn-row");
 		btn_row.setAttribute("id", params[i].name);
 
-		// if (!groupTitle[group_id]) {
 		var title_row = document.createElement("TR");
 		title_row.setAttribute("class", "btn-row");
 		var title_text = param.title;
@@ -553,7 +552,6 @@ function createTable_m() {
 		var title_cell = createTitleCell(title_text);
 		title_cell.setAttribute("colspan", max_btns);
 		title_row.appendChild(title_cell);
-		// }
 
 		for (let j = 0; j < max_btns; j++) {
 			var button_text = params[i].btnText[j];
