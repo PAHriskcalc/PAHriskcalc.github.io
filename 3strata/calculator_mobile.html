@@ -17,7 +17,7 @@
 
 <section class="container">
 
-	<table class="table table-bordered" id="mainTable" style="width:100%;border:2px solid black;margin-top: 60px">
+	<table class="table table-bordered" id="mainTable" style="width:100%;border:2px solid black;">
 	
 	<tbody class="solid-border">
 	<tr class="title-row">
@@ -37,9 +37,15 @@
 	</tr>
 
 	<tr class="header-row">
-		<th class="header-cell" style="width:32%;background-color: var(--low-green);">Low risk (<5%)</th>
-		<th class="header-cell" style="width:32%;background-color: var(--mid-yellow);">Intermediate risk (5-20%)</th>
-		<th class="header-cell" style="width:32%;background-color: var(--high-red);">High risk (>20%)</th>
+		<th class="header-cell" style="width:32%;background-color: var(--low-green);">
+			Low risk <br>(<5%)
+		</th>
+		<th class="header-cell" style="width:32%;background-color: var(--mid-yellow);">
+			Intermediate risk <br>(5-20%)
+		</th>
+		<th class="header-cell" style="width:32%;background-color: var(--high-red);">
+			High risk <br>(>20%)
+		</th>
 	</tr>
 	</tbody>
 
@@ -73,18 +79,30 @@
 	</tr>
 
 	<tr>
-		<td colspan="2">Extended<small>(using all available parameters above in SPAHR equation)</small></td>
-		<td class="result-cell" id="result_Full">Use &geq; 3 parameters</td>
+		<td colspan="2">
+			Extended (all)
+		</td>
+		<td class="result-cell" id="result_Full">
+			Use &geq; 3 parameters
+		</td>
 	</tr>
 
 	<tr>
-		<td colspan="2">SPAHR-Kylhammar<small>(up to 8 determinats of prognosis)</small></td>
-		<td class="result-cell" id="result_SPAHR">Use &geq; 3 parameters</td>
+		<td colspan="2">
+			SPAHR-Kylhammar
+		</td>
+		<td class="result-cell" id="result_SPAHR">
+			Use &geq; 3 parameters
+		</td>
 	</tr>
 
 	<tr>
-		<td colspan="2">COMPERA<small>(up to 6 parameters, without RA and pericardial effusion)</small></td>
-		<td class="result-cell" id="result_Compera">Use &geq; 3 parameters</td>
+		<td colspan="2">
+			COMPERA
+		</td>
+		<td class="result-cell" id="result_Compera">
+			Use &geq; 3 parameters
+		</td>
 	</tr>
 
 	<!-- <tr>
@@ -106,13 +124,21 @@
 	</tr>
 
 	<tr>
-		<td colspan="2">French invasive<small>(WHO-FC, 6MWD, RAP, CI)</small></td>
-		<td class="result-cell" id="result_french1">1.0</td>
+		<td colspan="2">
+			French invasive
+		</td>
+		<td class="result-cell" id="result_french1">
+			1.0<
+			/td>
 	</tr>
 
 	<tr>
-		<td colspan="2">French non-invasive<small>(WHO-FC, 6MWD, BNP/NT-proBNP)</small></td>
-		<td class="result-cell" id="result_french2">1.0</td>
+		<td colspan="2">
+			French non-invasive
+		</td>
+		<td class="result-cell" id="result_french2">
+			1.0
+		</td>
 	</tr>
 
 	<!-- <tr>

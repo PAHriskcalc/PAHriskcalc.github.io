@@ -6,15 +6,14 @@
   color: var(--frontpage-yellow);
   min-height: 3.125em;
   margin-bottom: 1.5em;
-  width: 90vw;
+  margin-top: 1.5em;
 }
-.header-title > p {
-  /* font-size: 30pt; */
-  font-size: 30pt;
+.header-title > h1 {
+  font-size: 2.5em;
   font-weight: bold;
 }
-.header-title > small {
-  font-size: 22pt;
+.header-title > h2 {
+  font-size: 2em;
 }
 .body-title {
   display: flex;
