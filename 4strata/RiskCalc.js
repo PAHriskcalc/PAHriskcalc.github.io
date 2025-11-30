@@ -16,7 +16,7 @@ let params = [];
 const WHO_FC = {
 	name: "WHO_FC", group: "WHO_walk", meta_group: "Modifiable", weight: [1], weight_f: [1, 1], value: [1, 0, 3, 4],
 	title: "WHO functional class", btnText: ["I, II", "-", "III", "IV"],
-	title_m: "WHO_FC", btnText_m:  ["I, II", "-", "III", "IV"],
+	title_m: "WHO-FC", btnText_m:  ["I, II", "-", "III", "IV"],
 	title_c: "", btnText_c: [],
 	title_p: "", btnText_p: []
 };

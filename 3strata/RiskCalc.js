@@ -113,7 +113,7 @@ params.push(BNP);
 const RAarea = {
 	name: "RAarea", group: "Imaging", meta_group: "Modifiable", weight: [1, 0, 1, 0], weight_f: [0, 0], value: [1, 2, 3],
 	title: "RA area", btnText: ["RA area &nbsp;< 18 cm<sup>2</sup>", "RA area 18 - 26 cm<sup>2</sup>", "RA area &nbsp;> 26 cm<sup>2</sup>"],
-	title_m: "Right atrial area (cm<sup>2</sup>) <sup>¤</sup>", btnText_m: ["< 18", "18-26", "> 26"],
+	title_m: "Right atrial area (echo, cm<sup>2</sup>) <sup>¤</sup>", btnText_m: ["< 18", "18-26", "> 26"],
 	title_c: "", btnText_c: ["< 18 cm^2", "18-26 cm^2", "> 26 cm^2"],
 	title_p: "", btnText_p: []
 };
@@ -122,7 +122,7 @@ params.push(RAarea);
 const sPAP = {
 	name: "sPAP", group: "Imaging", meta_group: "Modifiable", weight: [1, 0, 0, 0], weight_f: [0, 0], value: [1, 2, 3],
 	title: "TAPSE/sPAP", btnText: ["TAPSE/sPAP &nbsp; >0.32 mm/mmHg", "TAPSE/sPAP 0.19 - 0.32 mm/mmHg", "TAPSE/sPAP &nbsp;< 0.19 mm/mmHg"],
-	title_m: "TAPSE/sPAP (mm/mmHg) <sup>¤</sup>", btnText_m: ["< 0.32", "0.19 - 0.32", "< 0.19"],
+	title_m: "TAPSE/sPAP (echo, mm/mmHg) <sup>¤</sup>", btnText_m: ["< 0.32", "0.19 - 0.32", "< 0.19"],
 	title_c: "TAPSE/sPAP", btnText_c: [">0.32 mm/mmHg", "0.19-0.32 mm/mmHg", "<0.19 mm/mmHg"],
 	title_p: "", btnText_p: []
 };
@@ -131,7 +131,7 @@ params.push(sPAP);
 const Pericardial_Effusion = {
 	name: "Pericardial_Effusion", meta_group: "Modifiable", group: "Imaging", weight: [1, 0, 1, 0], weight_f: [0, 0], value: [1, 2, 3],
 	title: "Pericardial effusion", btnText: ["No pericardial effusion", "Minimal pericardial effusion", "Pericardial effusion"],
-	title_m: "Pericardial Effusion <sup>¤</sup>", btnText_m: ["None", "Minimal", "Significant"],
+	title_m: "Pericardial Effusion (echo) <sup>¤</sup>", btnText_m: ["None", "Minimal", "Significant"],
 	title_c: "", btnText_c: ["", "", ""],
 	title_p: "", btnText_p: []
 };
