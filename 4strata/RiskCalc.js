@@ -24,8 +24,8 @@ params.push(WHO_FC);
 // 6MWT
 const MWT = {
 	name: "MWT", group: "WHO_walk", meta_group: "Modifiable", weight: [1], weight_f: [1, 1], value: [1, 2, 3, 4],
-	title: "Six-minute walking distance", btnText: ["> 440 m", "440 - 320 m", "319 - 165 m", "< 165 m"],
-	title_m: "6MWD (m)", btnText_m:  ["> 440", "320 - 440", "165 - 319", "< 165"],
+	title: "Six-minute walking distance", btnText: ["> 440 m", "440-320 m", "319-165 m", "< 165 m"],
+	title_m: "6MWD (m)", btnText_m:  ["> 440", "320-440", "165-319", "< 165"],
 	title_c: "", btnText_c: [],
 	title_p: "", btnText_p: []
 };
@@ -33,8 +33,8 @@ params.push(MWT);
 // ProBNP
 const proBNP = {
 	name: "proBNP", group: "Biochem", meta_group: "Modifiable", weight: [1], weight_f: [0, 1], value: [1, 2, 3, 4],
-	title: "NT-proBNP", btnText: ["NT-proBNP &nbsp;< 300 ng/l", "NT-proBNP 300 - 649 ng/l", "NT-proBNP 650 - 1100 ng/l", "NT-proBNP &nbsp;> 1100 ng/l"],
-	title_m: "NT-proBNP (ng/L) <sup>*</sup>", btnText_m:  ["< 300", "300 - 649", "650 - 1100", "> 1100"],
+	title: "NT-proBNP", btnText: ["NT-proBNP &nbsp;< 300 ng/l", "NT-proBNP 300-649 ng/l", "NT-proBNP 650-1100 ng/l", "NT-proBNP &nbsp;> 1100 ng/l"],
+	title_m: "NT-proBNP (ng/L) <sup>*</sup>", btnText_m:  ["< 300", "300-649", "650-1100", "> 1100"],
 	title_c: "", btnText_c: [],
 	title_p: "", btnText_p: []
 };
@@ -42,8 +42,8 @@ params.push(proBNP);
 // BNP
 const BNP = {
 	name: "BNP", group: "Biochem", meta_group: "Modifiable", weight: [1], weight_f: [0, 1], value: [1, 2, 3, 4],
-	title: "BNP", btnText: ["BNP &nbsp;< 50 ng/l", "BNP 50 - 199 ng/l", "BNP 200 - 800 ng/l", "BNP &nbsp;> 800 ng/l"],
-	title_m: "BNP (ng/L) <sup>*</sup>", btnText_m:  ["< 50", "50 - 199", "200 - 800", "> 800"],
+	title: "BNP", btnText: ["BNP &nbsp;< 50 ng/l", "BNP 50-199 ng/l", "BNP 200-800 ng/l", "BNP &nbsp;> 800 ng/l"],
+	title_m: "BNP (ng/L) <sup>*</sup>", btnText_m:  ["< 50", "50-199", "200-800", "> 800"],
 	title_c: "", btnText_c: [],
 	title_p: "", btnText_p: []
 };

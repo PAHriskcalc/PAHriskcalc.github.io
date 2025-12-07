@@ -66,7 +66,7 @@ const NYHA = {
 const WALK = {
 	name: "Walk", id: "WALK", group: "", meta_group: "",
 	weight: [1, 1], priority_param: [0, 1], value: [-2, -1, 0, 1],
-	title: "Six-minute walking distance (m) <span style='color: orange'>&#9679</span>", btnText: ["&GreaterEqual; 440", " 439 - 320", "319 - 165", "< 165"],
+	title: "Six-minute walking distance (m) <span style='color: orange'>&#9679</span>", btnText: ["&GreaterEqual; 440", " 439-320", "319-165", "< 165"],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
@@ -74,7 +74,7 @@ const WALK = {
 const proBNP = {
 	name: "BNP", id: "proBNP", group: "", meta_group: "",
 	weight: [1, 1], priority_param: [0, 1], value: [-2, 0, NaN, 2],
-	title: "NT-proBNP (ng/L)  <span style='color: orange'>&#9679</span>#", btnText: ["< 300", "300 - 1099", "", "&GreaterEqual; 1100"],
+	title: "NT-proBNP (ng/L)  <span style='color: orange'>&#9679</span>#", btnText: ["< 300", "300-1099", "", "&GreaterEqual; 1100"],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]
@@ -82,7 +82,7 @@ const proBNP = {
 const BNP = {
 	name: "BNP", id: "BNP", group: "", meta_group: "",
 	weight: [1, 1], priority_param: [0, 1], value: [-2, 0, 1, 2],
-	title: "BNP (ng/L)  <span style='color: orange'>&#9679</span>#", btnText: ["< 50","50 - 199", "200 - 799", "&GreaterEqual; 800"],
+	title: "BNP (ng/L)  <span style='color: orange'>&#9679</span>#", btnText: ["< 50","50-199", "200-799", "&GreaterEqual; 800"],
 	title_m: "", btnText_m: ["", "", "", "", "", ""],
 	title_c: "", btnText_c: ["", "", "", "", "", ""],
 	title_p: "", btnText_p: ["", "", "", "", "", ""]

@@ -220,7 +220,7 @@ tr {
   padding: 0;
   height: 100%;
   width: 100%;
-  font-size: 1.125em;
+  font-size: 1.0em;
   color: white;
   background-color: var(--background-blue);
   display: flex;
