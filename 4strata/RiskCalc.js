@@ -114,7 +114,7 @@ function updateRisk() {
 		//Set param count for each risk
 		document.getElementById(riskID[i] + "_count").innerHTML = `${paramCount[i]}/${paramTotal[i]}`;
 		if (riskValue[i] && paramCount[i] >= paramMin) {
-			const riskRate = ["&nbsp;<small>(Low)</small>", "&nbsp;<small>(Intermediate-Low)</small>", "&nbsp;<small>(Intermediate-High)</small>", "&nbsp;<small>(High)</small>"];
+			const riskRate = ["<br><small>(Low)</small>", "<br><small>(Interm.-Low)</small>", "<br><small>(Interm.-High)</small>", "<br><small>(High)</small>"];
 
 			if (riskValue[i] < 1.5) {
 				// If riskValue rounds to 1

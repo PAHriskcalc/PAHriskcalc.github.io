@@ -13,11 +13,10 @@ tr {
   border-right: 2px solid black;
 }
 .title-cell {
-  font-size: 16px;
+  font-size: 1.1em;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
-  padding-left: 10px;
 }
 .header-row > .header-cell {
   vertical-align: middle;
