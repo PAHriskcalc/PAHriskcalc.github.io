@@ -175,7 +175,7 @@ function updateRisk() {
 				priorityCount[i] += params[j].priority_param[i];
 			}
 			if (params[j].weight[i] != 0) {
-				paramSet.add(params[j].name);
+				paramSet.add(param_name);
 			}
 		}
 		paramTotal[i] = paramSet.size;
@@ -255,13 +255,13 @@ function highlightParam(id = null) {
 		}
 		for (let i = 0; i < numOfParams; i++) {
 			if (params[i].weight[j]) {
-				btn_row = document.getElementById(params[i].name);
+				btn_row = document.getElementById(params[i].id);
 				btn_row.classList.toggle("highlight-active");
 			}
 		}
 	} else {
 		for (let i = 0; i < numOfParams; i++) {
-			btn_row = document.getElementById(params[i].name);
+			btn_row = document.getElementById(params[i].id);
 			if (btn_row.classList.contains("highlight-active")) {
 				btn_row.classList.toggle("highlight-active");
 			}
@@ -391,7 +391,7 @@ function createTable() {
 		// Create a new row for buttons.
 		var row = document.createElement("TR");
 		row.setAttribute("class", "btn-row");
-		row.setAttribute("id", params[i].name);
+		row.setAttribute("id", params[i].id);
 		// Check if meta-group title cell should be appended.
 		/*
 			Check if meta-group count is larger than 0,
@@ -490,7 +490,7 @@ function createTable_mobile() {
 		}
 		var btn_row = document.createElement("TR");
 		btn_row.setAttribute("class", "btn-row");
-		btn_row.setAttribute("id", params[i].name);
+		btn_row.setAttribute("id", params[i].id);
 
 		// if (!groupTitle[group_id]) {
 		var title_row = document.createElement("TR");
