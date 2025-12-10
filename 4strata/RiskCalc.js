@@ -37,7 +37,7 @@ const proBNP = {
 	name: "BNP", id: "proBNP", group: "Biochem", meta_group: "Modifiable",
 	weight: [1], weight_f: [0, 1], value: [1, 2, 3, 4],
 	title: "NT-proBNP", btnText: ["NT-proBNP &nbsp;< 300 ng/l", "NT-proBNP 300-649 ng/l", "NT-proBNP 650-1100 ng/l", "NT-proBNP &nbsp;> 1100 ng/l"],
-	title_m: "NT-proBNP (ng/L) <sup>*</sup>", btnText_m:  ["< 300", "300-649", "650-1100", "> 1100"],
+	title_m: "NT-proBNP (ng/L)", btnText_m:  ["< 300", "300-649", "650-1100", "> 1100"],
 	title_c: "", btnText_c: [],
 	title_p: "", btnText_p: []
 };
@@ -47,7 +47,7 @@ const BNP = {
 	name: "BNP", id: "BNP", group: "Biochem", meta_group: "Modifiable",
 	weight: [1], weight_f: [0, 1], value: [1, 2, 3, 4],
 	title: "BNP", btnText: ["BNP &nbsp;< 50 ng/l", "BNP 50-199 ng/l", "BNP 200-800 ng/l", "BNP &nbsp;> 800 ng/l"],
-	title_m: "BNP (ng/L) <sup>*</sup>", btnText_m:  ["< 50", "50-199", "200-800", "> 800"],
+	title_m: "BNP (ng/L)", btnText_m:  ["< 50", "50-199", "200-800", "> 800"],
 	title_c: "", btnText_c: [],
 	title_p: "", btnText_p: []
 };
@@ -55,7 +55,7 @@ params.push(BNP);
 //
 // Set group titles
 const groupTitle = {
-	Cardiopulmonary: "Cardiopulmonary excercise testing", Biochem: "Biochemical markers <sup>*</sup>",
+	Cardiopulmonary: "Cardiopulmonary excercise testing", Biochem: "Biochemical markers",
 	Imaging: "Imaging", Haemodynamics: "Haemodynamics"
 };
 const metaGroupTitle = { Clinical: "Clinical Observations", Modifiable: "Modifiable Parameters" };
