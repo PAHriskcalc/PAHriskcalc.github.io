@@ -16,6 +16,10 @@
 }
 .header-title > h2 {
   font-size: 1.8em;
+  font-weight: bold;
+}
+.header-title > h3 {
+  font-size: 1.8em;
 }
 .header-title > p {
   font-size: 1.2em;
